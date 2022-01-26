@@ -2,7 +2,7 @@
 
 2.0 Français + English versions  
 
-## [2.0] - 2022-01-01
+## [2.0] - 2022-01-15
 
 Version bilingue en français et en anglais  
 
