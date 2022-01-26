@@ -1,0 +1,92 @@
+/*************************************************/
+/* Option du choix de la taille de caractère */
+/* pour une lecture plus aisée */
+/* Retour aux valeurs d'origine */
+/*************************************************/
+body {
+	line-height: 1.65em; /* 1.65em */
+	letter-spacing: 0.02em; /* 0.02em */
+}
+
+section .style3, section .style4 {
+	font-family: 'Inter',-apple-system,system-ui,sans-serif; /*xyz*/ /* Police Inter avec OpenType Feature 'frac' pour class .fraction */
+	font-weight: 300; /* 300 */
+}
+
+section strong, section h2, section h3, section h4 {
+	font-weight: 600; /* 600 */
+	}
+
+/*************************************************/
+/* HD */
+@media screen and (min-width: 1900px) {
+	section p, section li {
+		font-size: 16pt; /* 16pt */
+	}
+}
+
+/*************************************************/
+/* Wide */
+@media screen and (max-width: 1899px) {
+	section p, section li { 
+		font-size: 14pt; /* 14pt */
+	}
+}
+
+/*************************************************/
+/* Wide */
+@media screen and (max-width: 1680px) {
+	section p, section li { 
+		font-size: 12.5pt; /* 12.5pt */
+	}
+}
+
+/*************************************************/
+/* Normal */
+@media screen and (max-width: 1280px) {
+	body {
+		line-height: 1.65em; /* 1.65em */
+	}
+	section p, section li { 
+		font-size: 12pt;  /* 12pt */
+	}
+}
+
+/*************************************************/
+/* Narrow */
+@media screen and (max-width: 980px) {
+	body {
+		line-height: 1.55em; /* 1.55em */
+	}
+	section p, section li {
+		font-size: 12.5pt;  /* 12.5pt */
+	}
+}
+
+/*************************************************/
+/* Narrower */
+@media screen and (max-width: 840px) {
+	section p, section li { 
+		font-size: 13pt;  /* 13pt */
+	}
+}
+
+/*************************************************/
+/* Mobile */ 
+@media screen and (max-width: 730px) {
+	body {
+		line-height: 1.6em; /* 1.6em */
+		letter-spacing: 0.01em; /*xyz*/
+	}
+	section p, section li {
+		font-size: 13.5pt;  /* 13.5pt */
+	}
+}
+
+/*************************************************/
+/* Mobile Petit Écran */
+@media screen and (max-width: 359px) {
+	section p, section li {
+		font-size: 13pt;  /* 13pt */
+	}
+}

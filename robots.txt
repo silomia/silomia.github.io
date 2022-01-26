@@ -1,0 +1,4 @@
+### voir http://www.robotstxt.org/
+
+User-agent: *   # pour tous les robots indexeurs
+Sitemap: https://silomia.github.io/sitemap.xml
