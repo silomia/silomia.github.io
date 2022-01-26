@@ -1,9 +1,9 @@
 ## Lisez-moi / Read Me
 
-> Ce dépôt est la copie pour archive du site web silomia.gitlab.io mais sans activer la fonction Pages.
+> Ce dépôt est la copie pour archive du site web [silomia.gitlab.io](https://silomia.gitlab.io) mais sans activer la fonction Pages.
 
 * * *
-![Logo silomia](blob/main/images/share-silomia-2.png?raw=true)  
+![Logo silomia](images/share-silomia-2.png?raw=true)  
 
 ### SITE
 
