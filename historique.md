@@ -1,6 +1,14 @@
 # Journal des modifications
 
-2.0 Français + English versions  
+## [2.0.1] - 2022-02-15
+
+Corrections mineures 
+
+### Changé
+- Diverses petites corrections en anglais.  
+- `en-change-the-world-and-humanity.html`, correction du schéma.org.  
+- Police `rasmus inter`, ajout du caractère `ô` en semi-gras et gras.  
+
 
 ## [2.0] - 2022-01-15
 
