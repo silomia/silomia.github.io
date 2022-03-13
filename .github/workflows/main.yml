@@ -9,7 +9,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Compress assets
-        uses: Timmy/brotli-action@v1
+        uses: dave-mcconnell/brotli-action@v1
         with:
           args: '-Zkv *.html *.css *.js *.xml *.txt'
       - name: Upload assets
