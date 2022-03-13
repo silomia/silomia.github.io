@@ -1,7 +1,21 @@
-- name: Compresser Fichiers Statiques en Brotli
-  uses: stefh/ghaction-CompressFiles@v1
-  with:
-    path: ${{ env.PUBLISH_DIR }}
-    extensions: '.js,.css,.html,.xml,.txt,.md'
-    depth: 3
-    tools: 'brotli'
+# pre-compress static assets with gzip and brotli 
+# tools: 'brotli,gzip'
+
+name: Deploy Action
+on: 
+   push:
+      branches:
+         - main
+jobs:
+  deploy:
+     name: Deploy
+     runs-on: ubuntu-latest
+     steps:
+     - name: Compresser Fichiers Statiques en Brotli
+       uses: stefh/ghaction-CompressFiles@v1
+       with:
+         path: ${{ env.PUBLISH_DIR }}
+         extensions: '.js,.css,.html,.xml,.txt,.md'
+         depth: 3
+         tools: 'brotli'
+
