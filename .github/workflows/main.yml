@@ -1,6 +1,7 @@
 name: Compresser site web en Brotli
 on: push
-
+jobs:
+steps:
 - name: Compresser Fichiers Statiques
   uses: stefh/ghaction-CompressFiles@v1
   with:
