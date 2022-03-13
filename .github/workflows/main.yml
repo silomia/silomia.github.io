@@ -1,8 +1,4 @@
-name: Compresser site web en Brotli
-on: push
-jobs:
-steps:
-- name: Compresser Fichiers Statiques
+- name: Compresser Fichiers Statiques en Brotli
   uses: stefh/ghaction-CompressFiles@v1
   with:
     path: ${{ env.PUBLISH_DIR }}
