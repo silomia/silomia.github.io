@@ -13,7 +13,6 @@ jobs:
         with:
           args: '-Zkv *.html depot/*.html depot/recettes/*.html css/*.css js/*.js *.xml *.txt'
       - name: Upload assets
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
-          name:
-          path: .
+          path: ./
