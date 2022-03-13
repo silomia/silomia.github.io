@@ -12,6 +12,7 @@
 <link rel="alternate" type="application/rss+xml" href="https://silomia.github.io/en-rss.xml" title="Silomia English">
 <link rel="alternate" hreflang="fr" href="https://silomia.github.io/internet-referencement-site-web.html">
 <link rel="alternate" hreflang="en" href="https://silomia.github.io/en-internet-seo-web-site.html">
+<link rel="canonical" href="https://silomia.gitlab.io/en-internet-seo-web-site.html">
 <link rel="preload" href="css/styles.min.css" as="style">
 <link rel="preload" href="js/script.min.js" as="script">
 <link rel="preload" href="fonts/silomia-inter-light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -80,18 +81,18 @@
 						<p>Many webmasters do not know how to reference their websites on search engines. I submit a summary of what you need to do to be well indexed. A huge fantasy revolves around SEO because everyone wants to be at the top of the results. I will break the myth, tell you the truth and save you money.</p>
 						<h3>Referencing, indexing, positioning? <br>What do all these words mean?</h3>
 						<p><em>The referencing</em> is the registration of your website in the databases of search engines.<br>
-<em>Indexing</em> is the action of a search engine to register all the web pages of your site in its database.<br>
-<em>Positioning</em> is the ranking your website gets when displaying the search result. Everyone wants their site to appear on the first page.<br>
+						<em>Indexing</em> is the action of a search engine to register all the web pages of your site in its database.<br>
+						<em>Positioning</em> is the ranking your website gets when displaying the search result. Everyone wants their site to appear on the first page.<br>
 						<header>
 							<h3>1- Referencing: registering with search engines</h3>
 						</header>
 						<p>Here are the direct links to register your website with the major search engines. This registration is free. Just put the URL of your website and that is it.<br>
-Google: <a href="https://search.google.com/search-console">search.google.com/search-console</a><br>
-Bing: <a href="https://www.bing.com/webmasters/">bing.com/webmasters/</a><br>
-Qwant: <a href="https://help.qwant.com/fr/aide/qwant-com/comment-referencer-mon-site-sur-qwant/">help.qwant.com/fr/aide/qwant-com/comment-referencer-mon-site-sur-qwant/</a><br>
-Baidu: <a href="https://ziyuan.baidu.com/linksubmit/url">ziyuan.baidu.com/linksubmit/url</a><br>
-Yandex: <a href="https://webmaster.yandex.ru">webmaster.yandex.ru</a>
-</p>
+						Google: <a href="https://search.google.com/search-console">search.google.com/search-console</a><br>
+						Bing: <a href="https://www.bing.com/webmasters/">bing.com/webmasters/</a><br>
+						Qwant: <a href="https://help.qwant.com/fr/aide/qwant-com/comment-referencer-mon-site-sur-qwant/">help.qwant.com/fr/aide/qwant-com/comment-referencer-mon-site-sur-qwant/</a><br>
+						Baidu: <a href="https://ziyuan.baidu.com/linksubmit/url">ziyuan.baidu.com/linksubmit/url</a><br>
+						Yandex: <a href="https://webmaster.yandex.ru">webmaster.yandex.ru</a>
+						</p>
 						<p>Paying to register with 300 indexes and directories is pointless. Here, you have access to 99% of the market.</p>
 						<p>It takes at least 1 to 4 weeks for the search engine to visit your website, index it and display it in the search results. It is possible to go down to 1 to 4 days to have a first-limited result (all the pages will not have been indexed and included in the database). Why does it take so long? Google has thousands of servers around the world. They must synchronize and it takes at least a few weeks. However, some news pages can be indexed in a few hours if the search engine is notified of this change (see below).</p>
 						<header>
@@ -102,30 +103,30 @@ Yandex: <a href="https://webmaster.yandex.ru">webmaster.yandex.ru</a>
 						<p>Go to the official website <a href="https://www.sitemaps.org/">sitemaps.org</a> to find out more.</p>
 						<h4>a) Creation of the “sitemap.xml” file</h4>
 						<p>If you use a CMS, blog, forum, e-commerce, etc., it is likely that a function creating this file automatically exists. Otherwise, a plug-in, module, extension should be available. Go to the website of your CMS, blog, e-commerce to find out more.<br>
-Softwares to being installed either on the web server or on your computer can also do this. Finally, some websites offer automatic file creation. Some of these services are free, others require a fee.<br>
-For small websites, I use this free service: <a href="https://www.xml-sitemaps.com/">xml-sitemaps.com</a> , but there are others.</p>
+						Softwares to being installed either on the web server or on your computer can also do this. Finally, some websites offer automatic file creation. Some of these services are free, others require a fee.<br>
+						For small websites, I use this free service: <a href="https://www.xml-sitemaps.com/">xml-sitemaps.com</a> , but there are others.</p>
 						<h4>b) Register the “sitemap.xml” with search engines</h4>
 						<p>Search engines will not find your "sitemap.xml" file by chance, you must warn them of its existence.</p>
 						<p>It is recommended that the “sitemap.xml” file is at the root of your hosting, at the first level, where the index.html or index.php file is located. You don't have to call it “sitemap.xml”, but it is better to respect this convention. This file can be compressed in GZ in order to take less space, it will then be named “sitemap.xml.gz”. Search engines can read the compressed version.</p>
 						<p>There are 4 methods of registration:<br>
-On the first page of your website, put a link to the file “sitemap.xml”. When a search engine finds it, it will read it.<br>
-<br>
-Another official method is the insertion of its reference in the “robots.txt” file. If you don't know what it is, go to the official page <a href="https://www.robotstxt.org/">robotstxt.org</a>. In short, it is used to prevent search engines from indexing specific folders and files. This file is read at each visit of a search engine, it is mandatory, it is useless to refer to it. It must be at the root of your hosting, at the first level, where the index.html or index.php file is found.<br>
-So, we add the following line in the file “robots.txt”:
-<pre class="smallfont code">Sitemap: https://www.domaine.tld/sitemap.xml</pre>
-Notify the search engines directly. This is like point 1 for registration, but complementary, it does not replace it. This method is mainly used to warn them that the file “sitemap.xml” has been updated and that they will find the references for new pages.<br>
-Replace <em>https://www.domaine.tld/sitemap.xml</em> by the URL of your sitemap:<br>
-Google:
-<pre class="smallfont code">https://www.google.com/ping?sitemap=https://www.domaine.tld/sitemap.xml</pre>
-Bing:
-<pre class="smallfont code">https://www.indexnow.org and follow the instructions</pre>
-Baidu:
-<pre class="smallfont code">https://ping.baidu.com/ping.html and submit the sitemap URL in the form.</pre>
-Manage the registration of your “sitemap.xml”. Google, Bing and others offer an interface to control indexing. To prove that you are indeed the owner or the webmaster, they will ask you to authenticate the website by either placing an HTML meta tag in the index.html or index.php file, or by placing a file with a number in your hosting. I invite you to take this step to speed up your referencing and the update of your sites. You must open a free account to do so:<br>
-Google: <a href="https://search.google.com/search-console/about">search.google.com/search-console/about</a><br>
-Bing: <a href="https://www.bing.com/webmasters/">bing.com/webmasters/</a><br>
-Baidu Webmater Tool: <a href="https://ziyuan.baidu.com/">ziyuan.baidu.com/</a><br>
-Yandex Webmaster Tool: <a href="https://webmaster.yandex.ru/">webmaster.yandex.ru</a></p>
+						On the first page of your website, put a link to the file “sitemap.xml”. When a search engine finds it, it will read it.<br>
+						<br>
+						Another official method is the insertion of its reference in the “robots.txt” file. If you don't know what it is, go to the official page <a href="https://www.robotstxt.org/">robotstxt.org</a>. In short, it is used to prevent search engines from indexing specific folders and files. This file is read at each visit of a search engine, it is mandatory, it is useless to refer to it. It must be at the root of your hosting, at the first level, where the index.html or index.php file is found.<br>
+						So, we add the following line in the file “robots.txt”:
+						<pre class="smallfont code">Sitemap: https://www.domaine.tld/sitemap.xml</pre>
+						Notify the search engines directly. This is like point 1 for registration, but complementary, it does not replace it. This method is mainly used to warn them that the file “sitemap.xml” has been updated and that they will find the references for new pages.<br>
+						Replace <em>https://www.domaine.tld/sitemap.xml</em> by the URL of your sitemap:<br>
+						Google:
+						<pre class="smallfont code">https://www.google.com/ping?sitemap=https://www.domaine.tld/sitemap.xml</pre>
+						Bing:
+						<pre class="smallfont code">https://www.indexnow.org and follow the instructions</pre>
+						Baidu:
+						<pre class="smallfont code">https://ping.baidu.com/ping.html and submit the sitemap URL in the form.</pre>
+						Manage the registration of your “sitemap.xml”. Google, Bing and others offer an interface to control indexing. To prove that you are indeed the owner or the webmaster, they will ask you to authenticate the website by either placing an HTML meta tag in the index.html or index.php file, or by placing a file with a number in your hosting. I invite you to take this step to speed up your referencing and the update of your sites. You must open a free account to do so:<br>
+						Google: <a href="https://search.google.com/search-console/about">search.google.com/search-console/about</a><br>
+						Bing: <a href="https://www.bing.com/webmasters/">bing.com/webmasters/</a><br>
+						Baidu Webmater Tool: <a href="https://ziyuan.baidu.com/">ziyuan.baidu.com/</a><br>
+						Yandex Webmaster Tool: <a href="https://webmaster.yandex.ru/">webmaster.yandex.ru</a></p>
 						<header>
 							<h3>3- Positioning: being number 1</h3>
 						</header>
@@ -133,11 +134,11 @@ Yandex Webmaster Tool: <a href="https://webmaster.yandex.ru/">webmaster.yandex.r
 						<p>To be successful, you have to keep in mind a guiding principle that Google asserts every time it changes its evaluation criteria. <strong>First and foremost, you must make a website for humans</strong> (fast, accessible, with well-presented and honest information, with a logical layout and outline). <strong>It is not up to you to adapt to Google, but it is Google that adapts to humans and their way of reading quality information.</strong> If your content is appreciated and relevant to a human, it will also be relevant to the search engine.</p>
 						<h4>a) Optimize your web page for a good index:</h4>
 						<p>The &lt;title&gt; tag must be explicit and describe what is in the page. No need to be long, search engines cut titles that exceed <strong>60 characters</strong> (spaces and punctuation included).<br>
-The meta description and keywords tags: you can say anything about them. Simply put, the meta keyword tag is useless. It is no longer used because of abuse (list too long, does not match the content, etc.). The meta description tag can be useful by displaying a summary in the result page and by highlighting particular keywords. This summary must match the content, otherwise the page will be banned. It must be less than <strong>160 characters</strong> (including spaces and punctuation) and will be displayed as a description in the results page. The meta description tag is optional. If it does not exist, the search engine will display an excerpt of the page highlighting the keywords found in the text (it is also a good solution to invite the reader to view your page).<br>
-When you write your page, highlight important keywords using the tags &lt;i&gt; &lt;b&gt; &lt;strong&gt; &lt;em&gt; &lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt;. But don't overdo it. If there are too many of them or if the keyword is highlighted too often, it will not be taken into account.<br>
-Your URL must contain a few keywords, but this URL must not exceed <strong>120 characters</strong> otherwise the included keywords will not be included in the search result (but technically the URL can be very long).<br>
-Page length is important. Avoid texts that are too long and heavy (more than 20 KB), the minimum is 300 words per page, 10000 words per page seem to be a maximum.<br> 
-For indexing robots, the content at the top of the page is more important than the rest of the page. As for journalistic writing, write the first paragraph as the summary of the article in order to include your keywords. This place (the introduction or teaser) is the most strategic because your first keywords will carry more weight. Consequently, the HTML code of the sidebars and menu bars will be placed at the end of the HTML file, where they will not interfere with the indexing of the text; use CSS style sheets to position these elements in the desired location.</p>
+						The meta description and keywords tags: you can say anything about them. Simply put, the meta keyword tag is useless. It is no longer used because of abuse (list too long, does not match the content, etc.). The meta description tag can be useful by displaying a summary in the result page and by highlighting particular keywords. This summary must match the content, otherwise the page will be banned. It must be less than <strong>160 characters</strong> (including spaces and punctuation) and will be displayed as a description in the results page. The meta description tag is optional. If it does not exist, the search engine will display an excerpt of the page highlighting the keywords found in the text (it is also a good solution to invite the reader to view your page).<br>
+						When you write your page, highlight important keywords using the tags &lt;i&gt; &lt;b&gt; &lt;strong&gt; &lt;em&gt; &lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt;. But don't overdo it. If there are too many of them or if the keyword is highlighted too often, it will not be taken into account.<br>
+						Your URL must contain a few keywords, but this URL must not exceed <strong>120 characters</strong> otherwise the included keywords will not be included in the search result (but technically the URL can be very long).<br>
+						Page length is important. Avoid texts that are too long and heavy (more than 20 KB), the minimum is 300 words per page, 10000 words per page seem to be a maximum.<br> 
+						For indexing robots, the content at the top of the page is more important than the rest of the page. As for journalistic writing, write the first paragraph as the summary of the article in order to include your keywords. This place (the introduction or teaser) is the most strategic because your first keywords will carry more weight. Consequently, the HTML code of the sidebars and menu bars will be placed at the end of the HTML file, where they will not interfere with the indexing of the text; use CSS style sheets to position these elements in the desired location.</p>
 						<h4>b) Having a good “pagerank” = having a lot of friends.</h4>
 						<p><strong>The more websites cite you and link to yours, the more popular you are (so you are considered interesting and relevant) and the better ranked your site is. The key is there.</strong> SEO companies can help you through their network of websites by artificially increasing your popularity and optimizing your site through their experiences.</p>
 						<p>Otherwise, do it yourself by talking about your site in many forums, blogs, newsgroups, partnerships…</p>
@@ -149,13 +150,13 @@ For indexing robots, the content at the top of the page is more important than t
 						<p>Therefore, good and unique content will give good natural SEO. However, if the site is slow with content that is complicated for a robot to read, the indexing will be limited and punished by poor positioning, far behind the other competitors. It is helpful to know how the indexing robot works and what are the good practices that will improve positioning and visibility.</p>
 						<h4>a) Search Engine Optimization:</h4>
 						<p>An article from Wikipedia gives a good overview of the indexing rules of search engines where all competing services replicate these practices for more consistency. It contains references to other articles written in English in a jargon that is relatively accessible to the enlightened amateur. <br>
-<a href="https://en.wikipedia.org/wiki/Search_engine_optimization">Wikipedia: Search engine optimization</a></p>
+						<a href="https://en.wikipedia.org/wiki/Search_engine_optimization">Wikipedia: Search engine optimization</a></p>
 						<h4>b) Test the site and analyse the results:</h4>
 						<p>In addition to the content of a web page, a whole series of technical criteria are taken into account to evaluate the positioning in the search results. Some are easy to fix, others require technical expertise to optimize coding and set up the webserver. I invite you to have your website examined at these addresses, which will display a detailed report and an evaluation of the technical efficiency:<br>
-Google Developers inspect your site and give you advice: <a href="https://developers.google.com/speed/pagespeed/insights/">developers.google.com/speed/pagespeed/insights/</a><br>
-Webpagetest examines the performance of a site: <a href="https://www.webpagetest.org">webpagetest.org</a><br>
-GTMetrix analyses the speed of a site: <a href="https://gtmetrix.com">gtmetrix.com</a><br>
-Pingdom determines the speed of a site: <a href="https://tools.pingdom.com">tools.pingdom.com</a></p>
+						Google Developers inspect your site and give you advice: <a href="https://developers.google.com/speed/pagespeed/insights/">developers.google.com/speed/pagespeed/insights/</a><br>
+						Webpagetest examines the performance of a site: <a href="https://www.webpagetest.org">webpagetest.org</a><br>
+						GTMetrix analyses the speed of a site: <a href="https://gtmetrix.com">gtmetrix.com</a><br>
+						Pingdom determines the speed of a site: <a href="https://tools.pingdom.com">tools.pingdom.com</a></p>
 					</section>
 				</div>
 			</div>

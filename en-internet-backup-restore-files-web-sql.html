@@ -12,6 +12,7 @@
 <link rel="alternate" type="application/rss+xml" href="https://silomia.github.io/en-rss.xml" title="Silomia English">
 <link rel="alternate" hreflang="fr" href="https://silomia.github.io/internet-sauvegarde-backup-restauration-web-sql.html">
 <link rel="alternate" hreflang="en" href="https://silomia.github.io/en-internet-backup-restore-files-web-sql.html">
+<link rel="canonical" href="https://silomia.gitlab.io/en-internet-backup-restore-files-web-sql.html">
 <link rel="preload" href="css/styles.min.css" as="style">
 <link rel="preload" href="js/script.min.js" as="script">
 <link rel="preload" href="fonts/silomia-inter-light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -81,7 +82,7 @@
 						<h3>1- Prepare the backup of the website:</h3>
 						<p>Always have a copy of your website on your computer. If you have installed a blog, forum, cms, e-commerce, keep an operational copy with the config, htaccess, plug-ins, additional modules, themes, templates and your modifications.</p>
 						<p>If you update your web software, do the same with your backup.<br>
-If your site contains an upload folder and logs, go get them regularly. To simplify this last task, the script below will make a ZIP backup of a log file. Instead of downloading a hundred small text files, everything will be grouped in a ZIP file.</p>
+						If your site contains an upload folder and logs, go get them regularly. To simplify this last task, the script below will make a ZIP backup of a log file. Instead of downloading a hundred small text files, everything will be grouped in a ZIP file.</p>
 <span class="smallfont">Code PHP</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #408080; font-style: italic">/* Make sure that the backup destination folder is created. It can be either in the www folder or elsewhere. Here we put it somewhere else*/</span>
@@ -126,8 +127,7 @@ If your site contains an upload folder and logs, go get them regularly. To simpl
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">system</span>(<span style="color: #BA2121">&quot;tar -cjf </span><span style="color: #BB6688; font-weight: bold">$repsauvegarde$zipuploads</span><span style="color: #BA2121">.tar.bz2 </span><span style="color: #BB6688; font-weight: bold">$uploads</span><span style="color: #BA2121">&quot;</span>));
 </pre></div>
 						<p>Note that tar bzip2 compresses better than tar gzip, which is also often more effective than Zip.</p>
-						<p><strong>ATTENTION:</strong> don't try to make a ZIP file of all your hosting, it might not work. There are 2 reasons for this: the execution time of a script is often limited from 30 to 120 seconds and the RAM memory allocated to processing the script and handling the files is limited depending on your hosting offer (from 32 MB to 256 MB, which is insufficient for a backup of your website).
-To know these limits, create a file info.php with the following code</p>
+						<p><strong>ATTENTION:</strong> don't try to make a ZIP file of all your hosting, it might not work. There are 2 reasons for this: the execution time of a script is often limited from 30 to 120 seconds and the RAM memory allocated to processing the script and handling the files is limited depending on your hosting offer (from 32 MB to 256 MB, which is insufficient for a backup of your website). To know these limits, create a file info.php with the following code</p>
 <span class="smallfont">Code PHP</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #008000">phpinfo</span>();
@@ -158,8 +158,8 @@ To know these limits, create a file info.php with the following code</p>
 </pre></div>
 						<h4>b) Backup by phpMyadmin</h4>
 						<p>To make a backup of your current MySQL database connect to your phpMyadmin interface. Enter the name of the SQL database and its password, then at the top of the left column, click on the name of the database. At the top of the central page, click on the “Export” tab. The Export page displays a simplified version that should be sufficient most of the time. Choose to export in SQL format and click on the Run button. To select specific tables, choose the custom method and check the boxes of the tables you want to export. Save the output to a file, with a character set that should be UTF-8 by default, and if the database is large, you can compress it to GZIP format. The other default checkboxes should be acceptable, unless you know what you are doing, and then click the Run button. And don't forget to log out when you are done by clicking on the Log Out icon in the top left corner.</p>
-<p>After the backup, the recovery…</p>
-<hr>
+						<p>After the backup, the recovery…</p>
+						<hr>
 						<header>
 							<h2><span class="icon fa-map-marker fa-lg"></span> Restoring your website and SQL database (Part 2)</h2>
 						</header>
@@ -177,21 +177,21 @@ To know these limits, create a file info.php with the following code</p>
 						<p>Send this file by FTP, open it with your web browser, and look for the line <em>upload_max_filesize</em> to know the maximum size. If your MySQL backup is below this limit, you can do it.</p>
 						<p>A tip if your “dump” or backup was done with phpMyadmin, you can restore in the same way, otherwise, go to the PHP scripting method explained in the next section.</p>
 						<p><em>Deleting the SQL database</em><br>
-Login to your phpMyadmin interface, enter the name of the SQL database and its password, then at the top of the left column, click on the name of the database. Then in the main window, at the bottom of the page, under the checkboxes column, click on “Check all” and in the menu that follows, choose “Delete table”. Confirm the deletion of “Tables” by clicking on “Yes”.</p>
+						Login to your phpMyadmin interface, enter the name of the SQL database and its password, then at the top of the left column, click on the name of the database. Then in the main window, at the bottom of the page, under the checkboxes column, click on “Check all” and in the menu that follows, choose “Delete table”. Confirm the deletion of “Tables” by clicking on “Yes”.</p>
 						<p><em>Restoring the base</em><br>
-You will import the new database. Click on the “Import” tab. Click on “Browse” to select the backup on your computer. <strong> WARNING:</strong> if the backup has just been made with phpMyadmin, i.e., having followed the procedure described above, select the character set “utf8” (there is a good chance that this character set is the right one, otherwise take “latin1”). If the backup was made otherwise, select the corresponding character set. Otherwise, accented characters will not display well on the website. Click Run. And don't forget to log out once you are done by clicking on the Log Out icon.</p>
+						You will import the new database. Click on the “Import” tab. Click on “Browse” to select the backup on your computer. <strong> WARNING:</strong> if the backup has just been made with phpMyadmin, i.e., having followed the procedure described above, select the character set “utf8” (there is a good chance that this character set is the right one, otherwise take “latin1”). If the backup was made otherwise, select the corresponding character set. Otherwise, accented characters will not display well on the website. Click Run. And don't forget to log out once you are done by clicking on the Log Out icon.</p>
 						<h4>b) Recovery by PHP script</h4>
 						<p>If you have exceeded the limit because your SQL database is too big, an excellent script can help you, it is called <a href="http://www.ozerov.de/bigdump.php">BigDump</a> of which you can download the latest <a href="depot/bigdump.zip">version 0.36b here</a>. The interface is in English. You just have to enter the parameters of your SQL database and choose the right character set “utf8” or “latin1”. If you used the above backup script, you know which character set you used, whereas you are less sure with phpMyadmin.</p>
 						<p><em>Deleting the SQL database</em><br>
-Login to your phpMyadmin interface, enter the name of the SQL database and its password, then at the top of the left column, click on the name of the database. Then in the main window, at the bottom of the page, under the checkboxes column, click on “Check all” and in the menu that follows, choose “Delete table”. Confirm the deletion of “Tables” by clicking on “Yes”. And don't forget to log out when you are done by clicking on the Log Out icon.</p>
+						Login to your phpMyadmin interface, enter the name of the SQL database and its password, then at the top of the left column, click on the name of the database. Then in the main window, at the bottom of the page, under the checkboxes column, click on “Check all” and in the menu that follows, choose “Delete table”. Confirm the deletion of “Tables” by clicking on “Yes”. And don't forget to log out when you are done by clicking on the Log Out icon.</p>
 						<p><em>Restoring the base</em><br>
-By FTP, send bigdump.php and your SQL backup in the same folder. With your web browser, open bigdump.php, it should list your database. Then click on Start Import. Usually, everything should go well and a window should tell you that the database has been restored. Otherwise, you will have to make a backup table by table of your SQL database to reduce the size of the files. Just do it with phpMyadmin as explained above. If this is not enough, check the forums, there are many tips. Then by FTP, delete bigdump.php and the SQL backup. Never keep bigdump, a hacker could use it very easily to control your website.<br>
-<em>A tip</em>, check how accented characters are displayed on your website after restoration. Because of some inconsistencies between latin1 and utf8, we can have bad surprises. For example, I have a blog where everything is in utf-8 (text, html charset, SQL interclass in utf-8, etc.), everything is consistent since its creation. If I make a dump (backup) of the database in utf8 with my script, then a restore with bigdump.php in utf8, the website doesn't display accented characters well. I had to do a dump in latin1 then restore with bigdump.php in utf8 to get back to normal. Think about it.</p>
+						By FTP, send bigdump.php and your SQL backup in the same folder. With your web browser, open bigdump.php, it should list your database. Then click on Start Import. Usually, everything should go well and a window should tell you that the database has been restored. Otherwise, you will have to make a backup table by table of your SQL database to reduce the size of the files. Just do it with phpMyadmin as explained above. If this is not enough, check the forums, there are many tips. Then by FTP, delete bigdump.php and the SQL backup. Never keep bigdump, a hacker could use it very easily to control your website.<br>
+						<em>A tip</em>, check how accented characters are displayed on your website after restoration. Because of some inconsistencies between latin1 and utf8, we can have bad surprises. For example, I have a blog where everything is in utf-8 (text, html charset, SQL interclass in utf-8, etc.), everything is consistent since its creation. If I make a dump (backup) of the database in utf8 with my script, then a restore with bigdump.php in utf8, the website doesn't display accented characters well. I had to do a dump in latin1 then restore with bigdump.php in utf8 to get back to normal. Think about it.</p>
 						<h3>5- Summary. You have on your computer</h3>
 						<p>a) your complete website (HTML files, images, and other files),<br>
-b) all updated files of your blog, forum, cms, e-commerce with config, htaccess, plugins, modules, themes, templates and your modifications,<br>
-c) the upload folders, logs, etc. that you regularly update,<br>
-d) a recent backup of your MySQL database.</p>
+						b) all updated files of your blog, forum, cms, e-commerce with config, htaccess, plugins, modules, themes, templates and your modifications,<br>
+						c) the upload folders, logs, etc. that you regularly update,<br>
+						d) a recent backup of your MySQL database.</p>
 						<h3>6- If you are doing the restoration after a hack</h3>
 						<p>Change your FTP and MySQL passwords. Then, don't forget to edit the config.inc.php or equivalent files that need your new SQL password.</p>
 					</section>

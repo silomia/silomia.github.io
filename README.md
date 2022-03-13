@@ -13,7 +13,8 @@ Adresse originale: [https://silomia.github.io](https://silomia.github.io)
 Dépôt Github: [https://github.com/silomia/silomia.github.io](https://github.com/silomia/silomia.github.io)  
 Langue: Français (pour lever toute ambigüité sur l'interprétation d'un concept, comparez avec ma version traduite en anglais). Emploi de la graphie rectifiée de 1990, car l'orthographe et la grammaire française sont trop complexes et parfois incohérentes aussi bien pour les francophones que pour les locuteurs étrangers (qu'on ne me parle pas de la beauté de l'orthographe, de la logique (_sic_) de la grammaire ou de conserver son étymologie; les langues latines plus phonétiques comme l'italien et l'espagnol représentent aussi une grande culture littéraire !).  
 Doctype: HTML5  
-Logiciels: BBEdit (pour lequel je suis crédité comme “unindicted co-conspirators” 🙂 ), GraphicConverter, Pixelmator, ImageOptim, Antidote, Apple macOS et Ubuntu.
+Logiciels: BBEdit (pour lequel je suis crédité comme “unindicted co-conspirators” 🙂 ), GraphicConverter, Pixelmator, ImageOptim, Antidote, Apple macOS et Ubuntu.  
+Services web: Webfont Generator de [fontsquirrel.com](https://www.fontsquirrel.com), [minifier.org](https://www.minifier.org), UglifyJS de [skalman.github.io](https://skalman.github.io/UglifyJS-online/), [DeepL](https://www.deepl.com), [Grammarly](https://www.grammarly.com), [Wordtune](https://www.wordtune.com)  
 
 ### ENGLISH VERSION
 

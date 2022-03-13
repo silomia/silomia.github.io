@@ -1,5 +1,15 @@
 # Journal des modifications
 
+## [2.0.2] - 2022-03-15
+
+Corrections mineures 
+
+### Changé
+- `conseils-pratiques-photographie.html`, `en-change-your-life-succeed-evolve.html`, `gateau-stollen.html`, `gateau-streusel-a-la-creme.html`, `gourmandise-brioche-au-beurre.html`, `gourmandise-croissants-pains-au-chocolat.html`, `internet-referencement-site-web.html`, `internet-se-proteger-des-pirates-et-hackers.html`, `le-monde-et-l-humanite-doivent-changer.html`, tabulations de mise en forme du code.  
+- `README`, ajout des services web.  
+- Ajout de la balise `link rel="canonical"` pointant vers le site gitlab pour indiquer le contenu dupliqué.  
+
+
 ## [2.0.1] - 2022-02-15
 
 Corrections mineures 
