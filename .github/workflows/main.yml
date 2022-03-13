@@ -1,19 +1,11 @@
 name: Compresser site web en Brotli
 on: push
 
-jobs:
-  compress:
-    name: Brotli
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-      - name: Compress assets
-        uses: dave-mcconnell/brotli-action@v1
-        with:
-          args: '-Zkv *.html depot/*.html depot/recettes/*.html css/*.css js/*.js *.xml *.txt'
-      - name: Upload assets
-        uses: actions/upload-artifact@v3
-        with:
-          name: artifacts
-          path: .*
+# pre-compress static assets with gzip and brotli with tools: 'brotli,gzip'
+- name: Compresser Fichiers Statiques
+  uses: stefh/ghaction-CompressFiles@v1
+  with:
+    path: ${{ env.PUBLISH_DIR }}
+    extensions: '.js,.css,.html,.xml,.txt,.md'
+    depth: 3
+    tools: 'brotli'
