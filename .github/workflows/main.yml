@@ -14,7 +14,7 @@ jobs:
      - name: Compresser Fichiers Statiques en Brotli
        uses: stefh/ghaction-CompressFiles@v1
        with:
-         path: ~/silomia.github.io/
+         path: ./
          extensions: '.js,.css,.html,.xml,.txt,.md'
          depth: 3
          tools: 'brotli'
