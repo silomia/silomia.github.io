@@ -8,13 +8,13 @@ on:
          - main
 jobs:
   deploy:
-     name: Deploy
+     name: Précompression en Brotli
      runs-on: ubuntu-latest
      steps:
      - name: Compresser Fichiers Statiques en Brotli
        uses: stefh/ghaction-CompressFiles@v1
        with:
-         path: ${{ env.PUBLISH_DIR }}
+         path: ./
          extensions: '.js,.css,.html,.xml,.txt,.md'
          depth: 3
          tools: 'brotli'
