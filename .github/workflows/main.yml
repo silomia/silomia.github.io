@@ -1,7 +1,6 @@
 name: Compresser site web en Brotli
 on: push
 
-# pre-compress static assets with gzip and brotli with tools: 'brotli,gzip'
 - name: Compresser Fichiers Statiques
   uses: stefh/ghaction-CompressFiles@v1
   with:
