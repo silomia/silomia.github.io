@@ -223,41 +223,32 @@ k.addons={offcanvas:function(){var e=this;if(this.opts.offCanvas){var t=function
 );
 
 /* ******************************************************************************* */
-/* FENÊTRE MODALE - UTILISATION DE LA TOUCHE Esc / CLIC HORS DE LA FENÊTRE POUR FERMER */
-/* Par dfsq et DNevens le 3 Jan 2015 */
-/* https://stackoverflow.com/questions/27758991/css-html-modal-using-the-escape-key-click-outside-to-close */
+/* FENÊTRE DIALOGUE MODALE  */
 /* ******************************************************************************* */
 
-function modalFermer() {
-	if (location.hash == '#fmodale') {
-		location.hash = '#fermer';
-	}
-}
-/* Prise en charge de la touche ECHAPPE, EFFACE et SUPPRIME et  */
+let dModale = document.getElementById('dmodale');
+
+// Afficher et fermer la fenêtre de dialogue modale au clic
+document.getElementById('omodale').addEventListener('click', function(e) {
+    dModale.showModal();
+});
+document.getElementById('cmodale').addEventListener('click', function(e) {
+    dModale.close();
+});
+
+/* Prise en charge de la touche ECHAPPE (active par défaut avec <dialog>), EFFACE et SUPPRIME */
 document.addEventListener('keyup', function(e) {
-/* 	if (e.key === "Escape") { modalFermer(); } */
 	switch (e.key) {
-		case 'Escape': modalFermer();
+		case 'Escape': dModale.close();
 			break;
-		case 'Backspace': modalFermer();
+		case 'Backspace': dModale.close();
 			break;
-		case 'Delete': modalFermer();
+		case 'Delete': dModale.close();
 			break;
 		default:
 			return; /* Quitte quand pas d'autre key event. */
 	}
 });
-/* Prise en charge du clic dans le contenant modal */
-if (document.getElementById('fmodale')) {
-	var modal = document.getElementById('fmodale');
-	modal.addEventListener('click', function(e) {
-		modalFermer();
-	}, false);
-/* Empêche l'évènement de blablater quand le clic intervient au sein du corps du modal */
-	modal.children[0].addEventListener('click', function(e) {
-		e.stopPropagation();
-	}, false);
-};
 
 /* Bouton Copier l'URL dans le presse papier */
 /* <a id="lmodale" href="fichier.html">lien</a> */
@@ -272,6 +263,7 @@ function copieLienTexte() {
 }
 var copierBouton = document.getElementById('copier');
 copierBouton ? document.getElementById('copier').addEventListener('click', copieLienTexte) : false;
+
 
 /* ******************************************************************************* */
 /* OUVERTURE PAR DÉVOILEMENT POUR MENTIONS LEGALES À LA PAGE COURRIER et POEME DE KIPLING */
@@ -322,55 +314,4 @@ poussoir.onclick = function changeCaract() {
 		sessionStorage.removeItem('SilomiaCaract') 
 	);
 /* PAS D'ENREGISTREMENT DANS sessionStorage DE LA CSS QUI CORRESPOND AU RETOUR À LA NORMALE */
-};
-
-
-/* ******************************************************************************* */
-/* LAZY LOAD IMAGES <source data-src=""> AU MOMENT OÙ ILS APPARAISSENT À L'ÉCRAN */
-/* REMPLACE data-src PAR srcset */
-/* DANS LA CSS POUR picture METTRE min-height:100px; ET ÉVENTUELLEMENT min-width:70px; */
-/* Denys Mishunov le 22 Jan 2018 */
-/* https://www.smashingmagazine.com/2018/01/deferring-lazy-loading-intersection-observer-api/ */
-/* */
-/* QUAND LE CODE HTML <img "images.jpg" loading="lazy"> SERA INTÉGRÉ MASSIVEMENT */
-/* À TOUS LES NAVIGATEURS WEB, ON POURRA RETIRER CETTE FONCTION */
-/* ******************************************************************************* */
-if (window.IntersectionObserver) { /* POUR LES NAVIGATEURS COMPATIBLES AVEC IntersectionObserver */
-const lazyimages = document.querySelectorAll('source[data-src]');
-const lazyconfig = {
-	root: null,
-	rootMargin: '0px 0px 50px 0px',
-	threshold: 0
-};
-let loaded = 0;
-let observer = new IntersectionObserver(function (entries, self) {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-		preloadImage(entry.target);
-		self.unobserve(entry.target);
-	}
-	});
-}, lazyconfig);
-lazyimages.forEach(image => {
-	observer.observe(image);
-});
-function preloadImage(source) {
-	const srcset = source.getAttribute('data-src');
-	if (!srcset) { return; }
-	source.srcset = srcset;
-};
-}
-/* ******************************************************************************* */
-/* DIFFÉRER LE CHARGEMENT DES IMAGES <source data-src=""> À LA FIN DU CHARGEMENT DE LA PAGE */
-/* REMPLACE data-src PAR srcset */
-/* ******************************************************************************* */
-else { /* POUR LES VIEUX NAVIGATEURS D'AVANT 2018, CHARGEMENT DIFFÉRÉ AU LIEU DE LAZYLOAD */
-window.addEventListener('load', function(){
-	var chargeimages= document.getElementsByTagName('source');
-	for (var i=0; i<chargeimages.length; i++) {
-		if (chargeimages[i].getAttribute('data-src')) {
-			chargeimages[i].setAttribute('srcset', chargeimages[i].getAttribute('data-src'));
-		}
-	}
-}, false)
 };

@@ -1,5 +1,16 @@
 # Journal des modifications
 
+## [2.0.3] - 2022-03-20
+
+Changements mineurs, moins de code JS et optimisation
+
+### Changé
+- `Tous les fichiers html`, `styles.css`, `script.js`, affichage de la fenêtre modale de copie d'URL en utilisant la balise `dialog` au lieu d'une combinaison d'astuces en CSS et JS.  
+
+### Retrait
+- `Tous les fichiers html`, `script.js`, méthode de chargement différé des images en JavaScript au profit de la méthode native loading="lazy".   
+
+
 ## [2.0.2] - 2022-03-15
 
 Corrections mineures 

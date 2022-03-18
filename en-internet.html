@@ -37,7 +37,7 @@
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
 <script type="application/ld+json">
 	{"@context":"http://schema.org/","@type":"WebPage","author":{"@type":"Person","name":"Ralph Davidovits"},"publisher":{"@type":"Organization","name":"Silomia","logo":{"@type":"ImageObject","url": "https://silomia.github.io/favicon-touch-192x192.png"}},
-	"datePublished":"2021-06-21","dateModified":"2022-01-15",
+	"datePublished":"2021-06-21","dateModified":"2022-03-20",
 	"name":"Internet: practical articles for webmasters","description":"Here are several articles on website management, how to protect yourself from hackers and pirates, SEO, debugging, backup…",
 	"image":["https://silomia.github.io/images/internet-mikko-lemola.jpg"],
 	"mainEntityOfPage":{"@type":"WebPage","@id":"https://silomia.github.io/"}
@@ -85,11 +85,10 @@
 						<li><a href="en-internet-secure-protect-from-hacker-attacks.html" class="button small">Read More</a></li>
 					</ul>
 						<picture class="image fit">
-							<source media="(max-width: 415px)" data-src="images/macbook-pro-clavier@1x.jpg">
-							<source media="(min-width: 416px)" data-src="images/macbook-pro-clavier@1x.jpg 1x, images/macbook-pro-clavier.jpg 2x">
-							<img alt="Clavier lumineux Macbook Pro" class="visi">
+							<source media="(max-width: 415px)" srcset="images/macbook-pro-clavier@1x.jpg">
+							<source media="(min-width: 416px)" srcset="images/macbook-pro-clavier@1x.jpg 1x, images/macbook-pro-clavier.jpg 2x">
+							<img src="images/macbook-pro-clavier@1x.jpg" loading="lazy" alt="Clavier lumineux Macbook Pro">
 						</picture>
-						<!--z><img src="images/macbook-pro-clavier@1x.jpg" loading="lazy" alt="Clavier lumineux Macbook Pro"></z-->
 						<header>
 							<h2><a href="en-internet-backup-restore-files-web-sql.html" class="">How to backup and restore a website and its SQL database</a></h2>
 						</header>
@@ -98,11 +97,10 @@
 						<li><a href="en-internet-backup-restore-files-web-sql.html" class="button small">Read More</a></li>
 					</ul>
 						<picture class="image fit">
-							<source media="(max-width: 415px)" data-src="images/repertoire@1x.jpg">
-							<source media="(min-width: 416px)" data-src="images/repertoire@1x.jpg 1x, images/repertoire.jpg 2x">
-							<img alt="Répertoire" class="visi">
+							<source media="(max-width: 415px)" srcset="images/repertoire@1x.jpg">
+							<source media="(min-width: 416px)" srcset="images/repertoire@1x.jpg 1x, images/repertoire.jpg 2x">
+							<img src="images/repertoire@1x.jpg" loading="lazy" alt="Répertoire">
 						</picture>
-						<!--z><img src="images/repertoire@1x.jpg" loading="lazy" alt="Répertoire"></z-->
 						<header>
 							<h2><a href="en-internet-seo-web-site.html" class="">Referencing a website: the true answers, the right method</a></h2>
 						</header>
@@ -111,11 +109,10 @@
 						<li><a href="en-internet-seo-web-site.html" class="button small">Read More</a></li>
 					</ul>
 						<picture class="image fit">
-							<source media="(max-width: 415px)" data-src="images/carte-mere-ordinateur@1x.jpg">
-							<source media="(min-width: 416px)" data-src="images/carte-mere-ordinateur@1x.jpg 1x, images/carte-mere-ordinateur.jpg 2x">
-							<img alt="Carte mère d'ordinateur. Crédit photo: Gigabyte" class="visi">
+							<source media="(max-width: 415px)" srcset="images/carte-mere-ordinateur@1x.jpg">
+							<source media="(min-width: 416px)" srcset="images/carte-mere-ordinateur@1x.jpg 1x, images/carte-mere-ordinateur.jpg 2x">
+							<img src="images/carte-mere-ordinateur@1x.jpg" loading="lazy" alt="Carte mère d'ordinateur. Crédit photo: Gigabyte">
 						</picture>
-						<!--z><img src="images/carte-mere-ordinateur@1x.jpg" loading="lazy" alt="Carte mère d'ordinateur. Crédit photo: Gigabyte"></z-->
 						<header>
 							<h2><a href="en-internet-debug-php-mysql.html" class="">Scripts and debugging tips in PHP, MySQL, mail()</a></h2>
 						</header>
@@ -143,17 +140,17 @@
 							<h2><span class="icon fa-users fa-lg"></span> Share</h2>
 						</header>
 						<ul class="icons center">
-							<li><a href="#fmodale" class="icon circle fa-partage-alt"><span class="label">Lien</span></a></li>
+							<li><a href="#dmodale" id="omodale" class="icon circle fa-partage-alt"><span class="label">Lien</span></a></li>
 							<li><a href="mailto:?subject=Check%20out%20this%20article%20from%20the%20Silomia%20website.&body=I%20just%20read%20this%20article%20from%20the%20Silomia%20website%20and%20I%20think%20you%20will%20find%20it%20interesting.%20%20%0D%0Go%20to%20this%20address%3A%20https%3A%2F%2Fsilomia.github.io%2Fen-internet.html" class="icon circle fa-envelope"><span class="label">E-mail</span></a></li>
 						</ul>
 						<ul class="icons center">
 							<li><a href="internet.html" class="icon circle fa-language"><span class="label">Lien</span></a> <br><a class="smallfont" href="internet.html">Version française</a></li>
 						</ul>
-						<div id="fmodale" class="smodale" role="dialog"><div>
-							<header><p>Copy the link to share it</p></header>
+						<dialog id="dmodale">
+							<header class="tmodale"><p>Copy the link to share it</p></header>
 							<p class="smallfont"><a id="lmodale" href="https://silomia.github.io/en-internet.html">https://silomia.github.io/en-internet.html</a></p>
-							<footer class="smodaleferme smallfont"><a id="copier" data-copie=">> Link copied" class="button special">Copy</a> <a href="#fermer" class="button special">Close</a></footer>
-						</div></div>
+							<footer class="tmodale smallfont"><a id="cmodale" class="button">Close</a> <a id="copier" data-copie=">> Link copied" class="button special">Copy</a></footer>
+						</dialog>
 					</section>
 				</div>
 			</div>
@@ -282,7 +279,7 @@
 	</ul>
 </footer>
 
-<!--z><style>.image.fit img.visi,img.visi{display:none}li.submenu{margin-top:1em}li.submenu ul{padding-left:.68em}#header{position:absolute}</style></z-->
+<!--z><style>li.submenu{margin-top:1em}li.submenu ul{padding-left:.68em}#header{position:absolute}</style></z-->
 </div><!-- page-wrapper -->
 
 <!-- Scripts -->

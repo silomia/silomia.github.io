@@ -790,6 +790,7 @@
 
 	ul.buttons li {
 		display: inline-block;
+		margin: 0 5px; /*xyz*/
 		/*padding: 0 0 0 1.5em;*/ /*xyz*/
 	}
 
@@ -863,7 +864,7 @@
 
 	input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, .button:hover {
 		background: rgba(188, 202, 206, 0.35); /*xyz*/
-		border-color: inherit;
+		border: inherit; /*xyz*/
 	}
 
 	input[type="button"].special, input[type="submit"].special, input[type="reset"].special,
@@ -871,7 +872,6 @@
 		background: #ff6633; /*xyz*/
 		border-color: #ff6633; /*xyz*/
 		color: #fff !important;
-		margin: 5px; /*xyz*/
 	}
 
 	input[type="button"].special:hover, input[type="submit"].special:hover, input[type="reset"].special:hover, .button.special:hover {
@@ -2472,54 +2472,36 @@
 		list-style: square;
 	}
 
-/* FENÊTRE MODALE */ /*xyz*/
-	.smodale {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 11;
-		width: 100%;
-		min-height: 100%;
-		overflow: auto;
-		/*background-color: rgba(0, 0, 0, 0.4);*/ /*xyz*/
-		opacity:0;
-		pointer-events: none;
+/* FENÊTRE DIALOGUE MODALE */ /*xyz*/
+	dialog {
+		max-width: 440px;
+		min-width: 280px;
+		padding: 15px 25px;
+		border-radius: 6px;
+		/*border: 0;*/ /*xyz*/
+		/*background: #FFFFFF;*/ /*xyz*/
+		/*box-shadow: 0 2px 5px rgba(0,0,0,0.3);*/ /*xyz*/
 	}
-	.smodale:target {
-		pointer-events: auto;
-		/*opacity:1;*/ /* voir dans styles.css reveal-banner */
+	dialog::backdrop { /*xyz impossible de spécifier la couleur de l'arrière plan selon le mode clair et sombre*/
+		background-color: rgba(128,128,128,0.4);
+	}
+	dialog[open] {
 		animation: reveal-banner 0.25s ease-in-out;
 		animation-fill-mode: forwards;
 	}
-	.smodale > div {
-		max-width: 440px;
-		min-width: 280px;
-		margin: 8% auto;
-		padding: 15px 25px;
-		border-radius: 6px;
-		/*background: #fff;*/ /*xyz*/
-		top: 50px;
-		left: 50%;
-		position: absolute;
-		transform: translate(-50%, 0%);
-		box-sizing: border-box;
-	}
-	.smodale div header p {
+	dialog header p {
 		margin-bottom: 1em;
 		user-select: none;
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
 	}
-	.smodale div footer {
-		/*border-top: solid 1px rgba(220, 220, 220, 1);*/ /*xyz*/
+	dialog footer {
 		padding-top: 1.5em;
+		/*border-top: solid 1px rgba(220, 220, 220, 1);*/ /*xyz*/
+		display: flex;
+		justify-content: space-around;
 	}
-	.smodaleferme {
-		position: relative;
-		text-align: center;
+	dialog footer .button {
+		width: auto;
+		user-select: none;
 	}
 	
 /* ANCRE INTERNE NON CACHÉE PAR LA BARRE D'ENTÊTE */ /*xyz*/
@@ -4386,15 +4368,14 @@
 	}
 	/*.modestyle.clair {display: inline-block; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #333; box-shadow: 0 0 0 2px #C0C0C0; margin-right: 4px; background: #eccc9e; background: linear-gradient(135deg, #eccc9e 0%,#eccc9e 50%,#f3f2e8 51%,#f3f2e8 100%); vertical-align: -20%;}*/
 	/*.modestyle.sombre {display: inline-block; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #333; box-shadow: 0 0 0 2px #C0C0C0; margin-right: 4px; background: #777; background: linear-gradient(135deg, #151515 0%,#151515 50%,#777 51%,#777 100%); vertical-align: -20%;}*/
-	.smodale {
-		background-color: var(--smodale-background-color);
+	dialog {
+		color: var(--body-color);
+		border: var(--dialog-border);
+		background: var(--dialog-background);
+		box-shadow: var(--dialog-box-shadow);
 	}
-	.smodale > div {
-		border:var(--smodale-div-border);
-		background: var(--smodale-div-background);
-	}
-	.smodale div footer {
-		border-top: var(--smodale-footer-border-top);
+	dialog footer {
+		border-top: var(--dialog-footer-border-top);
 	}
 	.block {
 		border-top: var(--block-border-top);
@@ -4462,10 +4443,10 @@
 		--modestyle-sombre-border: 1px solid #777777;
 		--modestyle-sombre-background-color: #444444;
 		--modestyle-sombre-color: #F3F3F3;
-		--smodale-background-color: rgba(0,0,0,.4);
-		--smodale-div-border: 0;
-		--smodale-div-background: #FFFFFF;
-		--smodale-footer-border-top: solid 1px #DCDCDC;
+		--dialog-border: 0;
+		--dialog-background: #FFFFFF;
+		--dialog-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+		--dialog-footer-border-top: solid 1px #DCDCDC;
 		--block-border-top: solid 1px #ECE9E9;
 		--block-file-color: #CC0000;
 		--block-a-text-decoration: none;
@@ -4525,10 +4506,10 @@
 		--modestyle-sombre-border: 1px solid #777777;
 		--modestyle-sombre-background-color: #444444;
 		--modestyle-sombre-color: #F3F3F3;
-		--smodale-background-color: rgba(128,128,128,.4);
-		--smodale-div-border: solid 1px #484848;
-		--smodale-div-background: #232323;
-		--smodale-footer-border-top: solid 1px #555555;
+		--dialog-border: solid 1px #484848;
+		--dialog-background: #232323;
+		--dialog-box-shadow: 0 2px 5px rgba(0,0,0,0.75);
+		--dialog-footer-border-top: solid 1px #555555;
 		--block-border-top: solid 1px #444444;
 		--block-file-color: #FF9090;
 		--block-a-text-decoration: none;
@@ -4552,7 +4533,7 @@
 		padding: 1.68%;
 	}
 
-	 header.special::before, header.special::after, .icons, .wrapper.style1, #cta, #my-menu, button, #fmodale header, #fmodale footer {
+	 header.special::before, header.special::after, .icons, .wrapper.style1, #cta, #my-menu, button, #tmodale {
 		display: none;
 		position: initial;
 	}
@@ -4632,11 +4613,11 @@
 		content: " [" attr(href) "] ";
 	}
 
-	#fmodale a::before {
+	#dmodale a::before {
 		content: "Origine de la page: ";
 	}
 
-	#fmodale a::after {
+	#dmodale a::after {
 		content: "";
 	}
 	sub {

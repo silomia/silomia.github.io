@@ -37,7 +37,7 @@
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
 <script type="application/ld+json">
 	{"@context":"http://schema.org/","@type":"Article","author":{"@type":"Person","name":"Ralph Davidovits"},"publisher":{"@type":"Organization","name":"Silomia","logo":{"@type":"ImageObject","url": "https://silomia.github.io/favicon-touch-192x192.png"}},
-	"datePublished":"2021-06-21","dateModified":"2022-01-15",
+	"datePublished":"2021-06-21","dateModified":"2022-03-20",
 	"headline":"Canevas de Business Modèle: Valider son Projet ou Entreprise","description":"Un outil facile pour confronter une idée commerciale ou sa start-up innovante face à la réalité. Comprendre le modèle économique d'une entreprise pour évoluer.",
 	"image":["https://silomia.github.io/images/business-alphaspirit.jpg"],
 	"mainEntityOfPage":{"@type":"WebPage","@id":"https://silomia.github.io/"}
@@ -98,7 +98,7 @@
 						<div class="row">
 							<div class="12u">
 								<section>
-								<a href="depot/business-model.pdf" target="_blank" class="image fit" title="Enregistrer le canevas idée business"><picture><source data-src="images/idee-business.png"><img alt="🏭" class="visi"></picture><!--z><img src="images/idee-business.png" loading="lazy" alt="idée de business"></z--></a>
+								<a href="depot/business-model.pdf" target="_blank" class="image fit" title="Enregistrer le canevas idée business"><picture><source srcset="images/idee-business.png"><img  src="images/idee-business.png" loading="lazy" alt="🏭 idée de business"></picture></a>
 								</section>
 							</div>
 						</div>
@@ -151,7 +151,7 @@
 						<div class="row">
 							<div class="12u">
 								<section>
-								<a href="depot/business-model.pdf" target="_blank" class="image fit" title="Enregistrer le canevas business model" ><picture><source data-src="images/model-business.png"><img alt="🏭" class="visi"></picture><!--z><img src="images/model-business.png" loading="lazy" alt="modèle de business"></z--></a>
+								<a href="depot/business-model.pdf" target="_blank" class="image fit" title="Enregistrer le canevas business model" ><picture><source srcset="images/model-business.png"><img src="images/model-business.png" loading="lazy" alt="🏭 modèle de business"></picture></a>
 								</section>
 							</div>
 						</div>
@@ -207,17 +207,17 @@
 							<h2><span class="icon fa-users fa-lg"></span> Partager</h2>
 						</header>
 						<ul class="icons center">
-							<li><a href="#fmodale" class="icon circle fa-partage-alt"><span class="label">Lien</span></a></li>
+							<li><a href="#dmodale" id="omodale" class="icon circle fa-partage-alt"><span class="label">Lien</span></a></li>
 							<li><a href="mailto:?subject=Regarde%20cet%20article%20du%20site%20web%20Silomia&body=Je%20viens%20de%20lire%20cet%20article%20provenant%20du%20site%20web%20Silomia%20et%20je%20pense%20que%20tu%20le%20trouveras%20int%C3%A9ressant.%20%0D%0AVa%20%C3%A0%20cette%20adresse%20%3A%20https%3A%2F%2Fsilomia.github.io%2Fbusiness-model-valider-projet-entreprise.html" class="icon circle fa-envelope"><span class="label">E-mail</span></a></li>
 						</ul>
 						<ul class="icons center">
 							<li><a href="en-business-model-canvas-validate-idea.html" class="icon circle fa-language"><span class="label">Lien</span></a> <br><a class="smallfont" href="en-business-model-canvas-validate-idea.html">English version</a></li>
 						</ul>
-						<div id="fmodale" class="smodale" role="dialog"><div>
-							<header><p>Copiez l'adresse pour la partager</p></header>
+						<dialog id="dmodale">
+							<header class="tmodale"><p>Copiez l'adresse pour la partager</p></header>
 							<p class="smallfont"><a id="lmodale" href="https://silomia.github.io/business-model-valider-projet-entreprise.html">https://silomia.github.io/business-model-valider-projet-entreprise.html</a></p>
-							<footer class="smodaleferme smallfont"><a id="copier" data-copie=">> Lien copié" class="button special">Copier</a> <a href="#fermer" class="button special">Fermer</a></footer>
-						</div></div>
+							<footer class="tmodale smallfont"><a id="cmodale" class="button">Fermer</a> <a id="copier" data-copie=">> Lien copié" class="button special">Copier</a></footer>
+						</dialog>
 					</section>
 				</div>
 			</div>
@@ -346,7 +346,7 @@
 	</ul>
 </footer>
 
-<!--z><style>.image.fit img.visi,img.visi{display:none}li.submenu{margin-top:1em}li.submenu ul{padding-left:.68em}#header{position:absolute}</style></z-->
+<!--z><style>li.submenu{margin-top:1em}li.submenu ul{padding-left:.68em}#header{position:absolute}</style></z-->
 </div><!-- page-wrapper -->
 
 <!-- Scripts -->

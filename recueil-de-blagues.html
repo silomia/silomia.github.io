@@ -37,7 +37,7 @@
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
 <script type="application/ld+json">
 	{"@context":"http://schema.org/","@type":"Article","author":{"@type":"Person","name":"Ralph Davidovits"},"publisher":{"@type":"Organization","name":"Silomia","logo":{"@type":"ImageObject","url": "https://silomia.github.io/favicon-touch-192x192.png"}},
-	"datePublished":"2021-06-21","dateModified":"2022-01-15",
+	"datePublished":"2021-06-21","dateModified":"2022-03-20",
 	"headline":"Blog de Blagues","description":"Une longue collection d'histoires drôles et de blagues archivées ici pour les retrouver facilement. Pour tous les gouts, tous les âges, ni sexiste, ni raciste.",
 	"image":["https://silomia.github.io/images/loup-tex-avery.jpg"],
 	"mainEntityOfPage":{"@type":"WebPage","@id":"https://silomia.github.io/"}
@@ -1112,17 +1112,17 @@ George: Rice&nbsp;? Good idea. And a couple of egg rolls, too.</p>
 							<h2><span class="icon fa-users fa-lg"></span> Partager</h2>
 						</header>
 						<ul class="icons center">
-							<li><a href="#fmodale" class="icon circle fa-partage-alt"><span class="label">Lien</span></a></li>
+							<li><a href="#dmodale" id="omodale" class="icon circle fa-partage-alt"><span class="label">Lien</span></a></li>
 							<li><a href="mailto:?subject=Regarde%20cet%20article%20du%20site%20web%20Silomia&body=Je%20viens%20de%20lire%20cet%20article%20provenant%20du%20site%20web%20Silomia%20et%20je%20pense%20que%20tu%20le%20trouveras%20int%C3%A9ressant.%20%0D%0AVa%20%C3%A0%20cette%20adresse%20%3A%20https%3A%2F%2Fsilomia.github.io%2Frecueil-de-blagues.html" class="icon circle fa-envelope"><span class="label">E-mail</span></a></li>
 						</ul>
 						<ul class="icons center">
 							<li><a href="en-blog-of-jokes.html" class="icon circle fa-language"><span class="label">Lien</span></a> <br><a class="smallfont" href="en-blog-of-jokes.html">English version</a></li>
 						</ul>
-						<div id="fmodale" class="smodale" role="dialog"><div>
-							<header><p>Copiez l'adresse pour la partager</p></header>
+						<dialog id="dmodale">
+							<header class="tmodale"><p>Copiez l'adresse pour la partager</p></header>
 							<p class="smallfont"><a id="lmodale" href="https://silomia.github.io/recueil-de-blagues.html">https://silomia.github.io/recueil-de-blagues.html</a></p>
-							<footer class="smodaleferme smallfont"><a id="copier" data-copie=">> Lien copié" class="button special">Copier</a> <a href="#fermer" class="button special">Fermer</a></footer>
-						</div></div>
+							<footer class="tmodale smallfont"><a id="cmodale" class="button">Fermer</a> <a id="copier" data-copie=">> Lien copié" class="button special">Copier</a></footer>
+						</dialog>
 					</section>
 				</div>
 			</div>
@@ -1251,7 +1251,7 @@ George: Rice&nbsp;? Good idea. And a couple of egg rolls, too.</p>
 	</ul>
 </footer>
 
-<!--z><style>.image.fit img.visi,img.visi{display:none}li.submenu{margin-top:1em}li.submenu ul{padding-left:.68em}#header{position:absolute}</style></z-->
+<!--z><style>li.submenu{margin-top:1em}li.submenu ul{padding-left:.68em}#header{position:absolute}</style></z-->
 </div><!-- page-wrapper -->
 
 <!-- Scripts -->

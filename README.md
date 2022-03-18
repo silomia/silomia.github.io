@@ -82,8 +82,6 @@ Licence: MIT
 
 **Divers:**  
 Divers codes en JS:  
-dfsq et DNevens ([https://stackoverflow.com/questions/27758991/css-html-modal-using-the-escape-key-click-outside-to-close](https://stackoverflow.com/questions/27758991/css-html-modal-using-the-escape-key-click-outside-to-close))  
-Denys Mishunov ([https://www.smashingmagazine.com/2018/01/deferring-lazy-loading-intersection-observer-api/](https://www.smashingmagazine.com/2018/01/deferring-lazy-loading-intersection-observer-api/))  
 Divers auteurs ([https://stackoverflow.com/questions/3795481/javascript-slidedown-without-jquery](https://stackoverflow.com/questions/3795481/javascript-slidedown-without-jquery))
 
 Toutes les photos de la section “Gourmandises” et “Memento du photographe” (sauf Fujifilm) sont de moi. Des photos d'illustration dont les crédits sont rédigés dans la balise IMG ALT (dans la mesure du possible où cette information existe). Aucune n'a été choisie pour confirmer les textes, elles sont toutes de simples images décoratives:  
