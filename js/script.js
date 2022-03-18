@@ -226,30 +226,30 @@ k.addons={offcanvas:function(){var e=this;if(this.opts.offCanvas){var t=function
 /* FENÊTRE DIALOGUE MODALE  */
 /* ******************************************************************************* */
 
-let dModale = document.getElementById('dmodale');
-
+const dModale = document.getElementById('dmodale');
 // Afficher et fermer la fenêtre de dialogue modale au clic
-document.getElementById('omodale').addEventListener('click', function(e) {
-    dModale.showModal();
-});
-document.getElementById('cmodale').addEventListener('click', function(e) {
-    dModale.close();
-});
+if (dModale) {
+	document.getElementById('omodale').addEventListener('click', function(e) {
+		dModale.showModal();
+	});
+	document.getElementById('cmodale').addEventListener('click', function(e) {
+		dModale.close();
+	});
 
-/* Prise en charge de la touche ECHAPPE (active par défaut avec <dialog>), EFFACE et SUPPRIME */
-document.addEventListener('keyup', function(e) {
-	switch (e.key) {
-		case 'Escape': dModale.close();
-			break;
-		case 'Backspace': dModale.close();
-			break;
-		case 'Delete': dModale.close();
-			break;
-		default:
-			return; /* Quitte quand pas d'autre key event. */
-	}
-});
-
+	/* Prise en charge de la touche ECHAPPE (active par défaut avec <dialog>), EFFACE et SUPPRIME */
+	document.addEventListener('keyup', function(e) {
+		switch (e.key) {
+			case 'Escape': dModale.close();
+				break;
+			case 'Backspace': dModale.close();
+				break;
+			case 'Delete': dModale.close();
+				break;
+			default:
+				return; /* Quitte quand pas d'autre key event. */
+		}
+	});
+};
 /* Bouton Copier l'URL dans le presse papier */
 /* <a id="lmodale" href="fichier.html">lien</a> */
 /* <a id="copier" data-copie=">> Lien copié" class="bouton">Copier</a> */
