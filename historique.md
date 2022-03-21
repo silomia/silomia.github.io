@@ -7,6 +7,7 @@ Changements techniques mineurs, moins de code JS et optimisation
 ### Changé
 - `Tous les fichiers html`, `styles.css`, `script.js`, affichage de la fenêtre modale de copie d'URL en utilisant la balise `dialog` au lieu d'une combinaison d'astuces en CSS et JS.  
 - `Tous les fichiers html`, les modes sombre, clair et lecture étaient inopérants avec les versions récentes de Google Chrome.  
+- `30-min-relaxation-meditation-fr+en+st.mp4`, changement d'encodeur vidéo de h.265 vers h.264.  
 
 ### Retrait
 - `Tous les fichiers html`, `script.js`, méthode de chargement différé des images en JavaScript au profit de la méthode native loading="lazy".   
