@@ -1,8 +1,17 @@
 # Journal des modifications
 
+## [2.0.4] - 2022-04-12
+
+Révision de quelques phrases  
+
+### Changé
+- `contre-la-manipulation-des-masses.html`, `en-manipulation-crowd-social-opinion.html`, mise en évidence du paradoxe de la société tolérante, réécriture des 3 questions, rôle des influencés.  
+- `README` révision des dépôts.  
+
+
 ## [2.0.3] - 2022-03-20
 
-Changements techniques mineurs, moins de code JS et optimisation
+Changements techniques mineurs, moins de code JS et optimisation  
 
 ### Changé
 - `Tous les fichiers html`, `styles.css`, `script.js`, affichage de la fenêtre modale de copie d'URL en utilisant la balise `dialog` au lieu d'une combinaison d'astuces en CSS et JS.  
@@ -15,7 +24,7 @@ Changements techniques mineurs, moins de code JS et optimisation
 
 ## [2.0.2] - 2022-03-15
 
-Corrections mineures 
+Corrections mineures  
 
 ### Changé
 - `conseils-pratiques-photographie.html`, `en-change-your-life-succeed-evolve.html`, `gateau-stollen.html`, `gateau-streusel-a-la-creme.html`, `gourmandise-brioche-au-beurre.html`, `gourmandise-croissants-pains-au-chocolat.html`, `internet-referencement-site-web.html`, `internet-se-proteger-des-pirates-et-hackers.html`, `le-monde-et-l-humanite-doivent-changer.html`, tabulations de mise en forme du code.  
@@ -25,7 +34,7 @@ Corrections mineures
 
 ## [2.0.1] - 2022-02-15
 
-Corrections mineures 
+Corrections mineures  
 
 ### Changé
 - Diverses petites corrections en anglais.  

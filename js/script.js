@@ -105,13 +105,13 @@ new Mhead( '#header', {
 /* ******************************************************************************* */
 
 /* ******************************************************************************* */
-/* POUR INSTALLER MMENU.JS	VERSION 8 */
+/* POUR INSTALLER MMENU.JS	VERSION 8.5.24 */
 /* ******************************************************************************* */
 /* SÉLECTIONNER LES GREFFONS SUIVANTS : offcanvas, screenReader, scrollBugFix, autoHeight, dropDown, iconPanels, keyboardNavigation, Borderstyle, Shadows, Themes */
 /* AUCUN wrappers */
 /* ******************************************************************************* */
 /* COMPILER SA PROPRE VERSION, BEAUCOUP PLUS PETITE ET EFFICACE */
-/* Installer Gulp dans Ubuntu 20.10. */
+/* Installer Gulp dans Ubuntu 21.10. */
 /* Avec le Terminal, presque toutes les install se font avec sudo. */ 
 /* Installer curl, gcc et node: */
 /* sudo apt-get install curl */

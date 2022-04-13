@@ -9,8 +9,9 @@
 
 Démarré en 2007, mis à jour et augmenté depuis  
 L'ensemble de l'œuvre est sous licence: CC BY 4.0 (avec suivi des modifications si redistribution, voir section 3a1B, d'où l'utilité de l'hébergement chez Github avec historique, empreinte et signature)  
-Adresse originale: [https://silomia.github.io](https://silomia.github.io)  
-Dépôt Github: [https://github.com/silomia/silomia.github.io](https://github.com/silomia/silomia.github.io)  
+Adresse du site web: [https://silomia.github.io](https://silomia.github.io)  
+Dépôt original sur GitLab: [https://gitlab.com/silomia/silomia.gitlab.io](https://gitlab.com/silomia/silomia.gitlab.io)  
+Copie du dépôt sur Github: [https://github.com/silomia/silomia.github.io](https://github.com/silomia/silomia.github.io)  
 Langue: Français (pour lever toute ambigüité sur l'interprétation d'un concept, comparez avec ma version traduite en anglais). Emploi de la graphie rectifiée de 1990, car l'orthographe et la grammaire française sont trop complexes et parfois incohérentes aussi bien pour les francophones que pour les locuteurs étrangers (qu'on ne me parle pas de la beauté de l'orthographe, de la logique (_sic_) de la grammaire ou de conserver son étymologie; les langues latines plus phonétiques comme l'italien et l'espagnol représentent aussi une grande culture littéraire !).  
 Doctype: HTML5  
 Logiciels: BBEdit (pour lequel je suis crédité comme “unindicted co-conspirators” 🙂 ), GraphicConverter, Pixelmator, ImageOptim, Antidote, Apple macOS et Ubuntu.  
@@ -21,7 +22,8 @@ Services web: Webfont Generator de [fontsquirrel.com](https://www.fontsquirrel.c
 Website started in 2007, updated and expanded since then, translated into English in 2021.  
 The whole work is under the licence: CC BY 4.0 (with tracking of the modifications if redistribution, see section 3a1B, hence the usefulness of the hosting at Github with versioning, checksum and signature)  
 Address of the English version: [https://silomia.github.io/en-index.html](https://silomia.github.io/en-index.html)  
-Github repository: [https://github.com/silomia/silomia.github.io](https://github.com/silomia/silomia.github.io)  
+Original repository on GitLab: [https://gitlab.com/silomia/silomia.gitlab.io](https://gitlab.com/silomia/silomia.gitlab.io)  
+Copy on Github: [https://github.com/silomia/silomia.github.io](https://github.com/silomia/silomia.github.io)  
 Language: English  
 **Although English is not my native language, I translated the French texts as best as possible. Some grammatical and phrasing errors are unavoidable. Native speakers may edit them. In case of doubt about the meaning of a sentence, only the French version is authoritative. Comparing the French version with my English translation helps to clarify any potential misunderstandings.**
 
