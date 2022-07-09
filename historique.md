@@ -1,5 +1,14 @@
 # Journal des modifications
 
+## [2.0.5] - 2022-07-10
+
+Révision de quelques phrases  
+
+### Changé
+- `contre-la-manipulation-des-masses.html`, la sottise n'est pas une alternative, la fabrique du doute, divers.  
+- `Tous les fichiers html`, date de modification en en-tête  
+
+
 ## [2.0.4] - 2022-04-12
 
 Révision de quelques phrases  
