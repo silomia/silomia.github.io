@@ -4190,7 +4190,7 @@
 
 /*************************************************/
 /* Mobile Petit Écran */
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 360px) {
 	body {
 		font-size: 14pt; /*xyz*/
 	}

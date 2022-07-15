@@ -85,7 +85,7 @@ section strong, section h2, section h3, section h4 {
 
 /*************************************************/
 /* Mobile Petit Écran */
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 360px) {
 	section p, section li {
 		font-size: 13pt;  /* 13pt */
 	}
