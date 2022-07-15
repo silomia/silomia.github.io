@@ -1,5 +1,15 @@
 # Journal des modifications
 
+## [2.0.5] - 2022-07-15
+
+Révision de quelques phrases, Changements techniques mineurs 
+
+### Changé
+- `contre-la-manipulation-des-masses.html`, `en-manipulation-crowd-social-opinion.html`, la sottise n'est pas une alternative, la fabrique du doute, divers.  
+- `Tous les fichiers html` et `CSS`, passage de max-width:359px à 360px car des écrans de téléphones mobiles avec cette largeur en pixels sont plus larges en cm, mais garde cette résolution, alors le texte affiché est trop grand.  
+- `Tous les fichiers html`, date de modification en en-tête  
+
+
 ## [2.0.5] - 2022-07-10
 
 Révision de quelques phrases  
