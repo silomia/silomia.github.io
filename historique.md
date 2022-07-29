@@ -1,23 +1,26 @@
 # Journal des modifications
 
+## [2.0.6] - 2022-08-01
+
+Servir les images au format AVIF, révision de quelques phrases  
+
+### Ajouté
+- Servir des images au format AVIF (plus léger d'environ -30%) comme alternative au JPEG.  
+
+### Changé
+- `le-monde-et-l-humanite-doivent-changer.html`, `en-change-the-world-and-humanity.html`, petits ajouts au principe 4, réécriture du principe 6.  
+- `styles.css`, correction de `:hover` sur `button`.   
+
+
 ## [2.0.5] - 2022-07-15
 
-Révision de quelques phrases, Changements techniques mineurs 
+Révision de quelques phrases, changements techniques mineurs 
 
 ### Changé
 - `contre-la-manipulation-des-masses.html`, `en-manipulation-crowd-social-opinion.html`, la sottise n'est pas une alternative, la fabrique du doute, divers.  
 - `Tous les fichiers html` et `CSS`, passage de max-width:359px à 360px car des écrans de téléphones mobiles avec cette largeur en pixels sont plus larges en cm, mais garde cette résolution, alors le texte affiché est trop grand.  
 - `Tous les fichiers html`, date de modification en en-tête  
 - `styles.css` un fin de commentaire à `#cta` pas effacé  
-
-
-## [2.0.5] - 2022-07-10
-
-Révision de quelques phrases  
-
-### Changé
-- `contre-la-manipulation-des-masses.html`, la sottise n'est pas une alternative, la fabrique du doute, divers.  
-- `Tous les fichiers html`, date de modification en en-tête  
 
 
 ## [2.0.4] - 2022-04-12
