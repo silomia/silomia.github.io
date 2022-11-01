@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.7] - 2022-09-10
+## [2.0.7] - 2022-11-01
 
 Mises à jour de mmenu.js et mburger, navigation au clavier améliorée, cosmétique  
 
