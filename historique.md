@@ -10,6 +10,7 @@ Mises à jour de mmenu.js et mburger, navigation au clavier améliorée, cosmét
 - barre d'entête, usage d'un nombre entier comme taille de caractère en pixels.  
 - mises à jour et adaptations des `script.js`, `styles.css` et de tous les fichiers `html`.  
 - `le-monde-et-l-humanite-doivent-changer.html`, faute d'accord au principe 6.  
+- Remplace toutes les images au format AVIF pour une version de meilleure qualité avec respect de la colorimétrie.  
 
 
 ## [2.0.6] - 2022-08-01
