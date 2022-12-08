@@ -972,7 +972,7 @@
 		/*background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/banner.jpg");*/ /*xyz*/
 		/*background-position: bottom left, bottom right, top left, center center;*/ /*xyz*/
 		/*background-repeat: no-repeat, no-repeat, repeat, no-repeat;*/
-		/*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII="), url("../images/banner.jpg");*/ /*déjà dans critique.css*/ /*xyz*/
+		/*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII="), url("../images/banner.jpg");*/ /*déjà dans critique-index.css*/ /*xyz*/
 		background-size: auto, cover; /*xyz*/
 		background-position: top left, center center; /*xyz*/
 		background-repeat: repeat, no-repeat; /*xyz*/
@@ -1041,6 +1041,7 @@
 		/*background-size: 25em, 25em, auto, cover;*/
 		/*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII="), url("../images/banner.jpg");*/ /*xyz*/
 		background-image: linear-gradient(to bottom, rgba(52,27,43, 0.5), rgba(52,27,43, 0.5)), url("../images/banner.jpg"); /*xyz*/
+		background-image: linear-gradient(to bottom, rgba(52,27,43, 0.5), rgba(52,27,43, 0.5)), image-set(url("../images/banner.avif") type("image/avif"), url("../images/banner.jpg") type("image/jpeg")); /*xyz*/
 		background-repeat: repeat, no-repeat; /*xyz*/
 		background-size: auto, cover; /*xyz*/
 		background-attachment: scroll, scroll;
@@ -3995,7 +3996,7 @@
 	/* Banner */
 	#banner {
 		/*background-size: 10em, 10em, auto, cover;*/
-		/*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII="), url("../images/banner@1x.jpg");*/ /*déjà dans critique.css*/ /*xyz*/
+		/*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII="), url("../images/banner@1x.jpg");*/ /*déjà dans critique-index.css*/ /*xyz*/
 		background-size: auto, cover; /*xyz*/
 		padding: 1.68em 1.68em 0em 1.68em; /*xyz*/
 	}
@@ -4030,6 +4031,7 @@
 	#cta {
 		/*background-size: 10em, 10em, auto, cover;*/
 		background-image: linear-gradient(to bottom, rgba(52,27,43, 0.5), rgba(52,27,43, 0.5)), url("../images/banner@1x.jpg"); /*xyz*/
+		background-image: linear-gradient(to bottom, rgba(52,27,43, 0.5), rgba(52,27,43, 0.5)), image-set(url("../images/banner@1x.avif") type("image/avif"), url("../images/banner@1x.jpg") type("image/jpeg")); /*xyz*/
 		padding: 3em 1.5em;
 	}
 	/* Footer */
