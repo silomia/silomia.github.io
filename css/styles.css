@@ -967,7 +967,7 @@
 	}
 }
 	#banner {
-		background-attachment: scroll, scroll, scroll, fixed;
+		/*background-attachment: scroll, scroll, scroll, fixed;*/ /*xyz*/
 		background-color: #645862;
 		/*background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/banner.jpg");*/ /*xyz*/
 		/*background-position: bottom left, bottom right, top left, center center;*/ /*xyz*/
