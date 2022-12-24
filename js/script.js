@@ -152,7 +152,7 @@ new Mhead( '#header', {
 /* ******************************************************************************* */
 
 /*!
- * mmenu.js v9.2
+ * mmenu.js v9.2.3
  * mmenujs.com
  *
  * Copyright (c) Fred Heusschen

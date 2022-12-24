@@ -1,16 +1,18 @@
 # Journal des modifications
 
-## [2.0.7] - 2022-11-01
+## [2.0.7] - 2022-12-21
 
-Mises à jour de mmenu.js et mburger, navigation au clavier améliorée, cosmétique  
+Mises à jour de mmenu.js et mburger, optimisations du code, AVIF, navigation au clavier améliorée, cosmétique  
 
 ### Changé
-- `mmenu.js` en version 9.2 et `mburger.css` en version 2.0  
+- `mmenu.js` en version 9.2.3 et `mburger.css` en version 2.0  
 - navigations améliorées au clavier du menu et du dialogue modal.  
 - barre d'entête, usage d'un nombre entier comme taille de caractère en pixels.  
 - mises à jour et adaptations des `script.js`, `styles.css` et de tous les fichiers `html`.  
 - `le-monde-et-l-humanite-doivent-changer.html`, faute d'accord au principe 6.  
+- `mmenu.html`, modification d'un titre.  
 - Remplace toutes les images au format AVIF pour une version de meilleure qualité avec respect de la colorimétrie.  
+- `styles.css` et autres feuilles de styles CSS, retrait des préfixes vendeurs -o et -ms, optimisation et minimisation par le logiciel CSSO.  
 
 
 ## [2.0.6] - 2022-08-01
