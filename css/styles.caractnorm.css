@@ -8,7 +8,7 @@ body {
 	letter-spacing: 0.02em; /* 0.02em */
 }
 
-section .style3, section .style4 {
+section:not(.style1) section {
 	font-family: 'Inter',-apple-system,system-ui,sans-serif; /*xyz*/ /* Police Inter avec OpenType Feature 'frac' pour class .fraction */
 	font-weight: 300; /* 300 */
 }
@@ -17,10 +17,14 @@ section strong, section h2, section h3, section h4 {
 	font-weight: 600; /* 600 */
 	}
 
+section h2, section h3 {
+	font-size: 1.15em; /* 1.15em */
+	}
+
 /*************************************************/
 /* HD */
 @media screen and (min-width: 1900px) {
-	section p, section li {
+	section:not(.style1) section {
 		font-size: 16pt; /* 16pt */
 	}
 }
@@ -28,7 +32,7 @@ section strong, section h2, section h3, section h4 {
 /*************************************************/
 /* Wide */
 @media screen and (max-width: 1899px) {
-	section p, section li { 
+	section:not(.style1) section {
 		font-size: 14pt; /* 14pt */
 	}
 }
@@ -36,7 +40,7 @@ section strong, section h2, section h3, section h4 {
 /*************************************************/
 /* Wide */
 @media screen and (max-width: 1680px) {
-	section p, section li { 
+	section:not(.style1) section {
 		font-size: 12.5pt; /* 12.5pt */
 	}
 }
@@ -47,7 +51,7 @@ section strong, section h2, section h3, section h4 {
 	body {
 		line-height: 1.65em; /* 1.65em */
 	}
-	section p, section li { 
+	section:not(.style1) section {
 		font-size: 12pt;  /* 12pt */
 	}
 }
@@ -58,7 +62,7 @@ section strong, section h2, section h3, section h4 {
 	body {
 		line-height: 1.55em; /* 1.55em */
 	}
-	section p, section li {
+	section:not(.style1) section {
 		font-size: 12.5pt;  /* 12.5pt */
 	}
 }
@@ -66,7 +70,7 @@ section strong, section h2, section h3, section h4 {
 /*************************************************/
 /* Narrower */
 @media screen and (max-width: 840px) {
-	section p, section li { 
+	section:not(.style1) section {
 		font-size: 13pt;  /* 13pt */
 	}
 }
@@ -78,7 +82,7 @@ section strong, section h2, section h3, section h4 {
 		line-height: 1.6em; /* 1.6em */
 		letter-spacing: 0.01em; /*xyz*/
 	}
-	section p, section li {
+	section:not(.style1) section {
 		font-size: 13.5pt;  /* 13.5pt */
 	}
 }
@@ -86,7 +90,7 @@ section strong, section h2, section h3, section h4 {
 /*************************************************/
 /* Mobile Petit Écran */
 @media screen and (max-width: 360px) {
-	section p, section li {
+	section:not(.style1) section {
 		font-size: 13pt;  /* 13pt */
 	}
 }
