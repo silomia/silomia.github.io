@@ -56,6 +56,10 @@ Inter v3.19 ([https://rsms.me/inter/](https://rsms.me/inter/))
 Rasmus  
 Licence: SIL Open Font License
 
+Inconsolata v3.0 ([https://github.com/googlefonts/Inconsolata/](https://github.com/googlefonts/Inconsolata/)  
+Raph Levien  
+Licence: SIL Open Font License 1.1
+
 Font Awesome v4.7 ([https://fontawesome.com](https://fontawesome.com))  
 Dave Gandy  
 Licence: SIL Open Font License 1.1

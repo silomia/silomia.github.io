@@ -1,5 +1,17 @@
 # Journal des modifications
 
+## [2.0.8] - 2023-02-16
+
+Changement du mode sombre (moins foncé pour faciliter la longue lecture) et du mode lecture (choix d'une autre police de caractères Inconsolata Semicondensed à chasse fixe un peu plus grasse). Quelques modifications de "Manipuler la foule"  
+
+### Changé
+- `styles.css` et autres feuilles de styles CSS, `script.js`, `courrier.html` et `menu.html` pour le nouveau mode sombre et lecture  
+- Remplacement des fontes Inter du mode lecture par Inconsolata Semicondensed et nouvelle compression des autres fontes Inter  
+- `mmenu.js` en version 9.3.0  
+- `contre-la-manipulation-des-masses.html`, `en-manipulation-crowd-social-opinion.html`, précisions pour lever des ambiguïtés, phrases de transitions, ordre de paragraphes  
+- README mise à jour des crédits.  
+
+
 ## [2.0.7] - 2022-12-21
 
 Mises à jour de mmenu.js et mburger, optimisations du code, AVIF, navigation au clavier améliorée, cosmétique  
@@ -10,7 +22,7 @@ Mises à jour de mmenu.js et mburger, optimisations du code, AVIF, navigation au
 - barre d'entête, usage d'un nombre entier comme taille de caractère en pixels.  
 - mises à jour et adaptations des `script.js`, `styles.css` et de tous les fichiers `html`.  
 - `le-monde-et-l-humanite-doivent-changer.html`, faute d'accord au principe 6.  
-- `mmenu.html`, modification d'un titre.  
+- `menu.html`, modification d'un titre.  
 - Remplace toutes les images au format AVIF pour une version de meilleure qualité avec respect de la colorimétrie.  
 - `styles.css` et autres feuilles de styles CSS, retrait des préfixes vendeurs -o et -ms, optimisation et minimisation par le logiciel CSSO.  
 
