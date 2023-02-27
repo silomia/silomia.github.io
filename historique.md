@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.8] - 2023-02-16
+## [2.0.8] - 2023-02-27
 
 Changement du mode sombre (moins foncé pour faciliter la longue lecture) et du mode lecture (choix d'une autre police de caractères Inconsolata Semicondensed à chasse fixe un peu plus grasse). Quelques modifications de "Manipuler la foule"  
 
