@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.8] - 2023-02-27
+## [2.0.8] - 2023-03-14
 
 Changement du mode sombre (moins foncé pour faciliter la longue lecture) et du mode lecture (choix d'une autre police de caractères Inconsolata Semicondensed à chasse fixe un peu plus grasse). Quelques modifications de "Manipuler la foule"  
 
@@ -9,6 +9,7 @@ Changement du mode sombre (moins foncé pour faciliter la longue lecture) et du 
 - Remplacement des fontes Inter du mode lecture par Inconsolata Semicondensed et nouvelle compression des autres fontes Inter  
 - `mmenu.js` en version 9.3.0  
 - `contre-la-manipulation-des-masses.html`, `en-manipulation-crowd-social-opinion.html`, précisions pour lever des ambiguïtés, phrases de transitions, ordre de paragraphes  
+- Quelques corrections en anglais  
 - README mise à jour des crédits.  
 
 
