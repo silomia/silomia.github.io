@@ -84,7 +84,7 @@
 						<h3>1- Préparer la sauvegarde du site web&nbsp;:</h3>
 						<p>Ayez toujours sur votre ordinateur la copie de votre site web. Si vous avez installé un blog, forum, cms, e-commerce, conservez-en une copie opérationnelle avec les fichiers config, htaccess, les plug-ins, modules additionnels, thèmes, templates et vos modifications.</p>
 						<p>Si vous mettez votre logiciel web à jour, faites la même chose avec votre sauvegarde.<br>
-Si votre site contient un dossier d'upload et des logs, allez les récupérer régulièrement. Pour simplifier cette dernière tâche, le script ci-dessous va faire une sauvegarde au format ZIP d'un fichier de log. Au lieu de télécharger une centaine de petits fichiers textes, tout sera regroupé en un fichier ZIP.</p>
+						Si votre site contient un dossier d'upload et des logs, allez les récupérer régulièrement. Pour simplifier cette dernière tâche, le script ci-dessous va faire une sauvegarde au format ZIP d'un fichier de log. Au lieu de télécharger une centaine de petits fichiers textes, tout sera regroupé en un fichier ZIP.</p>
 <span class="smallfont">Code PHP&nbsp;:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #408080; font-style: italic">/* Assurez-vous que le dossier de destination de la sauvegarde est cree. Il peut etre soit dans le dossier www ou ailleurs. Ici nous le mettons ailleurs*/</span>
@@ -130,7 +130,7 @@ Si votre site contient un dossier d'upload et des logs, allez les récupérer r�
 </pre></div>
 						<p>À noter que tar bzip2 compresse mieux que tar gzip qui, lui aussi, est souvent plus efficace que le Zip.</p>
 						<p><strong>ATTENTION&nbsp;:</strong> ne cherchez pas à faire un fichier ZIP de tout votre hébergement, cela risque de ne pas marcher. Il y a 2 raisons à cela&nbsp;: le temps d'exécution d'un script est souvent limité de 30 à 120 secondes et la mémoire RAM allouée au traitement du script et à la manipulation des fichiers est limitée en fonction de votre offre d'hébergement (de 32 Mo à 256 Mo, ce qui est insuffisant pour une sauvegarde de votre site web).<br>
-Pour connaitre ces limites, créez un fichier info.php avec le code suivant&nbsp;:</p>
+						Pour connaitre ces limites, créez un fichier info.php avec le code suivant&nbsp;:</p>
 <span class="smallfont">Code PHP&nbsp;:</span>
 <!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #008000">phpinfo</span>();
@@ -161,8 +161,8 @@ Pour connaitre ces limites, créez un fichier info.php avec le code suivant&nbsp
 </pre></div>
 						<h4>b) Sauvegarde par phpMyadmin&nbsp;:</h4>
 						<p>Pour faire une sauvegarde de votre base MySQL actuelle connectez-vous à votre interface phpMyadmin. Entrez le nom de la base SQL et son mot de passe, puis en haut de la colonne de gauche, cliquez sur le nom de la base. En haut de la page centrale, cliquez sur l'onglet “Exporter”. La page Exporter affiche une version simplifiée qui devrait suffire la plupart du temps. Choisissez l'export au format SQL et cliquez sur le bouton Exécuter. Pour sélectionner certaines tables, choisissez la méthode personnalisée et cochez les cases des tables que vous voulez exporter. Vous enregistrez la sortie vers un fichier, avec un jeu de caractère qui devrait être UTF-8 par défaut, et si la base de données est grosse, vous pouvez la compresser au format GZIP. Les autres cases à cocher par défaut devraient être acceptables, sauf si vous savez ce que vous faites, et enfin cliquez sur le bouton Exécuter. Et n'oubliez pas de vous déconnecter une fois terminé en cliquant sur l'icône Déconnecter en haut à gauche.</p>
-<p>Après la sauvegarde, la restauration…</p>
-<hr>
+						<p>Après la sauvegarde, la restauration…</p>
+						<hr>
 						<header>
 							<h2><span class="icon fa-map-marker fa-lg"></span> Restaurer son site web et sa base SQL (Partie 2)</h2>
 						</header>
@@ -180,9 +180,9 @@ Pour connaitre ces limites, créez un fichier info.php avec le code suivant&nbsp
 						<p>Envoyez ce fichier par FTP, ouvrez-le avec votre navigateur web, et cherchez la ligne&nbsp;: <em>upload_max_filesize</em> pour connaitre la taille maximum. Si votre sauvegarde MySQL est donc inférieure à cette limite, vous pouvez le faire.</p>
 						<p>Un conseil&nbsp;: si votre “dump” ou sauvegarde a été faite avec phpMyadmin, vous pouvez faire la restauration de la même manière, sinon, allez à la méthode par script PHP expliquée au point suivant.</p>
 						<p><em>Effacement de la base SQL&nbsp;:</em><br>
-Connectez-vous à votre interface phpMyadmin, entrez le nom de la base SQL et son mot de passe, puis en haut de la colonne de gauche, cliquez sur le nom de la base. Puis dans la fenêtre principale, en bas de la page, sous la colonne des cases à cocher, cliquez sur “Tout cocher” et dans le menu qui suit, choisissez “Supprimer la table”. Confirmer la suppression des “Tables” en cliquant sur “Oui”.</p>
+						Connectez-vous à votre interface phpMyadmin, entrez le nom de la base SQL et son mot de passe, puis en haut de la colonne de gauche, cliquez sur le nom de la base. Puis dans la fenêtre principale, en bas de la page, sous la colonne des cases à cocher, cliquez sur “Tout cocher” et dans le menu qui suit, choisissez “Supprimer la table”. Confirmer la suppression des “Tables” en cliquant sur “Oui”.</p>
 						<p><em>Restauration de la base&nbsp;:</em><br>
-On va importer la nouvelle base de données. Cliquez sur l'onglet “Importer”. Cliquez sur “Parcourir” pour sélectionner sur votre ordinateur la sauvegarde. <strong>ATTENTION&nbsp;:</strong> si la sauvegarde vient d'être faite avec phpMyadmin, c'est-à-dire en ayant suivi la procédure décrite ci-dessus, sélectionnez le jeu de caractères “utf8” (il y a de fortes chances que ce jeu de caractères soit le bon, sinon, prenez “latin1”). Si la sauvegarde a été réalisée autrement, choisissez le jeu de caractères correspondant. Sinon, les caractères accentués vont mal s'afficher sur le site web. Cliquez sur Exécuter. Et n'oubliez pas de vous déconnecter une fois terminé en cliquant sur l'icône Déconnecter.</p>
+						On va importer la nouvelle base de données. Cliquez sur l'onglet “Importer”. Cliquez sur “Parcourir” pour sélectionner sur votre ordinateur la sauvegarde. <strong>ATTENTION&nbsp;:</strong> si la sauvegarde vient d'être faite avec phpMyadmin, c'est-à-dire en ayant suivi la procédure décrite ci-dessus, sélectionnez le jeu de caractères “utf8” (il y a de fortes chances que ce jeu de caractères soit le bon, sinon, prenez “latin1”). Si la sauvegarde a été réalisée autrement, choisissez le jeu de caractères correspondant. Sinon, les caractères accentués vont mal s'afficher sur le site web. Cliquez sur Exécuter. Et n'oubliez pas de vous déconnecter une fois terminé en cliquant sur l'icône Déconnecter.</p>
 						<h4>b) Restauration par script PHP&nbsp;:</h4>
 						<p>Si vous avez dépassé la limite parce que votre base SQL est trop grosse, un excellent script peut vous aider, il s'agit de <a href="http://www.ozerov.de/bigdump.php">BigDump</a> dont vous pouvez télécharger la dernière <a href="depot/bigdump.zip">version 0.36b ici</a>. L'interface est en anglais. Il faut simplement entrer les paramètres de sa base SQL et choisir le bon jeu de caractères “utf8” ou “latin1”. Si vous avez utilisé le script de sauvegarde ci-dessus, vous savez quel jeu de caractères vous avez utilisé, alors qu'on est moins sûr avec phpMyadmin.</p>
 						<p><em>Effacement de la base SQL&nbsp;:</em><br>
