@@ -10,6 +10,8 @@ Changement du mode sombre (moins foncé pour faciliter la longue lecture) et du 
 - `mmenu.js` en version 9.3.0  
 - `contre-la-manipulation-des-masses.html`, `en-manipulation-crowd-social-opinion.html`, précisions pour lever des ambiguïtés, phrases de transitions, ordre de paragraphes  
 - Quelques corrections en anglais  
+- `conseils-pratiques-photographie.html`, ajout d'un style  
+- `mignardise-muffins.html`, `gourmandise.html`, `et` par `est`  
 - README mise à jour des crédits.  
 
 
