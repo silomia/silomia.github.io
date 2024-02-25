@@ -1,5 +1,19 @@
 # Journal des modifications
 
+## [2.0.9] - 2024-02-25
+
+Simples détails sans importance. Ajout dans la méditation.  
+
+### Changé
+- `conseils-pratiques-photographie.html`, dessin et peinture  
+- `meditation-relaxation-seance-video.html`, lien avec l'univers  
+- Mise à jour oubliée des `dateModified` des fichiers html modifiés depuis la version 2.0.8  
+- README retrait d'un commentaire erroné.  
+
+### Retrait
+- `courrier.html` et `images/e-mail.svg`, retrait de l'adresse à Posteo.  
+
+
 ## [2.0.8] - 2023-10-07
 
 Changement du mode sombre (moins foncé pour faciliter la longue lecture) et du mode lecture (choix d'une autre police de caractères Inconsolata Semicondensed à chasse fixe un peu plus grasse). Quelques modifications de "Manipuler la foule"  
