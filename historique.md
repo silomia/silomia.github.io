@@ -1,17 +1,19 @@
 # Journal des modifications
 
-## [2.0.9] - 2024-02-25
+## [2.0.9] - 2024-03-26
 
-Simples détails sans importance. Ajout dans la méditation.  
+Simples détails et mises à jours mineures.  
 
 ### Changé
 - `conseils-pratiques-photographie.html`, dessin et peinture  
+- `internet-referencement-site-web.html`, l'ère du PageRank est révolue  
+- `gateau-roule.html`, recette modifiée  
 - `meditation-relaxation-seance-video.html`, lien avec l'univers  
-- Mise à jour oubliée des `dateModified` des fichiers html modifiés depuis la version 2.0.8  
-- README retrait d'un commentaire erroné.  
+- Mise à jour oubliée des `dateModified` des fichiers html modifiés depuis la version 2.0.8.  
 
 ### Retrait
-- `courrier.html` et `images/e-mail.svg`, retrait de l'adresse à Posteo.  
+- `courrier.html` et `images/e-mail.svg`, retrait de l'adresse à Posteo  
+- README retrait d'un commentaire erroné.  
 
 
 ## [2.0.8] - 2023-10-07
