@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.9] - 2024-03-26
+## [2.0.9] - 2024-05-01
 
 Simples détails et mises à jours mineures.  
 
@@ -9,11 +9,14 @@ Simples détails et mises à jours mineures.
 - `internet-referencement-site-web.html`, l'ère du PageRank est révolue  
 - `gateau-roule.html`, recette modifiée  
 - `meditation-relaxation-seance-video.html`, lien avec l'univers  
+- `recueil-de-blagues.html`, nouvelle histoire  
+- README, autre adresse de courriel  
 - Mise à jour oubliée des `dateModified` des fichiers html modifiés depuis la version 2.0.8.  
 
 ### Retrait
+- `styles.css` et autres feuilles de styles CSS, retrait des `background-image` sans `image-set`  
 - `courrier.html` et `images/e-mail.svg`, retrait de l'adresse à Posteo  
-- README retrait d'un commentaire erroné.  
+- README, retrait d'un commentaire erroné.  
 
 
 ## [2.0.8] - 2023-10-07

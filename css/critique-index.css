@@ -110,7 +110,6 @@ ul.buttons.vertical li:first-child {
 	}
 }
 #banner {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII=),url("images/banner.jpg");
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII=),image-set(url("images/banner.avif") type("image/avif"), url("images/banner.jpg") type("image/jpeg"));
 	background-attachment: scroll,fixed;
 	background-position: top left,center center;

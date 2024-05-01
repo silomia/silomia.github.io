@@ -31,7 +31,7 @@ Language: English
 
 Conception et réalisation: Ralph Davidovits  
 Contact: [https://silomia.github.io/courrier.html](https://silomia.github.io/courrier.html)  
-Courriel chiffré confidentiel: xo⟨sept⟩@posteo.me (transcrire ⟨sept⟩ en chiffre)  
+Courriel: xo⟨sept⟩@mailo.com (transcrire ⟨sept⟩ en chiffre), avec [la clé PGP](https://silomia.github.io/images/public_pgp_xo7mailo-com.asc)  
 De: Saint-Quentin, Hauts de France, France
 
 ### CRÉDITS

@@ -1040,7 +1040,6 @@
 		/*background-repeat: no-repeat, no-repeat, repeat, no-repeat;*/
 		/*background-size: 25em, 25em, auto, cover;*/
 		/*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEWLg2L5CAJHAAAAAXRSTlMfze7VkwAAAB9JREFUeF7twAEJAAAAwjD7pzbHYVscAAAAAAAAAMABIQAAAYNlD+QAAAAASUVORK5CYII="), url("../images/banner.jpg");*/ /*xyz*/
-		background-image: linear-gradient(to bottom, rgba(52,27,43, 0.5), rgba(52,27,43, 0.5)), url("../images/banner.jpg"); /*xyz*/
 		background-image: linear-gradient(to bottom, rgba(52,27,43, 0.5), rgba(52,27,43, 0.5)), image-set(url("../images/banner.avif") type("image/avif"), url("../images/banner.jpg") type("image/jpeg")); /*xyz*/
 		background-repeat: repeat, no-repeat; /*xyz*/
 		background-size: auto, cover; /*xyz*/
