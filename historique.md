@@ -1,16 +1,18 @@
 # Journal des modifications
 
-## [2.0.9] - 2024-05-01
+## [2.0.9] - 2024-06-10
 
 Simples détails et mises à jours mineures.  
 
 ### Changé
 - `conseils-pratiques-photographie.html`, dessin et peinture  
-- `internet-referencement-site-web.html`, l'ère du PageRank est révolue  
+- `contre-la-manipulation-des-masses.html`, rôle du journalisme  
 - `gateau-roule.html`, recette modifiée  
+- `internet-referencement-site-web.html`, l'ère du PageRank est révolue  
+- `le-monde-et-l-humanite-doivent-changer.html`, rôle de l'amour  
 - `meditation-relaxation-seance-video.html`, lien avec l'univers  
 - `recueil-de-blagues.html`, nouvelle histoire  
-- README, autre adresse de courriel  
+- README, autre adresse de courriel    
 - Mise à jour oubliée des `dateModified` des fichiers html modifiés depuis la version 2.0.8.  
 
 ### Retrait
