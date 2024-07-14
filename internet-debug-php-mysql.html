@@ -35,7 +35,7 @@
 <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
 <script type="application/ld+json">
 	{"@context":"http://schema.org/","@type":"Article","author":{"@type":"Person","name":"Ralph Davidovits"},"publisher":{"@type":"Organization","name":"Silomia","logo":{"@type":"ImageObject","url": "https://silomia.github.io/favicon-touch-192x192.png"}},
-	"datePublished":"2021-06-21","dateModified":"2022-12-21",
+	"datePublished":"2021-06-21","dateModified":"2024-07-15",
 	"headline":"Scripts et astuces de débogage PHP, MySQL, maíl()",
 	"image":["https://silomia.github.io/images/carte-mere-ordinateur.jpg"],
 	"mainEntityOfPage":{"@type":"WebPage","@id":"https://silomia.github.io/internet.html"}
@@ -82,96 +82,177 @@
 						</header>
 						<p>Vous allez avoir un rapport d'erreur extrêmement détaillé avec le contenu de toutes les variables. Coller le code ci-dessus en début de votre script, juste après “&lt;?php”</p>
 <span class="smallfont">Activation rapport d'erreurs PHP</span>
-<!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span> 
-<span style="color: #008000">error_reporting</span>(<span style="color: #008000; font-weight: bold">E_ALL</span>);   <span style="color: #408080; font-style: italic">// Activer le rapport d&#39;erreurs PHP . Vous pouvez n&#39;utiliser que cette ligne, elle donnera déjà beaucoup de détails.</span>
+<!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
+<span style="color: #008000">error_reporting</span>(<span style="color: #008000; font-weight: bold">E_ALL</span>); <span style="color: #408080; font-style: italic">// Activer le rapport d&#39;erreurs PHP. On peut ignorer cette ligne si on utilise PHP 8.2 et plus</span>
 
 <span style="color: #19177C">$variables</span> <span style="color: #666666">=</span> <span style="color: #008000">get_defined_vars</span>(); <span style="color: #408080; font-style: italic">// Donne le contenu et les valeurs de toutes les variables dans la portée actuelle</span>
-<span style="color: #19177C">$var_ignore</span><span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">array</span>(<span style="color: #BA2121">&quot;GLOBALS&quot;</span>, <span style="color: #BA2121">&quot;_ENV&quot;</span>, <span style="color: #BA2121">&quot;_SERVER&quot;</span>); <span style="color: #408080; font-style: italic">// Détermine les var à ne pas afficher</span>
-<span style="color: #008000; font-weight: bold">echo</span> (<span style="color: #BA2121">&quot;&lt;strong&gt;Etat des variables a la ligne : &quot;</span><span style="color: #666666">.</span><span style="color: #008000; font-weight: bold">__LINE__</span><span style="color: #666666">.</span><span style="color: #BA2121">&quot; dans le fichier : &quot;</span><span style="color: #666666">.</span><span style="color: #008000; font-weight: bold">__FILE__</span><span style="color: #666666">.</span><span style="color: #BA2121">&quot;&lt;/strong&gt;&lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>);
-<span style="color: #19177C">$nom_fonction</span><span style="color: #666666">=</span>__FUNCTION__;
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">isset</span>(<span style="color: #19177C">$nom_fonction</span>)<span style="color: #666666">&amp;&amp;</span><span style="color: #19177C">$nom_fonction</span><span style="color: #666666">!=</span><span style="color: #BA2121">&quot;&quot;</span>) {
-  <span style="color: #008000; font-weight: bold">echo</span> (<span style="color: #BA2121">&quot;&lt;strong&gt;Dans la fonction : &quot;</span><span style="color: #666666">.</span><span style="color: #19177C">$nom_fonction</span><span style="color: #666666">.</span><span style="color: #BA2121">&quot;&lt;/strong&gt;&lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>);
+<span style="color: #19177C">$var_ignore</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">array</span>(<span style="color: #BA2121">&quot;GLOBALS&quot;</span>, <span style="color: #BA2121">&quot;_ENV&quot;</span>, <span style="color: #BA2121">&quot;_SERVER&quot;</span>); <span style="color: #408080; font-style: italic">// Détermine les var à ne pas afficher</span>
+
+<span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;&lt;strong&gt;État des variables à la ligne : &quot;</span> <span style="color: #666666">.</span> <span style="color: #008000; font-weight: bold">__LINE__</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot; dans le fichier : &quot;</span> <span style="color: #666666">.</span> <span style="color: #008000; font-weight: bold">__FILE__</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt;&lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+
+<span style="color: #19177C">$nom_fonction</span> <span style="color: #666666">=</span> __FUNCTION__;
+<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #19177C">$nom_fonction</span> <span style="color: #666666">!==</span> <span style="color: #BA2121">&#39;&#39;</span>) { <span style="color: #408080; font-style: italic">// Vérifie si __FUNCTION__ n&#39;est pas vide</span>
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;&lt;strong&gt;Dans la fonction : </span><span style="color: #BB6688; font-weight: bold">$nom_fonction</span><span style="color: #BA2121">&lt;/strong&gt;&lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+} <span style="color: #008000; font-weight: bold">else</span> {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;&lt;strong&gt;En dehors d&#39;une fonction :&lt;/strong&gt;&lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
 }
-<span style="color: #008000; font-weight: bold">foreach</span> (<span style="color: #19177C">$variables</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #19177C">$key</span><span style="color: #666666">=&gt;</span><span style="color: #19177C">$value</span>) {
-  <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #008000">in_array</span>(<span style="color: #19177C">$key</span>, <span style="color: #19177C">$var_ignore</span>)<span style="color: #666666">&amp;&amp;</span><span style="color: #008000">strpos</span>(<span style="color: #19177C">$key</span>,<span style="color: #BA2121">&quot;HTTP&quot;</span>)<span style="color: #666666">===</span><span style="color: #008000; font-weight: bold">false</span>) {
-    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;&lt;pre&gt;&quot;</span>;
-    <span style="color: #008000; font-weight: bold">echo</span> (<span style="color: #BA2121">&quot;$&quot;</span><span style="color: #666666">.</span><span style="color: #19177C">$key</span><span style="color: #666666">.</span><span style="color: #BA2121">&quot; =&gt; &quot;</span>);
-    <span style="color: #008000">print_r</span>(<span style="color: #19177C">$value</span>);
-    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;&lt;/pre&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-  }
-}  
+
+<span style="color: #008000; font-weight: bold">foreach</span> (<span style="color: #19177C">$variables</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #19177C">$key</span> <span style="color: #666666">=&gt;</span> <span style="color: #19177C">$value</span>) {
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #008000">in_array</span>(<span style="color: #19177C">$key</span>, <span style="color: #19177C">$var_ignore</span>) <span style="color: #666666">&amp;&amp;</span> str_contains(<span style="color: #19177C">$key</span>, <span style="color: #BA2121">&quot;HTTP&quot;</span>) <span style="color: #666666">===</span> <span style="color: #008000; font-weight: bold">false</span>) {
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;&lt;pre&gt;&quot;</span>;
+        <span style="color: #008000; font-weight: bold">echo</span> (<span style="color: #BA2121">&quot;$&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$key</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot; =&gt; &quot;</span>);
+        <span style="color: #008000">print_r</span>(<span style="color: #19177C">$value</span>);
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;&lt;/pre&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+    }
+}
 </pre></div>
-<hr>
 						<header>
 							<h3>Vérifier la connexion à sa base de données MySQL</h3>
 						</header>
 						<p>Créez un fichier que vous appellerez par exemple <em>debug_mysql.php</em>, puis placez-le dans votre hébergement. Renseignez les paramètres relatifs à la connexion à votre base de données MySQL. Si le script dit qu'il existe une entrée et qu'elle contient “Anne NONYME”, alors vous n'avez aucun problème de connexion.</p>
-						<p>Vous pouvez prendre ce fichier PHP ici: <a href="depot/sql-test.zip">sql-test.zip (1,5 Ko)</a></p>
+						<p>Vous pouvez prendre ce fichier PHP ici: <a href="depot/sql-test.zip">sql-test.zip (1,8 Ko)</a></p>
 <span class="smallfont">Débogage connexion base MySQL:</span>
-<!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
-<span style="color: #408080; font-style: italic">/* Par &quot;Abogil&quot;, créez un fichier debug.php */</span> 
+<!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;height:40em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
+<span style="color: #408080; font-style: italic">/* Créé par &quot;Abogil&quot;, créer un fichier debug.php */</span>
 
-<span style="color: #008000">error_reporting</span>(<span style="color: #008000; font-weight: bold">E_ALL</span>);	<span style="color: #408080; font-style: italic">// Activer le rapport d&#39;erreurs PHP</span>
+<span style="color: #408080; font-style: italic">// Activer la journalisation des erreurs PHP</span>
+<span style="color: #008000">error_reporting</span>(<span style="color: #008000; font-weight: bold">E_ALL</span>);
 
-<span style="color: #408080; font-style: italic">// ****** Configuration - Debut ****** </span>
- <span style="color: #19177C">$DBhost</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;serveur&quot;</span>; <span style="color: #408080; font-style: italic">// adresse du serveur SQL</span>
- <span style="color: #19177C">$DBName</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;nom&quot;</span>; <span style="color: #408080; font-style: italic">// nom de la base SQL</span>
- <span style="color: #19177C">$DBowner</span><span style="color: #666666">=</span> <span style="color: #BA2121">&quot;identifiant&quot;</span>; <span style="color: #408080; font-style: italic">// identifiant SQL </span>
- <span style="color: #19177C">$DBpw</span>	 <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;mdp&quot;</span>; <span style="color: #408080; font-style: italic">// mot de passe SQL </span>
-<span style="color: #408080; font-style: italic">// ****** Configuration - Fin ****** </span>
-	 
-<span style="color: #19177C">$fh_db</span> <span style="color: #666666">=</span> <span style="color: #008000">mysqli_connect</span>(<span style="color: #19177C">$DBhost</span>, <span style="color: #19177C">$DBowner</span>, <span style="color: #19177C">$DBpw</span>, <span style="color: #19177C">$DBName</span>); 
-<span style="color: #19177C">$Erreur</span> <span style="color: #666666">=</span> mysqli_connect_error(<span style="color: #19177C">$fh_db</span>); 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">strlen</span>(<span style="color: #19177C">$Erreur</span>) <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;1- mysqli_connect Connexion a la DATABASE = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$Erreur</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; <span style="color: #008000; font-weight: bold">exit</span>; } 
-<span style="color: #008000; font-weight: bold">else</span> { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;1- mysqli_connect Connexion a la DATABASE = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; }
+<span style="color: #408080; font-style: italic">// ****** Configuration Début ******</span>
+<span style="color: #19177C">$DBhost</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;serveur&quot;</span>; <span style="color: #408080; font-style: italic">// Adresse du serveur SQL</span>
+<span style="color: #19177C">$DBName</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;nom&quot;</span>; <span style="color: #408080; font-style: italic">// Nom de la base de données SQL</span>
+<span style="color: #19177C">$DBowner</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;identifiant&quot;</span>; <span style="color: #408080; font-style: italic">// Login du serveur SQL</span>
+<span style="color: #19177C">$DBpw</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;motdepasse&quot;</span>; <span style="color: #408080; font-style: italic">// Mot de passe du serveur SQL</span>
+<span style="color: #408080; font-style: italic">// ****** Configuration Fin ******</span>
 
-<span style="color: #19177C">$sel</span> <span style="color: #666666">=</span> mysqli_select_db(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$DBName</span>); 
-<span style="color: #19177C">$Erreur</span> <span style="color: #666666">=</span> mysqli_error(<span style="color: #19177C">$sel</span>); 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">strlen</span>(<span style="color: #19177C">$Erreur</span>) <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;2- mysqli_select_db Acces a la DATABASE </span><span style="color: #BB6688; font-weight: bold">$DBName</span><span style="color: #BA2121"> = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$Erreur</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; <span style="color: #008000; font-weight: bold">exit</span>; } 
-<span style="color: #008000; font-weight: bold">else</span> { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;2- mysqli_select_db Acces a la DATABASE </span><span style="color: #BB6688; font-weight: bold">$DBName</span><span style="color: #BA2121"> = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; }
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #408080; font-style: italic">// Connecter à la base de données</span>
+    <span style="color: #19177C">$fh_db</span> <span style="color: #666666">=</span> <span style="color: #008000">mysqli_connect</span>(<span style="color: #19177C">$DBhost</span>, <span style="color: #19177C">$DBowner</span>, <span style="color: #19177C">$DBpw</span>, <span style="color: #19177C">$DBName</span>);
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #19177C">$fh_db</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> Exception(
+            <span style="color: #BA2121">&quot;Erreur de connexion à la base de données : &quot;</span> <span style="color: #666666">.</span>
+                mysqli_connect_error(),
+        );
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;1- Connexion à la base de données = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+    }
+} <span style="color: #008000; font-weight: bold">catch</span> (Exception <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;1- Erreur connexion à la base de données = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span>
+        <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span>
+        <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
+
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #408080; font-style: italic">// Selectionner la base de données</span>
+    <span style="color: #19177C">$sel</span> <span style="color: #666666">=</span> mysqli_select_db(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$DBName</span>);
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #19177C">$sel</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> Exception(
+            <span style="color: #BA2121">&quot;Erreur de sélection de la base de données : &quot;</span> <span style="color: #666666">.</span>
+                mysqli_error(<span style="color: #19177C">$fh_db</span>),
+        );
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;2- Accès à la base de données </span><span style="color: #BB6688; font-weight: bold">$DBName</span><span style="color: #BA2121"> = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+    }
+} <span style="color: #008000; font-weight: bold">catch</span> (Exception <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;2- Erreur accès à la base de données </span><span style="color: #BB6688; font-weight: bold">$DBName</span><span style="color: #BA2121"> = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span>
+        <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span>
+        <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
 
 <span style="color: #408080; font-style: italic">// Création de la table Tab_test_DB</span>
-<span style="color: #19177C">$sql_query</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;CREATE TABLE `Tab_test_DB` ( `Id` int(11) NOT NULL auto_increment, `NOM` varchar(32) NOT NULL default &#39;&#39;, `PRENOM` varchar(32) NOT NULL default &#39;&#39;, PRIMARY KEY (`Id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8&quot;</span>;	 <span style="color: #408080; font-style: italic">// Requête </span>
-<span style="color: #19177C">$result_query</span><span style="color: #666666">=</span>mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>);	 <span style="color: #408080; font-style: italic">// Exécution de la requête </span>
-<span style="color: #19177C">$Erreur</span> <span style="color: #666666">=</span> mysqli_error(); 
-<span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;3- </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$result_query</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">strlen</span>(<span style="color: #19177C">$Erreur</span>) <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;Creation de la table Tab_test_DB = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$Erreur</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; <span style="color: #008000; font-weight: bold">exit</span>; } 
-<span style="color: #008000; font-weight: bold">else</span> { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;Creation de la table Tab_test_DB = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; }
+<span style="color: #19177C">$sql_query</span> <span style="color: #666666">=</span>
+    <span style="color: #BA2121">&quot;CREATE TABLE `Tab_test_DB` ( `Id` int(11) NOT NULL auto_increment, `NOM` varchar(32) NOT NULL default &#39;&#39;, `PRENOM` varchar(32) NOT NULL default &#39;&#39;, PRIMARY KEY (`Id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8&quot;</span>; <span style="color: #408080; font-style: italic">// Requête</span>
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #408080; font-style: italic">// Executer la requête</span>
+    <span style="color: #19177C">$result_query</span> <span style="color: #666666">=</span> mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>); <span style="color: #408080; font-style: italic">// Exécution de la requête</span>
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #19177C">$result_query</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> Exception(
+            <span style="color: #BA2121">&quot;Erreur de création de la table : &quot;</span> <span style="color: #666666">.</span> mysqli_error(<span style="color: #19177C">$fh_db</span>),
+        );
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;3- Création de la table Tab_test_DB =&lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+    }
+} <span style="color: #008000; font-weight: bold">catch</span> (Exception <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;3- Erreur création de la table </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span>
+        <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span>
+        <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
 
 <span style="color: #408080; font-style: italic">// Ajout d&#39;un enregistrement</span>
-<span style="color: #19177C">$sql_query</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;INSERT INTO `Tab_test_DB` values (&#39;&#39;,&#39;NONYME&#39;,&#39;Anne&#39;)&quot;</span>;	 <span style="color: #408080; font-style: italic">// Requête </span>
-<span style="color: #19177C">$result_query</span><span style="color: #666666">=</span>mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>);	 <span style="color: #408080; font-style: italic">// Exécution de la requête</span>
-<span style="color: #19177C">$Erreur</span> <span style="color: #666666">=</span> mysqli_error(); 
-<span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;4- </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$result_query</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">strlen</span>(<span style="color: #19177C">$Erreur</span>) <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot; Ajout d&#39;un enregistrement = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$Erreur</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; <span style="color: #008000; font-weight: bold">exit</span>; } 
-<span style="color: #008000; font-weight: bold">else</span> { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot; Ajout d&#39;un enregistrement = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; }
+<span style="color: #19177C">$sql_query</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;INSERT INTO `Tab_test_DB` values (&#39;&#39;,&#39;NONYME&#39;,&#39;Anne&#39;)&quot;</span>; <span style="color: #408080; font-style: italic">// Requête</span>
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #408080; font-style: italic">// Executer la requête</span>
+    <span style="color: #19177C">$result_query</span> <span style="color: #666666">=</span> mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>); <span style="color: #408080; font-style: italic">// Exécution de la requête</span>
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #19177C">$result_query</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> Exception(
+            <span style="color: #BA2121">&#39;Erreur d\&#39;ajout d\&#39;enregistrement : &#39;</span> <span style="color: #666666">.</span> mysqli_error(<span style="color: #19177C">$fh_db</span>),
+        );
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;4- Ajout d&#39;un enregistrement  =&lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+    }
+} <span style="color: #008000; font-weight: bold">catch</span> (Exception <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;4- Erreur ajout de valeur </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span>
+        <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span>
+        <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
 
-<span style="color: #408080; font-style: italic">// SELECT dans la table Tab_test_DB</span>
-<span style="color: #19177C">$sql_query</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;SELECT Id, NOM, PRENOM FROM `Tab_test_DB` WHERE NOM=\&#39;NONYME\&#39;&quot;</span>;	 <span style="color: #408080; font-style: italic">// Requête </span>
-<span style="color: #19177C">$result_query</span><span style="color: #666666">=</span>mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>);	 <span style="color: #408080; font-style: italic">// Exécution de la requête </span>
-<span style="color: #19177C">$Erreur</span> <span style="color: #666666">=</span> mysqli_error(); 
-<span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;5- </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">strlen</span>(<span style="color: #19177C">$Erreur</span>) <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;SELECT dans la table Tab_test_DB = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$Erreur</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; <span style="color: #008000; font-weight: bold">exit</span>; } 
-<span style="color: #008000; font-weight: bold">else</span> { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;SELECT dans la table Tab_test_DB = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; }
+<span style="color: #408080; font-style: italic">// Sélection dans la table Tab_test_DB</span>
+<span style="color: #19177C">$sql_query</span> <span style="color: #666666">=</span>
+    <span style="color: #BA2121">&quot;SELECT Id, NOM, PRENOM FROM `Tab_test_DB` WHERE NOM LIKE &#39;NONYME&#39;&quot;</span>; <span style="color: #408080; font-style: italic">// Requête</span>
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #408080; font-style: italic">// Executer la requête</span>
+    <span style="color: #19177C">$result_query</span> <span style="color: #666666">=</span> mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>); <span style="color: #408080; font-style: italic">// Exécution de la requête</span>
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #19177C">$result_query</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> Exception(
+            <span style="color: #BA2121">&quot;Erreur de sélection des données : &quot;</span> <span style="color: #666666">.</span> mysqli_error(<span style="color: #19177C">$fh_db</span>),
+        );
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;5- La colonne &lt;strong&gt;NOM&lt;/strong&gt; contenant la valeur &lt;strong&gt;NONYME&lt;/strong&gt; a été trouvée. &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+    }
+} <span style="color: #008000; font-weight: bold">catch</span> (Exception <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;5- Erreur de sélection de valeur </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span>
+        <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span>
+        <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
 
-<span style="color: #19177C">$sql_query</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;SELECT Id, NOM, PRENOM FROM `Tab_test_DB` ORDER BY NOM&quot;</span>;	 <span style="color: #408080; font-style: italic">// Requête </span>
-<span style="color: #19177C">$result_query</span><span style="color: #666666">=</span>mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>);	 <span style="color: #408080; font-style: italic">// Exécution de la requête </span>
-<span style="color: #19177C">$result_count_row_get</span> <span style="color: #666666">=</span> mysqli_num_rows(<span style="color: #19177C">$result_query</span>);	
-<span style="color: #19177C">$Erreur</span> <span style="color: #666666">=</span> mysqli_error(); 
-<span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;Nombre d&#39;enregistrements trouves = &lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$result_count_row_get</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">strlen</span>(<span style="color: #19177C">$Erreur</span>) <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>)	<span style="color: #008000; font-weight: bold">exit</span>; 
+<span style="color: #19177C">$sql_query</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;SELECT Id, NOM, PRENOM FROM `Tab_test_DB` ORDER BY NOM&quot;</span>; <span style="color: #408080; font-style: italic">// Requête</span>
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #408080; font-style: italic">// Executer la requête</span>
+    <span style="color: #19177C">$result_query</span> <span style="color: #666666">=</span> mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>); <span style="color: #408080; font-style: italic">// Exécution de la requête</span>
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #19177C">$result_query</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> Exception(
+            <span style="color: #BA2121">&quot;Erreur de sélection des données : &quot;</span> <span style="color: #666666">.</span> mysqli_error(<span style="color: #19177C">$fh_db</span>),
+        );
+    }
+    <span style="color: #19177C">$result_count_row_get</span> <span style="color: #666666">=</span> mysqli_num_rows(<span style="color: #19177C">$result_query</span>);
+} <span style="color: #008000; font-weight: bold">catch</span> (Exception <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;5- Erreur de sélection de colonne </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span>
+        <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span>
+        <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
+<span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;5- Nombre de résultats trouvés = &lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$result_count_row_get</span><span style="color: #BA2121">&lt;/strong&gt; [doit être égal à 1]&lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
 mysqli_free_result(<span style="color: #19177C">$result_query</span>);
 
-<span style="color: #408080; font-style: italic">// Supression de la table Tab_test_DB</span>
-<span style="color: #19177C">$sql_query</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;DROP TABLE IF EXISTS `Tab_test_DB`&quot;</span>;	 <span style="color: #408080; font-style: italic">// Requête </span>
-<span style="color: #19177C">$result_query</span><span style="color: #666666">=</span>mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>);	 <span style="color: #408080; font-style: italic">// Exécution de la requête </span>
-<span style="color: #19177C">$Erreur</span> <span style="color: #666666">=</span> mysqli_error(); 
-<span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;6- </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$result_query</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #008000">strlen</span>(<span style="color: #19177C">$Erreur</span>) <span style="color: #666666">&gt;</span> <span style="color: #666666">0</span>) { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;Supression de la table Tab_test_DB = &lt;strong&gt;&quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$Erreur</span> <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; <span style="color: #008000; font-weight: bold">exit</span>; } 
-<span style="color: #008000; font-weight: bold">else</span> { <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;Supression de la table Tab_test_DB = &lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; &lt;br /&gt;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; }
+<span style="color: #408080; font-style: italic">// Suppression de la table Tab_test_DB</span>
+<span style="color: #19177C">$sql_query</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;DROP TABLE IF EXISTS `Tab_test_DB`&quot;</span>; <span style="color: #408080; font-style: italic">// Requête</span>
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #408080; font-style: italic">// Executer la requête</span>
+    <span style="color: #19177C">$result_query</span> <span style="color: #666666">=</span> mysqli_query(<span style="color: #19177C">$fh_db</span>, <span style="color: #19177C">$sql_query</span>); <span style="color: #408080; font-style: italic">// Exécution de la requête</span>
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #666666">!</span><span style="color: #19177C">$result_query</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> Exception(
+            <span style="color: #BA2121">&quot;Erreur de suppression de la table : &quot;</span> <span style="color: #666666">.</span> mysqli_error(<span style="color: #19177C">$fh_db</span>),
+        );
+    } <span style="color: #008000; font-weight: bold">else</span> {
+        <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;6- Suppression de la table Tab_test_DB =&lt;strong&gt; OK &lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+    }
+} <span style="color: #008000; font-weight: bold">catch</span> (Exception <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot;6- Erreur suppression de la table </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">sql_query=&lt;strong&gt;</span><span style="color: #BB6688; font-weight: bold">$sql_query</span><span style="color: #BA2121">&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\$</span><span style="color: #BA2121">result_query=&lt;strong&gt;&quot;</span> <span style="color: #666666">.</span>
+        <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span>
+        <span style="color: #BA2121">&quot;&lt;/strong&gt; &lt;br /&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
 
-<span style="color: #408080; font-style: italic">// Closing connection </span>
-mysqli_close(<span style="color: #19177C">$fh_db</span>); 
+<span style="color: #408080; font-style: italic">// Fermeture de la connexion</span>
+mysqli_close(<span style="color: #19177C">$fh_db</span>);
 <span style="color: #BC7A00">?&gt;</span>
 </pre></div>
 <hr>
@@ -179,45 +260,51 @@ mysqli_close(<span style="color: #19177C">$fh_db</span>);
 							<h3>Tester l'envoi de message via la fonction mail()</h3>
 						</header>
 						<p>Il arrive parfois que les messages n'arrivent pas. Soit ils ne sont pas envoyés car le serveur est en panne, soit ils sont perdus quelque part, soit le script est mal programmé. Voici un script PHP qui fonctionne, il vous aidera à tester la situation. Créez un fichier <em>courrier.php</em> et copiez le code ci-dessous.</p>
-						<p>Vous pouvez prendre ce fichier PHP ici: <a href="depot/courrier-test.zip">courrier-test.zip (1,1 Ko)</a></p>
+						<p>Vous pouvez prendre ce fichier PHP ici: <a href="depot/courrier-test.zip">courrier-test.zip (1,3 Ko)</a></p>
 <span class="smallfont">Test fonction mail()</span>
-<!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
+<!-- HTML generated using hilite.me --><div class="smallfont code" style="overflow:auto;width:auto;height:40em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #BC7A00">&lt;?php</span>
 <span style="color: #408080; font-style: italic">// TEST FONCTION MAIL() PHP</span>
-<span style="color: #408080; font-style: italic">// CREEZ UN FICHIER courrier.php</span>
+<span style="color: #408080; font-style: italic">// CREEZ UNE FICHIER email.php</span>
+
+<span style="color: #008000; font-weight: bold">declare</span>(strict_types<span style="color: #666666">=1</span>); <span style="color: #408080; font-style: italic">// Enable strict types</span>
 
 <span style="color: #408080; font-style: italic">// *** A configurer</span>
 <span style="color: #19177C">$to</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;adresse@machin.truc&quot;</span>;  
 <span style="color: #19177C">$from</span>  <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;postmaster@bidule.truc&quot;</span>;  
 
 <span style="color: #408080; font-style: italic">// *** Laisser tel quel</span>
-<span style="color: #19177C">$jour</span>  <span style="color: #666666">=</span> <span style="color: #008000">date</span>(<span style="color: #BA2121">&quot;d-m-Y&quot;</span>);
+<span style="color: #19177C">$jour</span> <span style="color: #666666">=</span> <span style="color: #008000">date</span>(<span style="color: #BA2121">&quot;d-m-Y&quot;</span>);
 <span style="color: #19177C">$heure</span> <span style="color: #666666">=</span> <span style="color: #008000">date</span>(<span style="color: #BA2121">&quot;H:i&quot;</span>);
 
 <span style="color: #19177C">$sujet</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Essai Mail - </span><span style="color: #BB6688; font-weight: bold">$jour</span><span style="color: #BA2121"> </span><span style="color: #BB6688; font-weight: bold">$heure</span><span style="color: #BA2121">&quot;</span>;
 
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;&lt;html&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;&lt;head&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;&lt;title&gt; Subject &lt;/title&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;&lt;/head&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;&lt;body&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;Mail au format HTML simple avec la fonction PHP mail().&lt;br&gt; &lt;b&gt;</span><span style="color: #BB6688; font-weight: bold">$sujet</span><span style="color: #BA2121"> &lt;/b&gt; &lt;br&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;&lt;/body&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$contenu</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;&lt;/HTML&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+<span style="color: #19177C">$htmlContenu</span> <span style="color: #666666">=&lt;&lt;&lt;</span>HTML
+<span style="color: #666666">&lt;</span>html<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;</span>head<span style="color: #666666">&gt;</span>
+    <span style="color: #666666">&lt;</span>title<span style="color: #666666">&gt;</span>Sujet<span style="color: #666666">&lt;/</span>title<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;/</span>head<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;</span>body<span style="color: #666666">&gt;</span>
+    Mail au format HTML simple avec la fonction PHP <span style="color: #008000">mail</span>()<span style="color: #666666">.&lt;</span>br<span style="color: #666666">&gt;</span> <span style="color: #666666">&lt;</span>b<span style="color: #666666">&gt;</span><span style="color: #19177C">$sujet</span><span style="color: #666666">&lt;/</span>b<span style="color: #666666">&gt;</span> <span style="color: #666666">&lt;</span>br<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;/</span>body<span style="color: #666666">&gt;</span>
+<span style="color: #666666">&lt;/</span>html<span style="color: #666666">&gt;</span>
+HTML;
 
-<span style="color: #19177C">$headers</span>  <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;MIME-Version: 1.0 </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$headers</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;Content-Transfer-Encoding: 8bit </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$headers</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;Content-type: text/html; charset=utf-8 </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #19177C">$headers</span> <span style="color: #666666">.=</span> <span style="color: #BA2121">&quot;From: </span><span style="color: #BB6688; font-weight: bold">$from</span><span style="color: #BA2121">  </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #408080; font-style: italic">// $headers .= &quot;Disposition-Notification-To: $from  \n&quot;; // accuse de reception</span>
+<span style="color: #19177C">$headers</span> <span style="color: #666666">=</span> [
+    <span style="color: #BA2121">&quot;MIME-Version: 1.0&quot;</span>,
+    <span style="color: #BA2121">&quot;Content-Transfer-Encoding: 8bit&quot;</span>,
+    <span style="color: #BA2121">&quot;Content-type: text/html; charset=utf-8&quot;</span>,
+    <span style="color: #BA2121">&quot;From: </span><span style="color: #BB6688; font-weight: bold">$from</span><span style="color: #BA2121">&quot;</span>,
+];
 
-<span style="color: #19177C">$verif_envoi_mail</span> <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">TRUE</span>;
-
-<span style="color: #19177C">$verif_envoi_mail</span> <span style="color: #666666">=</span> <span style="color: #666666">@</span><span style="color: #008000">mail</span> (<span style="color: #19177C">$to</span>, <span style="color: #19177C">$sujet</span>, <span style="color: #19177C">$contenu</span>, <span style="color: #19177C">$headers</span>);
- 
-<span style="color: #008000; font-weight: bold">if</span> (<span style="color: #19177C">$verif_envoi_mail</span> <span style="color: #666666">===</span> <span style="color: #008000; font-weight: bold">FALSE</span>) <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot; ### Verification Envoi du Mail=</span><span style="color: #BB6688; font-weight: bold">$verif_envoi_mail</span><span style="color: #BA2121"> - Erreur envoi mail &lt;br&gt; </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
-<span style="color: #008000; font-weight: bold">else</span> <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot; *** Verification Envoi du Mail=</span><span style="color: #BB6688; font-weight: bold">$verif_envoi_mail</span><span style="color: #BA2121"> - Mail envoy&amp;eacute; avec succ&amp;egrave;s de </span><span style="color: #BB6688; font-weight: bold">$to</span><span style="color: #BA2121"> vers </span><span style="color: #BB6688; font-weight: bold">$from</span><span style="color: #BA2121"> &lt;br&gt; avec comme sujet: </span><span style="color: #BB6688; font-weight: bold">$sujet</span><span style="color: #BA2121"> </span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>; 
-<span style="color: #BC7A00">?&gt;</span> 
+<span style="color: #008000; font-weight: bold">try</span> {
+    <span style="color: #19177C">$verif_envoi_mail</span> <span style="color: #666666">=</span> <span style="color: #008000">mail</span>(<span style="color: #19177C">$to</span>, <span style="color: #19177C">$sujet</span>, <span style="color: #19177C">$htmlContenu</span>, <span style="color: #008000">implode</span>(<span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>, <span style="color: #19177C">$headers</span>));
+    <span style="color: #008000; font-weight: bold">if</span> (<span style="color: #19177C">$verif_envoi_mail</span> <span style="color: #666666">===</span> <span style="color: #008000; font-weight: bold">false</span>) {
+        <span style="color: #008000; font-weight: bold">throw</span> <span style="color: #008000; font-weight: bold">new</span> RuntimeException(<span style="color: #BA2121">&quot;Erreur envoi mail&quot;</span>);
+    }
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot; *** Verification Envoi du Mail=</span><span style="color: #BB6688; font-weight: bold">$verif_envoi_mail</span><span style="color: #BA2121"> - Mail envoyé avec succès vers </span><span style="color: #BB6688; font-weight: bold">$to</span><span style="color: #BA2121"> depuis </span><span style="color: #BB6688; font-weight: bold">$from</span><span style="color: #BA2121"> avec comme sujet: </span><span style="color: #BB6688; font-weight: bold">$sujet</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+} <span style="color: #008000; font-weight: bold">catch</span> (Throwable <span style="color: #19177C">$e</span>) {
+    <span style="color: #008000; font-weight: bold">echo</span> <span style="color: #BA2121">&quot; ### Verification Envoi du Mail=</span><span style="color: #BB6688; font-weight: bold">$verif_envoi_mail</span><span style="color: #BA2121"> - Erreur envoi mail: &quot;</span> <span style="color: #666666">.</span> <span style="color: #19177C">$e</span><span style="color: #666666">-&gt;</span><span style="color: #7D9029">getMessage</span>() <span style="color: #666666">.</span> <span style="color: #BA2121">&quot;</span><span style="color: #BB6622; font-weight: bold">\n</span><span style="color: #BA2121">&quot;</span>;
+}
 </pre></div>
 					</section>
 				</div>
@@ -372,7 +459,7 @@ mysqli_close(<span style="color: #19177C">$fh_db</span>);
 	<li><a href="menu.html" accesskey="3"><span class="icon fa-align-bars fa-fw"></span> Plan du site <span class="smallfont">[TOUCHE]+3</span></a></li>
 	</ul>
 	<ul class="copyright">
-	<li>&copy; 2007 à 2022 </li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><span class="icon fa-code fa-fw"></span> <a href="README.html">Crédits</a></li>
+	<li>&copy; 2007 à 2024 </li><li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li><span class="icon fa-code fa-fw"></span> <a href="README.html">Crédits</a></li>
 	</ul>
 </footer>
 
