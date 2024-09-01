@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.9] - 2024-07-15
+## [2.0.9] - 2024-09-01
 
 Simples détails et mises à jours mineures.  
 
@@ -13,7 +13,7 @@ Simples détails et mises à jours mineures.
 - `gateau-roule.html`, recette modifiée  
 - `internet-referencement-site-web.html`, l'ère du PageRank est révolue  
 - `le-monde-et-l-humanite-doivent-changer.html`, rôle de l'amour  
-- `meditation-relaxation-seance-video.html`, lien avec l'univers  
+- `meditation-relaxation-seance-video.html`, résoudre un problème répétitif, lien avec l'univers  
 - `recueil-de-blagues.html`, nouvelle histoire  
 - `gesfic.php`, `modif.php`, `chmod.php`, `sql-test.php`, `courrier-test.php` compatibles PHP 8.2  
 - README, autre adresse de courriel  
@@ -24,6 +24,7 @@ Simples détails et mises à jours mineures.
 ### Retrait
 - `styles.css` et autres feuilles de styles CSS, retrait des `background-image` sans `image-set`  
 - `courrier.html` et `images/e-mail.svg`, retrait de l'adresse à Posteo  
+- `decider-de-reussir-sa-vie-changer-evoluer.html`, retrait de texte en double repris dans `meditation-relaxation-seance-video.html`  
 - README, retrait d'un commentaire erroné.  
 
 
