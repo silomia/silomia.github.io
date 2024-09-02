@@ -12,7 +12,7 @@ Simples détails et mises à jours mineures.
 - `contre-la-manipulation-des-masses.html`, rôle du journalisme  
 - `gateau-roule.html`, recette modifiée  
 - `internet-referencement-site-web.html`, l'ère du PageRank est révolue  
-- `le-monde-et-l-humanite-doivent-changer.html`, rôle de l'amour  
+- `le-monde-et-l-humanite-doivent-changer.html`, réécriture du pardon, rôle de l'amour  
 - `meditation-relaxation-seance-video.html`, résoudre un problème répétitif, lien avec l'univers  
 - `recueil-de-blagues.html`, nouvelle histoire  
 - `gesfic.php`, `modif.php`, `chmod.php`, `sql-test.php`, `courrier-test.php` compatibles PHP 8.2  
