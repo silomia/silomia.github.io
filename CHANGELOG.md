@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.9] - 2024-10-08
+## [2.0.9] - 2024-11-17
 
 Simples détails et mises à jours mineures.  
 
@@ -16,6 +16,7 @@ Simples détails et mises à jours mineures.
 - `meditation-relaxation-seance-video.html`, résoudre un problème répétitif, lien avec l'univers  
 - `recueil-de-blagues.html`, nouvelle histoire  
 - `gesfic.php`, `modif.php`, `chmod.php`, `sql-test.php`, `courrier-test.php` compatibles PHP 8.2  
+- Police `rasmus inter` en version: 4.1  
 - README, autre adresse de courriel  
 - `historique.md` renommé en `CHANGELOG.md`  
 - Mise à jour oubliée des `dateModified` des fichiers html modifiés depuis la version 2.0.8  
