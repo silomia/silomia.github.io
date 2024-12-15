@@ -81,11 +81,6 @@ Hawcons v1 ([https://hawcons.com](https://hawcons.com))
 Yannick Lung  
 Licence: usage personnel et commercial, modifiable, pas de revente ni de redistribution ([https://hawcons.com/faq/](https://hawcons.com/faq/))
 
-**Code PHP pour lister les fichiers d'un répertoire:**  
-File-Directory-List v1.10 ([https://halgatewood.com/free/file-directory-list/](https://halgatewood.com/free/file-directory-list/))  
-Hal Gatewood  
-Licence: MIT
-
 **Divers:**  
 Divers codes en JS:  
 Divers auteurs ([https://stackoverflow.com/questions/3795481/javascript-slidedown-without-jquery](https://stackoverflow.com/questions/3795481/javascript-slidedown-without-jquery))
@@ -114,4 +109,4 @@ Rangizz: [image](images/marketing-rangizz@1x.jpg)
 [Pâte à tartiner chocolat noisette](gourmandise-pate-a-tartiner-chocolat-noisette.html): Christophe Michalak  
 [Se libérer du Mal](le-monde-et-l-humanite-doivent-changer.html): Jacob Bronowski, Gandhi, Michel Potay, Tina Seelig, divers auteurs  
 [Si… Tu seras un homme, mon fils (“If-”)](tu-seras-un-homme-mon-fils.html): Rudyard Kipling  
-[Vidéo de méditation et de relaxation universelle](meditation-relaxation-seance-video.html): Wim Hoff  
+[Vidéo de méditation et de relaxation universelle](meditation-relaxation-seance-video.html): Wim Hof  

@@ -26,7 +26,7 @@ Simples détails et mises à jours mineures.
 - `styles.css` et autres feuilles de styles CSS, retrait des `background-image` sans `image-set`  
 - `courrier.html` et `images/e-mail.svg`, retrait de l'adresse à Posteo  
 - `decider-de-reussir-sa-vie-changer-evoluer.html`, retrait de texte en double repris dans `meditation-relaxation-seance-video.html`  
-- README, retrait d'un commentaire erroné.  
+- README, retrait d'un commentaire erroné et d'un code PHP non utilisé.  
 
 
 ## [2.0.8] - 2023-10-07
