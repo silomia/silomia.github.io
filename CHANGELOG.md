@@ -1,5 +1,15 @@
 # Journal des modifications
 
+## [2.0.10] - 2025-02-09
+
+Simples détails et mises à jours mineures.  
+
+### Changé
+- `recettes diverses.pdf`, ajout et modification de recettes  
+- `mignardise-muffins.html` avec son PDF et ePub, correction du streusel  
+- `decider-de-reussir-sa-vie-changer-evoluer.html`, plus d'explications au point 9.  
+
+
 ## [2.0.9] - 2024-11-17
 
 Simples détails et mises à jours mineures.  
