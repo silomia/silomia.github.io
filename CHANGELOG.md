@@ -5,6 +5,7 @@
 Simples détails et mises à jours mineures.  
 
 ### Changé
+- `courrier.html` changement hébergeur de courrier  
 - `recettes diverses.pdf`, ajout et modification de recettes  
 - `mignardise-muffins.html` avec son PDF et ePub, correction du streusel  
 - `decider-de-reussir-sa-vie-changer-evoluer.html`, plus d'explications au point 9  
