@@ -1,13 +1,16 @@
 # Journal des modifications
 
-## [2.0.10] - 2025-02-09
+## [2.0.10] - 2025-03-09
 
 Simples détails et mises à jours mineures.  
 
 ### Changé
 - `recettes diverses.pdf`, ajout et modification de recettes  
 - `mignardise-muffins.html` avec son PDF et ePub, correction du streusel  
-- `decider-de-reussir-sa-vie-changer-evoluer.html`, plus d'explications au point 9.  
+- `decider-de-reussir-sa-vie-changer-evoluer.html`, plus d'explications au point 9  
+- Changement de la balise `link rel="canonical"` pointant vers le site github pour indiquer le contenu dupliqué  
+- Mise à jour des `dateModified` des fichiers html et sitemap.xml modifiés au 2025-03-09  
+- Mise à jour des années du copyright à 2025. 
 
 
 ## [2.0.9] - 2024-11-17
