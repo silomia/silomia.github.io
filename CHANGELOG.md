@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.10] - 2025-03-09
+## [2.0.10] - 2025-08-01
 
 Simples détails et mises à jours mineures.  
 
