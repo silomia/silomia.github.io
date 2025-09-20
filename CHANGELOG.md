@@ -1,6 +1,6 @@
 # Journal des modifications
 
-## [2.0.10] - 2025-09-10
+## [2.0.10] - 2025-09-21
 
 Simples détails et mises à jours mineures.  
 
@@ -9,7 +9,7 @@ Simples détails et mises à jours mineures.
 - `recettes diverses.pdf`, ajout et modification de recettes  
 - `mignardise-muffins.html` avec son PDF et ePub, correction du streusel  
 - `decider-de-reussir-sa-vie-changer-evoluer.html`, plus d'explications au point 9  
-- `meditation-relaxation-seance-video.html`, remplace un paragraphe moins utile par se connecter à soi et au divin  
+- `meditation-relaxation-seance-video.html`, remplace un paragraphe moins utile par se connecter à soi et au divin, la prière  
 - Changement de la balise `link rel="canonical"` pointant vers le site github pour indiquer le contenu dupliqué  
 - Mise à jour des `dateModified` des fichiers html et sitemap.xml modifiés au 2025-03-09  
 - Mise à jour des années du copyright à 2025. 
